@@ -1,0 +1,13 @@
+.Button {
+  cursor: pointer;
+  min-width: 50px;
+  color: var(--inverted-primary-color)
+}
+
+.clear {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
