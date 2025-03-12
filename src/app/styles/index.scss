@@ -4,16 +4,13 @@
 @import 'themes/dark';
 
 body {
-  
   interpolate-size: allow-keywords;
 }
 
 .app {
   font: var(--font-l);
-
   background-color: var(--bg-color);
   color: var(--primary-color);
-
   min-height: 100vh;
 }
 
