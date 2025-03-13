@@ -35,6 +35,7 @@ export default [
       "react/jsx-indent-props": [2, 2],
       "no-underscore-dangle": "off",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
+      "max-len": ["error", { code: 120, ignoreComments: true }],
     },
   },
   i18next.configs["flat/recommended"],
