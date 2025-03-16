@@ -6,7 +6,9 @@ import i18next from "eslint-plugin-i18next";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+  },
   {
     languageOptions: {
       globals: {
@@ -19,6 +21,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  i18next.configs["flat/recommended"],
   {
     rules: {
       "react/react-in-jsx-scope": "off",
@@ -34,9 +37,20 @@ export default [
       "react/jsx-indent": [2, 2],
       "react/jsx-indent-props": [2, 2],
       "no-underscore-dangle": "off",
-      "i18next/no-literal-string": ["error", { markupOnly: true }],
+      "i18next/no-literal-string": [
+        "error",
+        {
+          markupOnly: false,
+          ignoreAttribute: ["data-testid", "to"],
+        },
+      ],
       "max-len": ["error", { code: 120, ignoreComments: true }],
     },
   },
-  i18next.configs["flat/recommended"],
+  {
+    files: ["**/src/**/*.test.{ts,tsx}"],
+    rules: {
+      "i18next/no-literal-string": "off",
+    },
+  },
 ];

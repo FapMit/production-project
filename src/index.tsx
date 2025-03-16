@@ -8,11 +8,11 @@ import { ErrorBoundary } from "app/providers/ErrorBoundary";
 
 render(
   <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
+    <ThemeProvider>
+      <ErrorBoundary>
         <App/>
-      </ThemeProvider>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </ThemeProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
