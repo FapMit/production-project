@@ -14,7 +14,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki --chromeConcurrency 1 test",
     "test:ui:ok": "npx loki --chromeConcurrency 1 approve",
-    "test:ui:ci": "npx loki --chromeConcurrency 1 --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -89,6 +89,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "concurrently": "^9.1.2",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.4",
     "i18next-http-backend": "^3.0.2",
