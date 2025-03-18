@@ -7,7 +7,7 @@ export const TranslationDecorator = (story: () => StoryFn) => (
 
   <Suspense fallback="">
     <I18nextProvider i18n={i18n}>
-      {story()}
+      {story()} 
     </I18nextProvider>
   </Suspense>
 )
