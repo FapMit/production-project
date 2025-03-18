@@ -23,20 +23,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'Default button',
+    children: 'Стандартная',
   },
 };
 
 export const Outline: Story = {
   args: {
-    children: 'Outline button',
+    children: 'С окантовкой',
     theme: ThemeButton.OUTLINE,
   },
 };
 
 export const OutlineDark: Story = {
   args: {
-    children: 'Outline button',
+    children: 'С окантовкой темная',
     theme: ThemeButton.OUTLINE,
   },
   decorators: [
@@ -46,7 +46,7 @@ export const OutlineDark: Story = {
 
 export const Clear: Story = {
   args: {
-    children: 'Clear button',
+    children: 'Чистая',
     theme: ThemeButton.CLEAR,
   },
 };

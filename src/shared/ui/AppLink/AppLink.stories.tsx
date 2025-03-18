@@ -24,26 +24,26 @@ type Story = StoryObj<typeof meta>;
 export const PrimaryLight: Story = {
   args: {
     theme: AppLinkTheme.PRIMARY,
-    children: 'Primary link',
+    children: 'Основной цвет',
   },
 };
 export const PrimaryDark: Story = {
   args: {
     theme: AppLinkTheme.PRIMARY,
-    children: 'Primary link',
+    children: 'Основной цвет темной темы',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 export const InvertedLight: Story = {
   args: {
     theme: AppLinkTheme.INVERTED,
-    children: 'Inverted link',
+    children: 'Инвертированный цвет',
   },
 };
 export const InvertedDark: Story = {
   args: {
     theme: AppLinkTheme.INVERTED,
-    children: 'Inverted link',
+    children: 'Инвертированный цвет темной темы',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
