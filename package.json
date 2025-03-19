@@ -15,6 +15,9 @@
     "test:ui": "npx loki --chromeConcurrency 1 test",
     "test:ui:ok": "npx loki --chromeConcurrency 1 approve",
     "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -71,6 +74,7 @@
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.16.0",
     "react-refresh-typescript": "^2.0.10",
+    "reg-cli": "^0.18.10",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.85.1",
     "sass-loader": "^12.6.0",

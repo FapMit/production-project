@@ -19,7 +19,7 @@ const preview: Preview = {
     RouterDecorator,
     TranslationDecorator, 
     ThemeDecorator(Theme.LIGHT)
-  ]
+  ],
 };
 
 export default preview;
