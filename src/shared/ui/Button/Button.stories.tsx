@@ -21,6 +21,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Clear: Story = {
+  args: {
+    children: 'Текст',
+    theme: ButtonTheme.CLEAR,
+  },
+};
+
+export const ClearInverted: Story = {
+  args: {
+    children: 'Текст',
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+};
+
 export const DefaultS: Story = {
   args: {
     children: 'Стандартная кнопка',

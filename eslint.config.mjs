@@ -14,13 +14,24 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        __IS_DEV__: true,
       },
     },
   },
+  {globals: { __IS_DEV__: true }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  {
+    extends: [
+      'plugin:react-hooks/recommended'
+    ],
+    plugins: [
+      'react',
+      '@typescript-eslint',
+      'i18next',
+      'react-hooks'
+    ]
+  },
   i18next.configs["flat/recommended"],
   {
     rules: {
@@ -45,6 +56,8 @@ export default [
         },
       ],
       "max-len": ["error", { code: 120, ignoreComments: true }],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error"
     },
   },
   {

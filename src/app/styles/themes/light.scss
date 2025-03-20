@@ -1,4 +1,4 @@
-.app.light {
+:root:has(.app.light) {
   --bg-color: #cecece;  
   --inverted-bg-color: #1c1c1c;
   --primary-color: #574e4d;
