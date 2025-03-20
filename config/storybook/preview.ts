@@ -5,6 +5,23 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
 
+
+
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'ru', title: 'Russian' },
+      ],
+      showName: true,
+    },
+  },
+};
+
 const preview: Preview = {
   parameters: {
     controls: {

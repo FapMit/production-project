@@ -20,5 +20,5 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+    "./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx", "src/shared/config/storybook/TranslationDecorator/TranslationDecorator.js"]
 }
