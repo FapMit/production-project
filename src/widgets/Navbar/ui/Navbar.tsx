@@ -23,15 +23,20 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
-        <Button 
-          theme={ButtonTheme.CLEAR_INVERTED} 
-          onClick={onToggleModal}
-          className={cls.link}
-        >
-          {t('Войти')}
-        </Button>
+      <Button 
+        theme={ButtonTheme.CLEAR_INVERTED} 
+        onClick={onToggleModal}
+        className={cls.link}
+      >
+        {t('Войти')}
+      </Button>
       
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae labore, id beatae quam inventore doloremque sed nemo exercitationem eum nihil tempore, eligendi expedita sapiente natus unde est veniam! Alias, ratione? </Modal>
+      <Modal 
+        isOpen={isAuthModal} 
+        onClose={onToggleModal}
+      > 
+        {t('Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolor ipsa temporibus vitae facere fugiat quis voluptatem repellendus omnis dicta.')}
+      </Modal>
     </div>
   );
 }
