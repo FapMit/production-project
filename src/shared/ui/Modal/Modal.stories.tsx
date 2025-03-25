@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta = {
-  title: 'Widgets/Modal',
+  title: 'Shared/Modal',
   component: Modal,
   parameters: {
     layout: 'fullscreen'
@@ -27,6 +27,7 @@ export const Light: Story = {
 export const Dark: Story = {
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isOpen: true},
+    isOpen: true
+  },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
