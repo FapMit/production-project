@@ -34,7 +34,7 @@ const preview: Preview = {
   decorators: [
     StyleDecorator, 
     RouterDecorator,
-    TranslationDecorator, 
+    TranslationDecorator,
     ThemeDecorator(Theme.LIGHT)
   ],
 };

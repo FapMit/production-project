@@ -165,3 +165,12 @@ export const SquareDarkXL: Story = {
     size: ButtonSize.XL,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Дисаблет',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    size: ButtonSize.L,
+    disabled: true
+  },
+};

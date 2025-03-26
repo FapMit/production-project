@@ -6,17 +6,54 @@
 .Loader {
   display: inline-block;
   position: relative;
+  color: var(--inverted-primary-color)
+}
+
+.loader__s {
+  width: 40px;
+  height: 40px;
+
+  & div {
+    width: 24px;
+    height: 24px;
+    border-width: 4px;
+  }
+}
+
+.loader__m {
+  width: 60px;
+  height: 60px;
+
+  & div {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.loader__l {
   width: 80px;
   height: 80px;
-  color: var(--inverted-primary-color)
+
+  & div {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.loader__xl {
+  width: 100px;
+  height: 100px;
+
+  & div {
+    width: 84px;
+    height: 84px;
+  }
 }
 
 .Loader div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
   margin: 8px;
   border: 8px solid currentcolor;
   border-radius: 50%;

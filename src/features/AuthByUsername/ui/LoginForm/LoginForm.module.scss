@@ -1,7 +1,14 @@
 .LoginForm {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.loginHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input {
