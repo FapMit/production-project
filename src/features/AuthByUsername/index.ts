@@ -4,4 +4,4 @@ export {
 
 export { LoginSchema } from './model/types/loginSchema';
 
-export { loginReducer, loginActions } from './model/slice/loginSlice';
+export { loginActions } from './model/slice/loginSlice';

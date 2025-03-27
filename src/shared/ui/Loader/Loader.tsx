@@ -1,5 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Loader.module.scss";
+import { HTMLAttributes } from "react";
 
 export enum LoaderSize {
   S = 'loader__s',
@@ -8,7 +9,7 @@ export enum LoaderSize {
   XL = 'loader__xl'
 }
 
-interface LoaderProps {
+interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   size?: LoaderSize;
 }
@@ -17,6 +18,7 @@ export const Loader = (props: LoaderProps) => {
   const {
     className,
     size = LoaderSize.L,
+    ...otherProps
   } = props;
 
   const mods: Record<string,boolean> = {
@@ -24,7 +26,10 @@ export const Loader = (props: LoaderProps) => {
   }
 
   return ( 
-    <div className={classNames(cls.Loader, mods, [className])}>
+    <div 
+      className={classNames(cls.Loader, mods, [className])} 
+      {...otherProps}
+    >
       <div></div>
       <div></div>
       <div></div>

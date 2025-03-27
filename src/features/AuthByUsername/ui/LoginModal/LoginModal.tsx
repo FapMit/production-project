@@ -1,7 +1,10 @@
-import { LoginForm } from "../LoginForm/LoginForm";
+// import { LoginForm } from "../LoginForm/LoginForm";
+import { Suspense } from "react";
+import { LoginFormAsync as  LoginForm } from "../LoginForm/LoginForm.async";
 import { Modal } from "shared/ui/Modal/Modal";
+import { Loader, LoaderSize } from "shared/ui/Loader/Loader";
 
-interface LoginModalProps {
+interface LoginModalProps  {
   isOpen?: boolean;
   onClose?: () => void;
 }
@@ -18,7 +21,9 @@ export const LoginModal = (props: LoginModalProps) => {
       onClose={onClose}
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<Loader style={{width: '100%', display: 'flex', justifyContent: 'center'}} size={LoaderSize.L}/>}>
+        <LoginForm />
+      </Suspense>
     </Modal>
   );
 }
