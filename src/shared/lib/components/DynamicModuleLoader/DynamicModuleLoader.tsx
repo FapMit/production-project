@@ -5,7 +5,7 @@ import { FC, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 
 export type ReducersList = {
-  [name in StateSchemaKey]: Reducer
+  [name in StateSchemaKey]?: Reducer
 }
 
 type ReducersListEntry = [StateSchemaKey, Reducer]
