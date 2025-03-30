@@ -34,7 +34,7 @@ export const AuthLight: Story = {
   decorators: [StoreDecorator({
     user: {
       authData: {
-        id: 1,
+        id: '1',
         email: 'admin',
       },
     },
@@ -44,7 +44,7 @@ export const AuthDark: Story = {
   decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
     user: {
       authData: {
-        id: 1,
+        id: '1',
         email: 'admin',
       },
     },

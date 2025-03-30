@@ -8,7 +8,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 jest.mock('axios');
 
-const mockedAxios = jest.mocked(axios, true);
+const mockedAxios = jest.mocked(axios);
 
 describe('loginByEmail', () => {
   // let dispatch: Dispatch;
@@ -65,6 +65,6 @@ describe('loginByEmail', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toBe('error');
+    expect(result.payload).toBe('Вы ввели неверный логин или пароль');
   });
 });

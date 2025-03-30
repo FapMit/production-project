@@ -25,5 +25,15 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Максим",
+    "lastname": "Фетисов",
+    "age": 23,
+    "gender": "Мужской",
+    "currency": "RUB",
+    "country": "Россия",
+    "city": "Москва",
+    "email": "admin@gmail.com",
+    "avatar": "https://imgcdn.stablediffusionweb.com/2024/4/17/3b3ceb83-440b-4402-8461-00514a71c584.jpg"
+  }
 }

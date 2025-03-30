@@ -19,7 +19,7 @@
 }
 
 .items {
-  margin: 0 auto;
+  margin-left: 10px;
   padding-top: 20px;
   width: fit-content;
   display: flex;
@@ -49,13 +49,9 @@
 .collapsed {
   max-width: var(--sidebar-width-collapsed);
 
-  .switchers {    
+  .switchers {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .items {
-    align-items: center;
   }
 
   .link span {
@@ -63,9 +59,7 @@
     display: none;
     transition: opacity .3s ease-in-out, display 1s;
   }
-  
 }
-
 
 .collapseBtn {
   position: absolute;
