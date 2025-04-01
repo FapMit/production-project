@@ -9,6 +9,11 @@
   color: var(--inverted-primary-color)
 }
 
+.Loader.centered {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .loader__s {
   width: 40px;
   height: 40px;
@@ -60,6 +65,7 @@
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: currentcolor transparent transparent;
 }
+
 
 .Loader div:nth-child(1) {
   animation-delay: -0.45s;

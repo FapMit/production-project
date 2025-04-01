@@ -49,7 +49,7 @@ export const Input = memo((props: InputProps) => {
   }
 
   const onSelect = (e: React.SyntheticEvent<HTMLInputElement>) => {
-    setCaretPosition(e.currentTarget.selectionStart);
+    setCaretPosition(e.currentTarget.selectionStart || 0);
   }
 
   return (

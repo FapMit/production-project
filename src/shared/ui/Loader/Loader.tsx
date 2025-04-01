@@ -12,17 +12,20 @@ export enum LoaderSize {
 interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   size?: LoaderSize;
+  centered?: boolean;
 }
 
 export const Loader = (props: LoaderProps) => {
   const {
     className,
     size = LoaderSize.L,
+    centered = false,
     ...otherProps
   } = props;
 
   const mods: Record<string,boolean> = {
     [cls[size]]: true,
+    [cls['centered']]: centered
   }
 
   return ( 

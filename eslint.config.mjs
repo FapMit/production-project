@@ -14,7 +14,8 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: true,
       },
     },
 

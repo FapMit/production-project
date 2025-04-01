@@ -6,7 +6,7 @@ import { Loader, LoaderSize } from "shared/ui/Loader/Loader";
 
 interface LoginModalProps  {
   isOpen?: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
