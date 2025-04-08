@@ -28,12 +28,12 @@
   "profile": {
     "firstname": "Максим",
     "lastname": "Фетисов",
-    "age": 23,
+    "age": 22,
     "gender": "Мужской",
     "currency": "RUB",
-    "country": "Россия",
+    "country": "Russia",
     "city": "Москва",
     "email": "admin@gmail.com",
-    "avatar": "https://imgcdn.stablediffusionweb.com/2024/4/17/3b3ceb83-440b-4402-8461-00514a71c584.jpg"
+    "avatar": "https://cdn.vectorstock.com/i/500p/76/08/mysterious-man-in-a-hood-on-dark-background-vector-30927608.jpg"
   }
 }

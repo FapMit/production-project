@@ -22,6 +22,7 @@
 .caretWrapper {
   flex-grow: 1;
   position: relative;
+  display: flex;
 }
 
 .caret {
@@ -32,6 +33,10 @@
   bottom: 0;
   left: 0;
   animation: blink .5s forwards infinite;
+}
+
+.readonly {
+  // color: var(--succes-dark-color);
 }
 
 @keyframes blink {
