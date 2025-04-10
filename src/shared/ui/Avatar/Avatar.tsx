@@ -1,6 +1,6 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cls from "./Avatar.module.scss";
-import defaultImage from "./default.png"
+import defaultImage from "shared/assets/default/default.png"
 
 export enum AvatarSize {
   S = "avatar__s",
@@ -33,7 +33,7 @@ export const Avatar = (props: AvatarProps) => {
 
   return ( 
     <div className={classNames(cls.Avatar, mods, [className])}>
-      <img src={src == '' ? defaultImage : src} alt={name} />
+      <img src={!src ? defaultImage : src} alt={name} />
     </div>
   );
 }

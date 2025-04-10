@@ -4,8 +4,6 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Avatar, AvatarSize } from './Avatar';
 
-import AvatarImg from './default.png';
-
 const meta = {
   title: 'Shared/Avatar',
   component: Avatar,
@@ -16,7 +14,6 @@ const meta = {
   argTypes: {
   },
   args: {
-    src: AvatarImg
   }
 } satisfies Meta<typeof Avatar>;
 

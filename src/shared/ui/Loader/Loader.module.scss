@@ -6,77 +6,77 @@
 .Loader {
   display: inline-block;
   position: relative;
-  color: var(--inverted-primary-color)
-}
-
-.Loader.centered {
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
-.Loader.loader__s {
-  width: 40px;
-  height: 40px;
+  color: var(--inverted-primary-color);
 
   & div {
-    width: 24px;
-    height: 24px;
-    border-width: 4px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    margin: 8px;
+    border: 8px solid currentcolor;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: currentcolor transparent transparent;
   }
-}
 
-.loader__m {
-  width: 60px;
-  height: 60px;
 
-  & div {
-    width: 44px;
-    height: 44px;
+  & div:nth-child(1) {
+    animation-delay: -0.45s;
   }
-}
 
-.loader__l {
-  width: 80px;
-  height: 80px;
-
-  & div {
-    width: 64px;
-    height: 64px;
+  & div:nth-child(2) {
+    animation-delay: -0.3s;
   }
-}
 
-.loader__xl {
-  width: 100px;
-  height: 100px;
-
-  & div {
-    width: 84px;
-    height: 84px;
+  & div:nth-child(3) {
+    animation-delay: -0.15s;
   }
-}
 
-.Loader div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  margin: 8px;
-  border: 8px solid currentcolor;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: currentcolor transparent transparent;
-}
+  &.centered {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 
+  &.loader__s {
+    width: 40px;
+    height: 40px;
 
-.Loader div:nth-child(1) {
-  animation-delay: -0.45s;
-}
+    & div {
+      width: 24px;
+      height: 24px;
+      border-width: 4px;
+    }
+  }
 
-.Loader div:nth-child(2) {
-  animation-delay: -0.3s;
-}
+  &.loader__m {
+    width: 60px;
+    height: 60px;
 
-.Loader div:nth-child(3) {
-  animation-delay: -0.15s;
+    & div {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &.loader__l {
+    width: 80px;
+    height: 80px;
+
+    & div {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &.loader__xl {
+    width: 100px;
+    height: 100px;
+
+    & div {
+      width: 84px;
+      height: 84px;
+    }
+  }
 }
 
 @keyframes lds-ring {

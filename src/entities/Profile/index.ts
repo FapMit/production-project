@@ -1,8 +1,7 @@
-
-
 export {
   Profile,
-  ProfileSchema
+  ProfileSchema,
+  ValidateProfileError
 } from './model/types/profile'
 
 export {
@@ -14,7 +13,7 @@ export {
   fetchProfileData
 } from './model/services/fetchProfileData/fetchProfileData'
 
-export { 
+export {
   updateProfileData
 } from './model/services/updateProfileData/updateProfileData'
 
@@ -41,3 +40,7 @@ export {
 export {
   getProfileReadonly
 } from './model/selectors/getProfileReadonly/getProfileReadonly'
+
+export { 
+  getProfileValidateErrors 
+} from './model/selectors/getProfileValidateError/getProfileValidateErrors'

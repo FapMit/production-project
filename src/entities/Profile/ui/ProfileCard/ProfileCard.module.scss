@@ -8,7 +8,7 @@
 }
 
 .loading,
-.error  {
+.error {
   display: flex;
   align-items: center;
   min-height: 300px;
@@ -17,6 +17,7 @@
 .error {
   justify-content: center;
 }
+
 .centered {
   margin: 0 auto;
 }

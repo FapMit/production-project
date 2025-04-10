@@ -31,5 +31,6 @@ export const WithoutValue: Story = {
   args: {
     placeholder: 'Placeholder',
     autoFocus: true,
+    value: '',
   },
 };
