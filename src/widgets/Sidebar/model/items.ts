@@ -2,6 +2,8 @@ import { SVGProps, VFC } from "react";
 import HomeIcon from "shared/assets/icons/home.svg";
 import AboutIcon from "shared/assets/icons/about.svg";
 import ProfileIcon from "shared/assets/icons/profile.svg";
+import ArticlesIcon from "shared/assets/icons/articles.svg";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 export interface SidebarItemType {
   path: string;
@@ -12,19 +14,25 @@ export interface SidebarItemType {
 
 export const SidebarItemsList: SidebarItemType[] = [
   {
-    path: "/",
+    path: RoutePath.main,
     text: "Главная",
     Icon: HomeIcon,
   },
   {
-    path: "/about",
+    path: RoutePath.about,
     text: "О нас",
     Icon: AboutIcon,
   },
   {
-    path: "/profile",
+    path: RoutePath.profile,
     text: "Профиль",
     Icon: ProfileIcon,
     authOnly: true
   },
+  {
+    path: RoutePath.articles,
+    text: "Статьи",
+    Icon: ArticlesIcon,
+    authOnly: true
+  }
 ]
