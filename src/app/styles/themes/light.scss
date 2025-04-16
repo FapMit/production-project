@@ -1,8 +1,18 @@
-:root:has(.app_light_theme) {
+:root:has(.app_light_theme){
   --bg-color: #cecece;  
   --inverted-bg-color: #1c1c1c;
   --primary-color: #574e4d;
   --inverted-primary-color: #f80;
   --secondary-color: #000;
   --inverted-secondary-color: #fff;
+
+  // skeleton
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  // code
+  --code-bg: #bab9b9;
+
+  // loader
+  --loader-color: #f80;
 }

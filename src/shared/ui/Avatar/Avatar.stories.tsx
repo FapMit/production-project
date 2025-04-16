@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Avatar, AvatarSize } from './Avatar';
+import { Avatar } from './Avatar';
 
 const meta = {
   title: 'Shared/Avatar',
@@ -23,38 +23,20 @@ type Story = StoryObj<typeof meta>;
 export const LightCircle: Story = {
   args: {
     circle: true,
-    size: AvatarSize.L
+    size: 200,
   },
 };
 
 export const DarkCircle: Story = {
   args: {
     circle: true,
-    size: AvatarSize.L
+    size: 200,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const LightS: Story = {
+export const Size300: Story = {
   args: {
-    size: AvatarSize.S
-  },
-};
-
-export const LightM: Story = {
-  args: {
-    size: AvatarSize.M
-  },
-};
-
-export const LightL: Story = {
-  args: {
-    size: AvatarSize.L
-  },
-};
-
-export const LightXL: Story = {
-  args: {
-    size: AvatarSize.XL
+    size: 300,
   },
 };

@@ -34,6 +34,13 @@ export const Dark: Story = {
   })],
 };
 
+export const Pink: Story = {
+  args: {},
+  decorators: [ThemeDecorator(Theme.PINK), StoreDecorator({
+    user: {authData: {}}
+  })],
+};
+
 export const NoAuth: Story = {
   args: {},
   decorators: [StoreDecorator({})],

@@ -8,7 +8,7 @@ const meta = {
   title: 'Widgets/ThemeSwitcher',
   component: ThemeSwitcher,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -24,4 +24,9 @@ export const Light: Story = {
 export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const Pink: Story = {
+  args: {},
+  decorators: [ThemeDecorator(Theme.PINK)],
 };

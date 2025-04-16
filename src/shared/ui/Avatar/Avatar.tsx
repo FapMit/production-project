@@ -1,19 +1,14 @@
+import { CSSProperties, useMemo } from "react";
+import defaultImage from "shared/assets/default/default.png";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cls from "./Avatar.module.scss";
-import defaultImage from "shared/assets/default/default.png"
 
-export enum AvatarSize {
-  S = "avatar__s",
-  M = "avatar__m",
-  L = "avatar__l",
-  XL = "avatar__xl"
-}
 
 interface AvatarProps {
   className?: string;
   src?: string;
-  name?: string;
-  size?: AvatarSize;
+  alt?: string;
+  size?: number;
   circle?: boolean;
 }
 
@@ -21,19 +16,23 @@ export const Avatar = (props: AvatarProps) => {
   const {
     className,
     src,
-    name = "Avatar",
-    size = AvatarSize.M,
+    alt,
+    size,
     circle = false
   } = props;
 
   const mods: Mods = {
-    [cls[size]]: true,
     [cls.circle]: circle
   }
 
-  return ( 
+  const styles = useMemo<CSSProperties>(() => ({
+    width: size || 100,
+    height: size || 100,
+  }), [size]);
+
+  return (
     <div className={classNames(cls.Avatar, mods, [className])}>
-      <img src={!src ? defaultImage : src} alt={name} />
+      <img src={!src ? defaultImage : src} alt={alt} style={styles} />
     </div>
   );
 }

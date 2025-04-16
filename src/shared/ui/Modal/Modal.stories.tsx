@@ -31,3 +31,11 @@ export const Dark: Story = {
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
+
+export const Pink: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    isOpen: true
+  },
+  decorators: [ThemeDecorator(Theme.PINK)],
+};

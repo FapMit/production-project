@@ -1,0 +1,20 @@
+.codeWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.Code {
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+  overflow-x: auto;
+  background-color: var(--code-bg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--code-bg);
+  font: var(--font-m);
+}
+
+.copyBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

@@ -6,6 +6,7 @@ import DarkIcon from "shared/assets/icons/themeDark.svg";
 import PinkIcon from "shared/assets/icons/themePink.svg";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { memo } from "react";
+import { Icon } from "shared/ui/Icon/Icon";
 
 
 interface ThemeSwitcherProps {
@@ -19,13 +20,17 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
   switch (theme) {
   case Theme.LIGHT:
-    themeIcon = <DarkIcon/>;
+    themeIcon = <Icon Svg={DarkIcon}/>;
     break;
   case Theme.DARK:
-    themeIcon = <PinkIcon/>;
+    themeIcon = <Icon Svg={PinkIcon}/>;
     break;
   case Theme.PINK:
-    themeIcon = <LightIcon/>;
+    themeIcon = <Icon Svg={LightIcon}/>;
+    break;
+  default:
+    themeIcon = <Icon Svg={DarkIcon}/>;
+    break;
   }
 
   return (
