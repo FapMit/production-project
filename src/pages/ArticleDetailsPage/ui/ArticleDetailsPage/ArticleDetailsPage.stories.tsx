@@ -84,6 +84,9 @@ export const Light: Story = {
       articleDetails: {
         data: ArticleData,
       },
+      ArticleDetailsComments: {
+        
+      }
     })
   ],
 };

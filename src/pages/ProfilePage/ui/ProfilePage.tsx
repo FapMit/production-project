@@ -1,25 +1,27 @@
-import { 
-  fetchProfileData, 
-  getProfileError, 
-  getProfileForm, 
-  getProfileIsLoading, 
-  getProfileReadonly, 
-  getProfileValidateErrors, 
-  profileActions, 
-  profileReducer, 
-  ValidateProfileError 
-} from "entities/Profile";
-import { ProfileCard } from "entities/Profile/ui/ProfileCard/ProfileCard";
-import { useCallback, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
+import {
+  fetchProfileData,
+  getProfileError,
+  getProfileForm,
+  getProfileIsLoading,
+  getProfileReadonly,
+  getProfileValidateErrors,
+  profileActions,
+  profileReducer,
+  ValidateProfileError
+} from "entities/Profile";
+import { ProfileCard } from "entities/Profile/ui/ProfileCard/ProfileCard";
+import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -39,6 +41,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
@@ -49,11 +52,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
   }
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id))
     }
-  }, [dispatch]);
+  })
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }))
@@ -99,9 +102,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       <div className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((err) => (
-          <Text 
-            key={err} 
-            theme={TextTheme.ERROR} 
+          <Text
+            key={err}
+            theme={TextTheme.ERROR}
             text={validateErrorTranslates[err]}
           />
         ))}

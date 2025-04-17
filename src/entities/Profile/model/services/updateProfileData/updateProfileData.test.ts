@@ -13,6 +13,7 @@ const data = {
   currency: Currency.USD,
   firstname: 'Admin',
   lastname: 'Adminov',
+  id: '1',
 }
 
 describe('updateProfileData', () => {

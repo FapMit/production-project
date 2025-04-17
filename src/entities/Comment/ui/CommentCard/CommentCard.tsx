@@ -1,10 +1,12 @@
 import { memo } from "react";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink } from "shared/ui/AppLink/AppLink";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Text, TextSize } from "shared/ui/Text/Text";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 interface CommentCardProps {
   className?: string;
@@ -18,7 +20,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className])}>
+      <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton maxWidth={30} height={30} borderRadius={"50%"} />
           <Skeleton maxWidth={300} height={16} />
@@ -28,13 +30,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
     )
   }
 
+  if (!comment) {
+    return null;
+  }
+
   return (
     <div className={classNames(cls.CommentCard, {}, [className])}>
-      <div className={cls.header}>
-        <Avatar size={30} circle alt={comment?.user.email} src={comment?.user.avatar} />
-        <Text title={comment?.user.email} size={TextSize.S} />
-      </div>
-      <Text text={comment?.text} />
+      <AppLink className={cls.header} to={`${RoutePath.profile}/${comment.user.id}`}>
+        <Avatar size={30} circle alt={comment.user.email} src={comment.user.avatar} />
+        <Text title={comment.user.email} size={TextSize.S} />
+      </AppLink>
+      <Text text={comment.text} />
     </div>
   );
 });
