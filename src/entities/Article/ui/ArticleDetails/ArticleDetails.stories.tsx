@@ -14,6 +14,11 @@ const ArticleData: Article = {
   "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   "views": 1022,
   "createdAt": "11.04.2025",
+  "user": {
+    "id": "1",
+    "email": "email",
+    "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
+  },
   "type": [ArticleType.IT],
   "blocks": [
     {
@@ -63,9 +68,8 @@ const ArticleData: Article = {
   ]
 }
 
-
 const meta = {
-  title: 'Entities/ArticleDetails',
+  title: 'Entities/Article/Details',
   component: ArticleDetails,
   parameters: {
     layout: 'fullscreen'

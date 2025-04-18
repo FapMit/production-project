@@ -1,0 +1,106 @@
+.viewsWrapper {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  width: fit-content;
+}
+
+.LIST {
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  .title {
+    margin-top: 10px;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 16px 0;
+  }
+
+  .textBlock {
+    margin-bottom: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    line-clamp: 5;
+    text-align: justify;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.TILE {
+  width: 230px;
+  height: fit-content;
+  transition: all .3s;
+  cursor: pointer;
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+
+    .img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  .date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+  }
+
+  &:hover {
+    filter: grayscale(.5) drop-shadow(0 0 0.75rem var(--primary-color));
+    transform: scale(1.01);
+    transition: all .3s;
+
+    .date {
+      display: block;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .types p {
+    width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .title {
+    margin-top: 8px;
+  }
+
+  .title p {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -15,6 +15,7 @@ const ArticleData: Article = {
   "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   "views": 1022,
   "createdAt": "11.04.2025",
+  "user": { id: "1", email: "email", avatar: "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg" },
   "type": [ArticleType.IT],
   "blocks": [
     {
@@ -64,6 +65,27 @@ const ArticleData: Article = {
   ]
 }
 
+const comments = {
+  ids: ['1', '2', '3'],
+  entities: {
+    1: {
+      id: '1',
+      text: 'test comment',
+      user: { id: '1', email: 'admin' },
+    },
+    2: {
+      id: '2',
+      text: 'test comment',
+      user: { id: '1', email: 'admin' },
+    },
+    3: {
+      id: '3',
+      text: 'test comment',
+      user: { id: '1', email: 'admin' },
+    }
+  }
+}
+
 const meta = {
   title: 'Pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
@@ -79,25 +101,25 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
-  decorators: [ThemeDecorator(Theme.DARK),
+  decorators: [
     StoreDecorator({
       articleDetails: {
         data: ArticleData,
       },
-      ArticleDetailsComments: {
-        
-      }
+      ArticleDetailsComments: comments,
     })
   ],
 };
 
 export const Dark: Story = {
   args: {},
-  decorators: [ThemeDecorator(Theme.DARK),
+  decorators: [
+    ThemeDecorator(Theme.DARK),
     StoreDecorator({
       articleDetails: {
         data: ArticleData,
       },
+      ArticleDetailsComments: comments
     })
   ],
 };

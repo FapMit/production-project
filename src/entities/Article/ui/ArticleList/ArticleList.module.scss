@@ -1,0 +1,14 @@
+.LIST {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.TILE {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: fit-content;
+}

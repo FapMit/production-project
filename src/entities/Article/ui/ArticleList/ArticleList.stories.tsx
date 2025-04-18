@@ -1,12 +1,10 @@
 /* eslint-disable max-len */
-import { Article, ArticleList, ArticleView } from "entities/Article";
-import { memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./ArticlesPage.module.scss";
+import type { Meta, StoryObj } from '@storybook/react';
 
-interface ArticlesPageProps {
-  className?: string;
-}
+import { ArticleList } from './ArticleList';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import { Article, ArticleView } from 'entities/Article/model/types/Article';
 
 const article = {
   "id": "1",
@@ -88,24 +86,83 @@ const article = {
   ]
 } as Article;
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  // const { t } = useTranslation('article');
+const meta = {
+  title: 'Entities/Article/List',
+  component: ArticleList,
+  parameters: {
+    layout: 'fullscreen'
+  },
+  tags: ['autodocs'],
+  argTypes: {},
+} satisfies Meta<typeof ArticleList>;
 
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        articles={
-          new Array(32)
-            .fill(0)
-            .map((_, index) => ({
-              ...article,
-              id: String(index),
-            }))
-        }
-        view={ArticleView.LIST}
-      />
-    </div>
-  );
-}
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export default memo(ArticlesPage);
+export const LightTile: Story = {
+  args: {
+    articles: [article,article,article],
+  },
+};
+
+export const DarkTile: Story = {
+  args: {
+    articles: [article,article,article]
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const PinkTile: Story = {
+  args: {
+    articles: [article,article,article]
+  },
+  decorators: [ThemeDecorator(Theme.PINK)],
+};
+
+export const LightList: Story = {
+  args: {
+    articles: [article,article,article],
+    view: ArticleView.LIST
+  },
+};
+
+export const DarkList: Story = {
+  args: {
+    articles: [article,article,article],
+    view: ArticleView.LIST
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const PinkList: Story = {
+  args: {
+    articles: [article,article,article],
+    view: ArticleView.LIST
+  },
+  decorators: [ThemeDecorator(Theme.PINK)],
+};
+
+export const NoArticles: Story = {
+  args: {
+    articles: []
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const LoadingList: Story = {
+  args: {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.LIST
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const LoadingTile: Story = {
+  args: {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.TILE
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
