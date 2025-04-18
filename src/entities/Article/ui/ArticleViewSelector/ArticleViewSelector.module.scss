@@ -1,0 +1,10 @@
+.ArticleViewSelector {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.selected {
+  fill: var(--secondary-color);
+  stroke: none;
+}

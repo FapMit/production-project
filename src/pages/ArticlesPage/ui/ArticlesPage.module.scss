@@ -1,4 +1,14 @@
 .ArticlesPage {
   display: flex;
+  flex-direction: column;
   min-height: 100%;
+}
+
+.icon {
+  fill: var(--primary-color);
+  stroke: none;
+
+  &.active {
+    outline: 1px solid var(--primary-color);
+  }
 }
