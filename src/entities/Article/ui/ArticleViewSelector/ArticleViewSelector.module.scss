@@ -4,7 +4,11 @@
   gap: 10px;
 }
 
-.selected {
-  fill: var(--secondary-color);
+.viewSvg {
+  fill: var(--view-nonselected);
   stroke: none;
+}
+
+.selected {
+  fill: var(--view-selected);
 }
