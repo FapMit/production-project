@@ -28,7 +28,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
     isLoading = false,
     view = ArticleView.TILE,
   } = props
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
+
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        {getSkeletons(view)}
+      </div>
+    )
+  }
 
   if (!articles.length) {
     return (

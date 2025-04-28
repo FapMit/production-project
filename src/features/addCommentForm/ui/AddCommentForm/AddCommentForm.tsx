@@ -22,7 +22,7 @@ const reducers: ReducersList = {
 
 const AddCommentForm = memo((props: addCommentFormProps) => {
   const { className, onSendComment, isLoading } = props
-  const { t } = useTranslation();
+  const { t } = useTranslation('comments');
 
   const text = useSelector(getAddCommentFormText);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -49,7 +49,7 @@ const AddCommentForm = memo((props: addCommentFormProps) => {
         <Input
           className={cls.input}
           placeholder={t("Введите текст")}
-          value={text}
+          value={text || ''}
           onChange={onCommentTextChange}
         />
         <Button

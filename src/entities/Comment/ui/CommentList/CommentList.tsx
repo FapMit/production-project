@@ -19,7 +19,7 @@ export const CommentList = memo((props: CommentListProps) => {
     isLoading,
   } = props;
 
-  const { t } = useTranslation();
+  const { t } = useTranslation('comments');
 
   if (isLoading) {
     return (

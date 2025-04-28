@@ -21,7 +21,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, article, view } = props
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
   const navigate = useNavigate();
 
