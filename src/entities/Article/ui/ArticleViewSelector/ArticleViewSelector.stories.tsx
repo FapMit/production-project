@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleView } from 'entities/Article/model/types/Article';
 
 const meta = {
-  title: 'Entities/ArticleViewSelector',
+  title: 'Entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
   parameters: {
     layout: 'fullscreen'

@@ -87,7 +87,7 @@ const article = {
 } as Article;
 
 const meta = {
-  title: 'Entities/Article/ListItem',
+  title: 'Entities/Article/ArticleListItem',
   component: ArticleListItem,
   parameters: {
     layout: 'fullscreen'

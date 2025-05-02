@@ -8,7 +8,9 @@
 .TILE {
   display: flex;
   gap: 15px;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   height: fit-content;
+  margin: 0 auto;
 }

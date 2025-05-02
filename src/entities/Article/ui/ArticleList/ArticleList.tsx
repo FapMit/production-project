@@ -5,6 +5,7 @@ import { Article, ArticleView } from "../../model/types/Article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
+import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text/Text";
 
 interface ArticleListProps {
   className?: string;
@@ -41,7 +42,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   if (!articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className])}>
-        {t("Статьи не найдены")}
+        <Text size={TextSize.L} align={TextAlign.CENTER} title={t("Статьи не найдены")} theme={TextTheme.ERROR}/>
       </div>
     )
   }

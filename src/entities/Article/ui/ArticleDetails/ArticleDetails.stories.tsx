@@ -69,7 +69,7 @@ const ArticleData: Article = {
 }
 
 const meta = {
-  title: 'Entities/Article/Details',
+  title: 'Entities/Article/ArticleDetails',
   component: ArticleDetails,
   parameters: {
     layout: 'fullscreen'
