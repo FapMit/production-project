@@ -5,6 +5,7 @@
 
 .normal {
   background: var(--card-bg);
+  pointer-events: none;
 }
 
 .outlined {

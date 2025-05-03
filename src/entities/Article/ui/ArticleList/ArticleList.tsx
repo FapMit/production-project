@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleView } from "../../model/types/Article";
@@ -12,10 +12,12 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  isRecommendations?: boolean;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => {
-  return new Array(view === ArticleView.TILE ? 10 : 3)
+const getSkeletons = (view: ArticleView, count: number = 9) => {
+  return new Array(view === ArticleView.TILE ? count : 3)
     .fill(0)
     .map((item, index) => (
       <ArticleListItemSkeleton key={index} view={view} />
@@ -28,13 +30,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
     articles,
     isLoading = false,
     view = ArticleView.TILE,
+    isRecommendations = false,
+    target
   } = props
   const { t } = useTranslation('articles');
 
   if (isLoading) {
+    const count = isRecommendations ? 4 : 9;
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
+        {getSkeletons(view,count)}
       </div>
     )
   }
@@ -55,6 +60,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             article={article}
             view={view}
             key={article.id}
+            target={target}
           />
         ))
       }

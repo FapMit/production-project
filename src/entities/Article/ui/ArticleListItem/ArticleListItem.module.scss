@@ -5,6 +5,10 @@
   width: fit-content;
 }
 
+.card {
+  pointer-events: all;
+}
+
 .LIST {
   .header {
     display: flex;

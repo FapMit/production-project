@@ -45,7 +45,7 @@ export default [
         "error",
         {
           markupOnly: false,
-          ignoreAttribute: ["data-testid", "to"],
+          ignoreAttribute: ["data-testid", "to", "_target"],
         },
       ],
       "max-len": ["error", { code: 200, ignoreComments: true }],

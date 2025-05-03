@@ -5,3 +5,15 @@
 .commentTitle {
   margin-top: 15px;
 }
+
+.recommendations {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  border-radius: 12px;
+  padding: 30px; 
+  
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-color);
+}

@@ -106,7 +106,9 @@ export const Light: Story = {
       articleDetails: {
         data: ArticleData,
       },
-      ArticleDetailsComments: comments,
+      articleDetailsPage: {
+        coments: comments
+      },
     })
   ],
 };
@@ -119,7 +121,9 @@ export const Dark: Story = {
       articleDetails: {
         data: ArticleData,
       },
-      ArticleDetailsComments: comments
+      articleDetailsPage: {
+        coments: comments
+      },
     })
   ],
 };
