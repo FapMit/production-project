@@ -87,7 +87,7 @@ const comments = {
 }
 
 const meta = {
-  title: 'Pages/ArticleDetailsPage',
+  title: 'Pages/ArticleDetailsPage/Page',
   component: ArticleDetailsPage,
   parameters: {
     layout: 'fullscreen'

@@ -47,7 +47,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
     dispatch(fetchArticleRecommendations());
-
   })
 
   if (!id) {
@@ -81,7 +80,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           className={cls.commentTitle}
         />
         <AddCommentForm onSendComment={onSendComment} isLoading={commentsIsLoading || false} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+        <CommentList isLoading={commentsIsLoading} comments={comments} className={cls.commentList}/>
       </Page>
     </DynamicModuleLoader>
   );
