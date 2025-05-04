@@ -14,5 +14,7 @@
   "Форма авторизации": "Authorization form",
   "Введите логин": "Login",
   "Введите пароль": "Password",
-  "Вы ввели неверный логин или пароль": "Incorrect login or password"
+  "Вы ввели неверный логин или пароль": "Incorrect login or password",
+  "Сервис новостей": "News Service",
+  "Создать статью": "Create article"
 }

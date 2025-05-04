@@ -7,7 +7,14 @@
   padding: 15px;
 }
 
+.AppName {
+  width: var(--sidebar-width);
+}
+
 .link {
   display: block;
   margin-left: auto;
+}
+.createdLink {
+font: var(--font-m);
 }

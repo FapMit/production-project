@@ -2,10 +2,13 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss';
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useState } from "react";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
+import { Text } from "shared/ui/Text/Text";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 
 interface NavbarProps {
@@ -33,10 +36,19 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cls.Navbar, {}, [className])}>
+        <Text title={t('Сервис новостей')} className={cls.AppName} />
+        <AppLink
+          to={RoutePath.article_create}
+          className={cls.createdLink}
+          theme={AppLinkTheme.INVERTED}
+        >
+          {t('Создать статью')}
+        </AppLink>
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           onClick={onLogout}
           className={cls.link}
+          size={ButtonSize.L}
         >
           {t('Выйти')}
         </Button>
@@ -46,6 +58,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
+      <Text title={t('Сервис новостей')} className={cls.AppName} />
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         onClick={onShow}
