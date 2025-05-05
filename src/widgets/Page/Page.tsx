@@ -15,7 +15,7 @@ interface PageProps {
   children: ReactNode;
   onScrollEnd?: () => void;
 }
-
+export const PAGE_ID = "PAGE_ID";
 export const Page = memo((props: PageProps) => {
   const {
     className,
@@ -52,7 +52,10 @@ export const Page = memo((props: PageProps) => {
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
     >
-      <div className={cls.pageContainer}>
+      <div 
+        className={cls.pageContainer} 
+        id={PAGE_ID}
+      >
         {children}
         {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
       </div>

@@ -26,7 +26,7 @@ export const Avatar = (props: AvatarProps) => {
   }
 
   const styles = useMemo<CSSProperties>(() => ({
-    width: size || 100,
+    maxWidth: size || 100,
     height: size || 100,
   }), [size]);
 

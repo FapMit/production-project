@@ -60,6 +60,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
         <ArticlesPageFilters />
+
         <ArticleList
           isLoading={isLoading}
           articles={articles}
