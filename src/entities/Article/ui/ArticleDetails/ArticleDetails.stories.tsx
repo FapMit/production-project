@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ArticleDetails } from './ArticleDetails';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/Article';
+import { Article, ArticleBlockType, ArticleType } from '../../model/types/Article';
 
 const ArticleData: Article = {
   "id": "1",

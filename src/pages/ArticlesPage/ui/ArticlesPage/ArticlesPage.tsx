@@ -1,7 +1,9 @@
 import { ArticleList } from "entities/Article";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -12,9 +14,7 @@ import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } f
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
-import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import cls from "./ArticlesPage.module.scss";
-import { useSearchParams } from "react-router-dom";
 
 interface ArticlesPageProps {
   className?: string;

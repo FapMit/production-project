@@ -1,4 +1,4 @@
-import { getAddCommentFormError, getAddCommentFormText } from "features/addCommentForm/model/selectors/addCommentFormSelectors";
+import { getAddCommentFormError, getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";

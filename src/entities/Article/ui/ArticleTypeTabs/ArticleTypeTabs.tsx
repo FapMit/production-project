@@ -1,4 +1,4 @@
-import { ArticleType } from "entities/Article/model/types/Article";
+import { ArticleType } from "../../model/types/Article";
 import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";

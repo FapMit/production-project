@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleViewSelector } from './ArticleViewSelector';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleView } from 'entities/Article/model/types/Article';
+import { ArticleView } from '../../model/types/Article';
 
 const meta = {
   title: 'Entities/Article/ArticleViewSelector',

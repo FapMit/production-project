@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleListItem } from './ArticleListItem';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Article, ArticleView } from 'entities/Article/model/types/Article';
+import { Article, ArticleView } from '../../model/types/Article';
 
 const article = {
   "id": "1",

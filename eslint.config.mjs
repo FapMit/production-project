@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import i18next from "eslint-plugin-i18next";
 import reactHooks from 'eslint-plugin-react-hooks';
+import testPlugin from "@fapmit/eslint-plugin-test-plugin";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -24,7 +25,8 @@ export default [
       pluginJs: pluginJs,
       'react-hooks': reactHooks,
       'react': pluginReact,
-      'i18next': i18next
+      'i18next': i18next,
+      'test-plugin': testPlugin
     },
 
     rules: {
@@ -50,7 +52,8 @@ export default [
       ],
       "max-len": ["error", { code: 200, ignoreComments: true }],
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "error"
+      "react-hooks/exhaustive-deps": "error",
+      "test-plugin/path-cheker": "error",
     },
   },
   ...tseslint.configs.recommended,

@@ -1,4 +1,4 @@
-import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoadi
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
 
-import { ArticleBlock, ArticleBlockType } from "entities/Article/model/types/Article";
+import { ArticleBlock, ArticleBlockType } from "../../model/types/Article";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
