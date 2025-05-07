@@ -1,12 +1,14 @@
 .ProfileCard {
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
-  overflow: hidden;
   width: 100%;
 }
 
 .input {
   width: 100%;
+}
+.inputSelect {
+  width: fit-content;
 }
 
 .loading,

@@ -111,13 +111,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly={readonly}
       />
       <CountrySelect
-        className={cls.input}
+        className={cls.inputSelect}
         value={data?.country}
         onChange={onChangeCountry}
         readonly={readonly}
       />
       <CurrencySelect
-        className={cls.input}
+        className={cls.inputSelect}
         value={data?.currency}
         onChange={onChangeCurrency}
         readonly={readonly}
