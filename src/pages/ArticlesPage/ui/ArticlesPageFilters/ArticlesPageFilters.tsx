@@ -12,6 +12,7 @@ import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getAr
 import { fetchArticlesList } from "../../model/services/fetchArticleList/fetchArticlesList";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";
 import cls from "./ArticlesPageFilters.module.scss";
+import { HStack, VStack } from "shared/ui/Stack";
 
 interface ArticlesPageFiltersProps {
   className?: string;
@@ -64,8 +65,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   }, [dispatch, fetchData]);
 
   return (
-    <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-      <div className={cls.sortWrapper}>
+    <VStack gap="16" max className={classNames(cls.ArticlesPageFilters, {}, [className])}>
+      <HStack justify="between" align="center" gap="16" max>
         <ArticleSortSelector
           order={order}
           sort={sort}
@@ -73,15 +74,14 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           onChangeSort={onChangeSort}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={cls.search}>
         <Input placeholder={t("Поиск")} value={search} onChange={onChangeSearch} />
       </Card>
       <ArticleTypeTabs
         onChangeType={onChangeType}
         value={type}
-        className={cls.tabs}
       />
-    </div>
+    </VStack>
   );
 });

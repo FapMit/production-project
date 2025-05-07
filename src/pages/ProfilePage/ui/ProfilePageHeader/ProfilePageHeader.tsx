@@ -1,13 +1,13 @@
 import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "entities/Profile";
+import { getUserAuthData } from "entities/User";
+import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Text } from "shared/ui/Text/Text";
-import cls from "./ProfilePageHeader.module.scss";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useCallback } from "react";
-import { getUserAuthData } from "entities/User";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { HStack } from "shared/ui/Stack";
+import { Text } from "shared/ui/Text/Text";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -39,7 +39,12 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack 
+      justify="between" 
+      gap="16"
+      max
+      className={classNames('', {}, [className])}
+    >
       <Text title={t("Профиль")} />
       {canEdit && (
         <>
@@ -53,7 +58,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
               </Button>
             )
             : (
-              <div className={classNames(cls.btns, {}, [])}>
+              <HStack gap="8">
                 <Button
                   theme={ButtonTheme.OUTLINE_RED}
                   onClick={onCancelEdit}
@@ -66,12 +71,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 >
                   {t("Сохранить")}
                 </Button>
-
-              </div>
+              </HStack>
             )
           }
         </>
       )}
-    </div>
+    </HStack>
   );
 }

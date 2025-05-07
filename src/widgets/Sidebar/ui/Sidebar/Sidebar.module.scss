@@ -11,22 +11,13 @@
   position: absolute;
   bottom: 20px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  gap: 20px;
 }
 
 .items {
   margin-left: 10px;
   padding-top: 20px;
   width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  gap: 10px;
 }
 
 .link {
@@ -49,10 +40,10 @@
 .collapsed {
   max-width: var(--sidebar-width-collapsed);
 
-  .switchers {
-    flex-direction: column;
-    gap: 10px;
-  }
+  // .switchers {
+  //   flex-direction: column;
+  //   gap: 10px;
+  // }
 
   .link span {
     opacity: 0;

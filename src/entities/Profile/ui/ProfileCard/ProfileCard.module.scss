@@ -2,21 +2,16 @@
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
   overflow: hidden;
+  width: 100%;
 }
 
 .input {
-  margin-top: 10px;
+  width: 100%;
 }
 
 .loading,
 .error {
-  display: flex;
-  align-items: center;
   min-height: 300px;
-}
-
-.error {
-  justify-content: center;
 }
 
 .centered {

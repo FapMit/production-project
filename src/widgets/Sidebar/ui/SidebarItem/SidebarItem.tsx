@@ -6,6 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "entities/User";
 import { SidebarItemType } from "../../model/types/sidebar";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 
 
@@ -27,8 +28,10 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       to={item.path}
       className={classNames(cls.link, { [cls.collapsed]: collapsed })}
     >
-      <item.Icon />
-      <span>{t(item.text)}</span>
+      <HStack justify="center" align="start" gap="16">
+        <item.Icon />
+        <span>{t(item.text)}</span>
+      </HStack>
     </AppLink>
   );
 });
