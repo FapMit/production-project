@@ -4,6 +4,8 @@
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--inverted-bg-color) var(--bg-color);
 }
 
 .pageContainer {  
