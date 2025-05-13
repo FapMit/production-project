@@ -1,14 +1,16 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from './Navbar.module.scss';
-import { useTranslation } from "react-i18next";
-import { memo, useCallback, useState } from "react";
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import { LoginModal } from "features/AuthByUsername";
-import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
-import { Text } from "shared/ui/Text/Text";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { LoginModal } from "features/AuthByUsername";
+import { memo, useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Text } from "shared/ui/Text/Text";
+import cls from './Navbar.module.scss';
 
 
 interface NavbarProps {
@@ -35,7 +37,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
+      <header className={classNames(cls.Navbar, {}, [className])}>
         <Text title={t('Сервис новостей')} className={cls.AppName} />
         <AppLink
           to={RoutePath.article_create}
@@ -44,15 +46,37 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Создать статью')}
         </AppLink>
-        <Button
-          theme={ButtonTheme.CLEAR_INVERTED}
-          onClick={onLogout}
-          className={cls.link}
-          size={ButtonSize.L}
-        >
-          {t('Выйти')}
-        </Button>
-      </div>
+        {/* <HStack gap="8" className={cls.links} > */}
+        <Dropdown
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('Профиль'),
+              href: RoutePath.profile + authData.id              
+            },
+            { 
+              content: t('Выйти'), 
+              onClick: onLogout 
+            }
+          
+          ]}
+          trigger={
+            <Avatar circle size={32}
+              alt={authData.email}
+              src={authData.avatar}
+            />
+          }
+        />
+        {/* <Button
+            theme={ButtonTheme.CLEAR_INVERTED}
+            onClick={onLogout}
+            size={ButtonSize.L}
+          >
+            {t('Выйти')}
+          </Button> */}
+        {/* </HStack> */}
+      </header>
     )
   }
 

@@ -6,14 +6,13 @@ import cls from './ListBox.module.scss';
 import { HStack } from '../Stack';
 import { Icon } from '../Icon/Icon';
 import ArrowIcon from 'shared/assets/icons/arrowDown.svg';
+import { DropDownDirection } from 'shared/types/ui';
 
 export interface ListBoxItem {
   value: string;
   content: ReactNode;
   disabled?: boolean
 }
-
-type DropDownDirection = 'bottom' | 'top';
 
 interface ListBoxProps {
   className?: string;
@@ -26,6 +25,13 @@ interface ListBoxProps {
   direction?: DropDownDirection;
 }
 
+const mapDirectionClass: Record<DropDownDirection, string> = {
+  'bottom left': cls.optionsBottomLeft,
+  'bottom right': cls.optionsBottomRight,
+  'top left': cls.optionsTopLeft,
+  'top right': cls.optionsTopRight,
+}
+
 export const ListBox = (props: ListBoxProps) => {
   const {
     className,
@@ -35,10 +41,10 @@ export const ListBox = (props: ListBoxProps) => {
     onChange,
     label,
     readonly,
-    direction = 'bottom'
-  } = props
+    direction = 'bottom right',
+  } = props;
 
-  const optionsClasses = [cls[direction]]
+  const optionsClasses = [mapDirectionClass[direction]];
 
   return (
     <HStack gap='8'>

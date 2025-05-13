@@ -8,10 +8,13 @@ const meta = {
   title: 'Shared/ListBox',
   component: ListBox,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
+  decorators: [
+    Story => <div style={{padding: '100px'}}><Story/></div>
+  ]
 } satisfies Meta<typeof ListBox>;
 
 export default meta;
@@ -83,6 +86,82 @@ export const Dark: Story = {
       }
     ],
     defaultValue: 'value 2',
+    onChange: () => {},
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const BottomRight: Story = {
+  args: {
+    items: [
+      {
+        value: 'value 1',
+        content: 'value 1'
+      },
+      {
+        value: 'value 2',
+        content: 'value 212412412412441241'
+      }
+    ],
+    defaultValue: 'value 2',
+    direction: 'bottom right',
+    onChange: () => {},
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const BottomLeft: Story = {
+  args: {
+    items: [
+      {
+        value: 'value 1',
+        content: 'value 1'
+      },
+      {
+        value: 'value 2',
+        content: 'value 212412412412441241'
+      }
+    ],
+    defaultValue: 'value 2',
+    direction: 'bottom left',
+    onChange: () => {},
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const TopRight: Story = {
+  args: {
+    items: [
+      {
+        value: 'value 1',
+        content: 'value 1'
+      },
+      {
+        value: 'value 2',
+        content: 'value 212412412412441241'
+      }
+    ],
+    defaultValue: 'value 2',
+    direction: 'top right',
+    onChange: () => {},
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const TopLeft: Story = {
+  args: {
+    items: [
+      {
+        value: 'value 1',
+        content: 'value 1'
+      },
+      {
+        value: 'value 2',
+        content: 'value 212412412412441241'
+      }
+    ],
+    defaultValue: 'value 2',
+    direction: 'top left',
     onChange: () => {},
   },
   decorators: [ThemeDecorator(Theme.DARK)],
