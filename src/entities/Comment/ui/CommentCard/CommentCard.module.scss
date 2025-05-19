@@ -1,9 +1,6 @@
 .CommentCard {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   padding: 10px;
-  border: 1px solid var(--primary-color)
+  border: 1px solid var(--primary-color);
 }
 
 .header {

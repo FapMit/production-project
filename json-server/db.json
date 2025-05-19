@@ -766,36 +766,6 @@
       "userId": "1"
     },
     {
-      "articleId": "1",
-      "userId": "1",
-      "text": "sfasfasf",
-      "id": "mn6tOnE"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "hello world",
-      "id": "MosCDkt"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "fasfasf",
-      "id": "2zWraAY"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "fasfasf",
-      "id": "7526GCI"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "4124124",
-      "id": "5kLg9Y0"
-    },
-    {
       "articleId": "2",
       "userId": "2",
       "text": "python is the best",
@@ -824,6 +794,42 @@
       "userId": "1",
       "text": "asfarwq",
       "id": "jrUQ_uK"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "1jwm6_Z"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new comment",
+      "id": "_zxaz5f"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new",
+      "id": "SSYORfK"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new new",
+      "id": "U6y9qog"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "super",
+      "id": "T_K2hG4"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "test",
+      "id": "sr_iS5H"
     }
   ],
   "users": [
@@ -847,7 +853,7 @@
       "id": "1",
       "firstname": "Максим",
       "lastname": "Фетисов",
-      "age": 25,
+      "age": 24,
       "gender": "Мужской",
       "currency": "RUB",
       "country": "Russia",

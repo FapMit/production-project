@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const child = <><div>div 1</div><div>div 1</div><div>div 1</div></>
+const child = <><div>11111</div><div>2222222</div><div>3333333</div></>
 
 export const Row: Story = {
   args: {

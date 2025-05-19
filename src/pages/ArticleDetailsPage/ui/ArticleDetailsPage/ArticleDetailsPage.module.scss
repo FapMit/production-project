@@ -1,21 +1,3 @@
 .ArticleDetailsPage {
   width: 100%;
 }
-
-.commentTitle {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.recommendations {
-  flex-wrap: nowrap;
-  overflow: auto hidden;
-  border-radius: 12px;
-  padding: 30px;   
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--bg-color);
-}
-
-.commentList {
-  padding-top: 20px;
-}

@@ -101,20 +101,23 @@ type Story = StoryObj<typeof meta>;
 
 export const LightTile: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
+    isRecommendations: true,
   },
 };
 
 export const DarkTile: Story = {
   args: {
-    articles: [article,article,article]
+    articles: [article,article,article],
+    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const PinkTile: Story = {
   args: {
-    articles: [article,article,article]
+    articles: [article,article,article],
+    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
@@ -122,14 +125,14 @@ export const PinkTile: Story = {
 export const LightList: Story = {
   args: {
     articles: [article,article,article],
-    view: ArticleView.LIST
+    view: ArticleView.LIST,
   },
 };
 
 export const DarkList: Story = {
   args: {
     articles: [article,article,article],
-    view: ArticleView.LIST
+    view: ArticleView.LIST,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -137,14 +140,15 @@ export const DarkList: Story = {
 export const PinkList: Story = {
   args: {
     articles: [article,article,article],
-    view: ArticleView.LIST
+    view: ArticleView.LIST,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
 
 export const NoArticles: Story = {
   args: {
-    articles: []
+    articles: [],
+    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -153,7 +157,7 @@ export const LoadingList: Story = {
   args: {
     articles: [],
     isLoading: true,
-    view: ArticleView.LIST
+    view: ArticleView.LIST,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -162,7 +166,8 @@ export const LoadingTile: Story = {
   args: {
     articles: [],
     isLoading: true,
-    view: ArticleView.TILE
+    view: ArticleView.TILE,
+    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
