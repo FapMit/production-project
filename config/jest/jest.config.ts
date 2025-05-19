@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
@@ -51,6 +51,15 @@ const config: Config = {
     // '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
+  "reporters": [
+    "default",
+    ["jest-html-reporters", {
+      "publicPath": "<rootDir>/reports/unit",
+      "filename": "report.html",
+      "openReport": false,
+      "inlineSource": true,
+    }]
+  ],
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -61,7 +70,7 @@ const config: Config = {
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
-  
+
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -98,16 +107,16 @@ const config: Config = {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  
+
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  
+
 
   // An array of file extensions your modules use
-  
+
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -143,7 +152,7 @@ const config: Config = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  
+
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -166,7 +175,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  
+
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -175,7 +184,7 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  
+
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
