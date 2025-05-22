@@ -4,9 +4,11 @@ import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
+import { initialize, mswLoader } from 'msw-storybook-addon';
 
-
+initialize();
 
 export const globalTypes = {
   locale: {
@@ -33,12 +35,14 @@ const preview: Preview = {
     },
   },
   decorators: [
-    StyleDecorator, 
+    StyleDecorator,
     RouterDecorator,
     TranslationDecorator,
     ThemeDecorator(Theme.LIGHT),
     StoreDecorator({}),
+    SuspenseDecorator
   ],
+  loaders: [mswLoader],
 };
 
 export default preview;

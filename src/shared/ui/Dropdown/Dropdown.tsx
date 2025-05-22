@@ -38,7 +38,7 @@ export const Dropdown = memo((props: DropdownProps) => {
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              type="button" 
+              type="button"
               disabled={item.disabled}
               onClick={item.onClick}
               className={classNames(cls.item, { [cls.active]: active }, [])}
@@ -49,14 +49,16 @@ export const Dropdown = memo((props: DropdownProps) => {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href}>
+              <Menu.Item
+                key={item.href} as={AppLink} to={item.href}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={String(item.content)} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

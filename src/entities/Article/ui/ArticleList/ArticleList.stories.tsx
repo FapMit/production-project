@@ -94,6 +94,9 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {},
+  args: {
+    virtualized: false,
+  }
 } satisfies Meta<typeof ArticleList>;
 
 export default meta;
@@ -102,14 +105,12 @@ type Story = StoryObj<typeof meta>;
 export const LightTile: Story = {
   args: {
     articles: [article, article, article],
-    isRecommendations: true,
   },
 };
 
 export const DarkTile: Story = {
   args: {
     articles: [article,article,article],
-    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -117,7 +118,6 @@ export const DarkTile: Story = {
 export const PinkTile: Story = {
   args: {
     articles: [article,article,article],
-    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
@@ -148,7 +148,6 @@ export const PinkList: Story = {
 export const NoArticles: Story = {
   args: {
     articles: [],
-    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -167,7 +166,6 @@ export const LoadingTile: Story = {
     articles: [],
     isLoading: true,
     view: ArticleView.TILE,
-    isRecommendations: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

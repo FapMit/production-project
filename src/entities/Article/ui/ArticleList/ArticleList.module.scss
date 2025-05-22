@@ -30,9 +30,15 @@
   }
 }
 
-.RecomendationList {
+.RecomendationTile {
   display: flex;
   justify-content: flex-start;
+  gap: 15px;
+}
+
+.RecomendationList {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 

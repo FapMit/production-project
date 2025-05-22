@@ -1,7 +1,14 @@
+export enum UserRole {
+  ADMIN = "ADMIN",
+  USER = "USER",
+  MANAGER = "MANAGER",
+}
+
 export interface User {
   id: string;
   email: string;
   avatar?: string;
+  roles?: UserRole[];
 }
 
 export interface userSchema {

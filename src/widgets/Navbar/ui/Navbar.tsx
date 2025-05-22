@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from "entities/User";
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,6 +22,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onClose = useCallback(() => {
     setIsAuthModal(false);
@@ -35,6 +37,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout())
   }, [dispatch]);
 
+  const isAdminPanelAvailable = isAdmin || isManager
+
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
@@ -46,20 +50,23 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Создать статью')}
         </AppLink>
-        {/* <HStack gap="8" className={cls.links} > */}
         <Dropdown
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: t('Админка'),
+              href: RoutePath.admin_panel
+            }] : []),
             {
               content: t('Профиль'),
-              href: RoutePath.profile + authData.id              
+              href: RoutePath.profile + authData.id
             },
-            { 
-              content: t('Выйти'), 
-              onClick: onLogout 
+            {
+              content: t('Выйти'),
+              onClick: onLogout
             }
-          
+
           ]}
           trigger={
             <Avatar circle size={32}
@@ -68,14 +75,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             />
           }
         />
-        {/* <Button
-            theme={ButtonTheme.CLEAR_INVERTED}
-            onClick={onLogout}
-            size={ButtonSize.L}
-          >
-            {t('Выйти')}
-          </Button> */}
-        {/* </HStack> */}
       </header>
     )
   }

@@ -4,7 +4,7 @@ import { I18nextProvider } from "react-i18next";
 import i18nForTests from "../../i18n/i18nForTests";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const TranslationDecorator = (story: () => StoryFn, context: any) => {
+export const TranslationDecorator = (StoryComponent: StoryFn, context: any) => {
   const { locale } = context.globals;
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const TranslationDecorator = (story: () => StoryFn, context: any) => {
   return (
     <Suspense fallback=''>
       <I18nextProvider i18n={i18nForTests}>
-        {story()}
+        <StoryComponent/>
       </I18nextProvider>
     </Suspense>
   );

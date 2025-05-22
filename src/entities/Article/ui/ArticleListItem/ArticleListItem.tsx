@@ -12,6 +12,7 @@ import { Text } from "shared/ui/Text/Text";
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from "../../model/types/Article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 interface ArticleListItemProps {
   className?: string;
@@ -25,10 +26,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { t } = useTranslation('articles');
 
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
-  const views = <div className={cls.viewsWrapper}>
+  const views = <HStack gap="8">
     <Text text={String(article.views)} className={cls.views} />
     <Icon Svg={EyeIcon} />
-  </div>
+  </HStack>
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
@@ -36,7 +37,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id} 
+        to={RoutePath.article_details + article.id}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
@@ -51,26 +52,23 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
-          <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id}>
-              <Button
-                theme={ButtonTheme.OUTLINE}
-              >
-                {t('Читать далее...')}
-              </Button>
-            </AppLink>
-
+          <HStack max justify="between">
+            <Button
+              theme={ButtonTheme.OUTLINE}
+            >
+              {t('Читать далее...')}
+            </Button>
             {views}
-          </div>
+          </HStack>
         </Card>
       </AppLink>
     );
   }
 
   return (
-    <AppLink 
+    <AppLink
       target={target}
-      to={RoutePath.article_details + article.id} 
+      to={RoutePath.article_details + article.id}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card className={cls.card}>

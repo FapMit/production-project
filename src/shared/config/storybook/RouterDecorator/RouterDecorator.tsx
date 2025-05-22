@@ -1,10 +1,10 @@
 import { StoryFn } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 
-export const RouterDecorator = (story: () => StoryFn) => {
+export const RouterDecorator = (StoryComponent: StoryFn) => {
   return (
     <BrowserRouter>
-      {story()}
+      <StoryComponent/>
     </BrowserRouter>
   );
 };

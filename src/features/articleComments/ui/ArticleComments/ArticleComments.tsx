@@ -1,6 +1,6 @@
 import { CommentForm, CommentList } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -11,7 +11,7 @@ import cls from './ArticleComments.module.scss';
 
 interface ArticleCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleComments = memo((props: ArticleCommentsProps) => {
@@ -23,7 +23,7 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   const userData = useSelector(getUserAuthData);
 
   const onSendComment = useCallback((text: string) => {
-    const commentInfo = {articleId: id, userId: userData?.id, text}
+    const commentInfo = { articleId: id, userId: userData?.id, text }
     addArticleComment(commentInfo).then(() => refetch())
   }, [addArticleComment, id, refetch, userData?.id])
 
@@ -38,7 +38,10 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
         title={t('Комментарии')}
         className={cls.commentTitle}
       />
-      <CommentForm onSendComment={onSendComment} isLoading={isLoading || false} />
+      <Suspense fallback={'Загрузка'}>
+        <CommentForm onSendComment={onSendComment} isLoading={isLoading || false} />
+      </Suspense>
+
       {comments && <CommentList isLoading={isLoading} comments={comments} className={cls.commentList} />}
     </VStack>
   );

@@ -14,7 +14,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
-  isRecommendations?: boolean;
+  virtualized?: boolean;
   target?: HTMLAttributeAnchorTarget;
 }
 
@@ -32,7 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     articles,
     isLoading = false,
     view = ArticleView.TILE,
-    isRecommendations = false,
+    virtualized = true,
     target
   } = props
   const { t } = useTranslation('articles');
@@ -73,7 +73,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   };
 
   if (isLoading) {
-    const count = isRecommendations ? 4 : 9;
+    const count = virtualized ? 4 : 9;
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         {getSkeletons(view, count)}
@@ -89,9 +89,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
     )
   }
 
-  if (isRecommendations) {
+  if (!virtualized) {
     return (
-      <div className={classNames(cls.RecomendationList, {}, [className])}>
+      <div className={classNames(isBig ? cls.RecomendationList : cls.RecomendationTile, {}, [className])}>
         {
           articles.map((item) => (
             <ArticleListItem

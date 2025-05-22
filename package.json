@@ -52,8 +52,8 @@
     "@testing-library/react": "^12.1.3",
     "@types/jest": "^29.5.14",
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.7.0",
@@ -80,6 +80,8 @@
     "json-server": "^0.17.0",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "msw": "^2.8.4",
+    "msw-storybook-addon": "^2.0.4",
     "react-refresh": "^0.16.0",
     "react-refresh-typescript": "^2.0.10",
     "reg-cli": "^0.18.10",
@@ -87,6 +89,7 @@
     "sass": "^1.85.1",
     "sass-loader": "^12.6.0",
     "storybook": "^8.6.6",
+    "storybook-addon-mock": "^5.0.0",
     "style-loader": "^3.3.1",
     "stylelint": "^16.15.0",
     "stylelint-config-standard-scss": "^14.0.0",
@@ -101,8 +104,10 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^2.1.2",
     "@headlessui/react": "^1.6.6",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.9.7",
+    "@storybook/theming": "^8.6.14",
     "@types/react-virtualized": "^9.22.2",
     "axios": "^1.8.4",
     "concurrently": "^9.1.2",
@@ -110,8 +115,8 @@
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.4",
     "i18next-http-backend": "^3.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-i18next": "^15.4.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
@@ -136,5 +141,10 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      ""
+    ]
   }
 }
