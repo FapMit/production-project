@@ -12,7 +12,8 @@ import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoadi
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import cls from "./ArticleDetails.module.scss";
 
-import { ArticleBlock, ArticleBlockType } from "../../model/types/Article";
+import { ArticleBlock } from "../../model/types/Article";
+import { ArticleBlockType } from "../../model/consts/articleConsts";
 import CalendarIcon from "shared/assets/icons/calendar.svg";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";

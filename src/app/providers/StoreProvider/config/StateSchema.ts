@@ -40,7 +40,7 @@ export interface ReducerManager {
   getMountedReducers: () => MountedReducers,
 }
 
-export interface ReduxStopreWithManagers extends EnhancedStore<StateSchema> {
+export interface ReduxStoreWithManagers extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager
 }
 

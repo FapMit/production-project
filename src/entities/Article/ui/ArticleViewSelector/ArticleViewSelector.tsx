@@ -4,7 +4,7 @@ import TileIcon from "shared/assets/icons/tile.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button/Button";
 import { Icon } from "shared/ui/Icon/Icon";
-import { ArticleView } from "../../model/types/Article";
+import { ArticleView } from "../../model/consts/articleConsts";
 import cls from "./ArticleViewSelector.module.scss";
 import { HStack } from "shared/ui/Stack";
 
