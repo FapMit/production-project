@@ -1,31 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { NotificationList } from './NotificationList';
+import { Overlay } from './Overlay';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta = {
-  title: 'Entities/NotificationList',
-  component: NotificationList,
+  title: 'Shared/Overlay',
+  component: Overlay,
   parameters: {
     layout: 'fullscreen'
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof NotificationList>;
+} satisfies Meta<typeof Overlay>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-    id: '1',
-  },
+  args: {},
 };
 
 export const Dark: Story = {
-  args: {
-    id: '1',
-  },
+  args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
 };
