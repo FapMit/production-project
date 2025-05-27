@@ -7,6 +7,7 @@ interface SkeletonProps {
   height?: string | number;
   maxWidth?: string | number;
   borderRadius?: string;
+  width?: string | number;
 }
 
 export const Skeleton = memo((props: SkeletonProps) => {
@@ -14,6 +15,7 @@ export const Skeleton = memo((props: SkeletonProps) => {
     className,
     height,
     maxWidth,
+    width,
     borderRadius,
   } = props;
 
@@ -21,6 +23,7 @@ export const Skeleton = memo((props: SkeletonProps) => {
     maxWidth,
     height,
     borderRadius,
+    width
   }
 
   return (

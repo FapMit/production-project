@@ -1,12 +1,14 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '../Button/Button';
-import cls from './ListBox.module.scss';
-import { HStack } from '../Stack';
-import { Icon } from '../Icon/Icon';
 import ArrowIcon from 'shared/assets/icons/arrowDown.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DropDownDirection } from 'shared/types/ui';
+import { Button, ButtonTheme } from '../../../Button/Button';
+import { Icon } from '../../../Icon/Icon';
+import { HStack } from '../../../Stack';
+import { mapDirectionClass } from '../../styles/consts';
+import cls from './ListBox.module.scss';
+import popupCls from "../../styles/popup.module.scss";
 
 export interface ListBoxItem {
   value: string;
@@ -25,12 +27,7 @@ interface ListBoxProps {
   direction?: DropDownDirection;
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-}
+
 
 export const ListBox = (props: ListBoxProps) => {
   const {
@@ -56,12 +53,14 @@ export const ListBox = (props: ListBoxProps) => {
         )
       }
       <HListBox
+        disabled={readonly}
         as={'div'}
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button
+          disabled={readonly} className={popupCls.trigger}>
           <Button
             theme={ButtonTheme.OUTLINE}
             disabled={readonly}

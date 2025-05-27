@@ -1,0 +1,16 @@
+.NotificationButton {}
+
+.icon {
+  max-width: 25px;
+  width: 100%;
+}
+
+.notifications {
+  min-height: 150px;
+  max-height: 300px;
+  width: min-content;
+  overflow-y: scroll;
+  margin-right: -8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}

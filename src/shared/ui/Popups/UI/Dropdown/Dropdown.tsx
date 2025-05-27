@@ -3,7 +3,9 @@ import { Fragment, memo, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DropDownDirection } from "shared/types/ui";
 import cls from "./Dropdown.module.scss";
-import { AppLink } from "../AppLink/AppLink";
+import popupCls from "../../styles/popup.module.scss";
+import { AppLink } from "../../../AppLink/AppLink";
+import { mapDirectionClass } from "../../styles/consts";
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -19,20 +21,13 @@ interface DropdownProps {
   direction?: DropDownDirection;
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-}
-
 export const Dropdown = memo((props: DropdownProps) => {
   const { className, items, trigger, direction = 'bottom right' } = props
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
+    <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
       <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item) => {

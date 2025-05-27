@@ -1,0 +1,13 @@
+.NotificationItem {
+  width: 100%;
+}
+
+.link {
+  width: 100%;
+}
+
+.text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

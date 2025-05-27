@@ -3,12 +3,19 @@
   color: var(--primary-color);
   padding: 5px 15px;
   transition: all .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     opacity: .7;
     stroke-opacity: .7;
     fill-opacity: .7;
     transition: all .3s;
+  }
+
+  &.disabled {
+    opacity: .5;
   }
 }
 
@@ -95,8 +102,3 @@
     font: var(--font-xl);
   }
 }
-
-.disabled {
-  opacity: .5;
-}
-

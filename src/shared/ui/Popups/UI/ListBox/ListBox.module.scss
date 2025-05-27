@@ -1,18 +1,5 @@
-.ListBox {
-  position: relative;
-  width: max-content;
-}
-
 .Label {
   font: var(--font-m);
-}
-
-.trigger {
-  background: none;
-  border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
 }
 
 .buttonInner {
@@ -37,30 +24,7 @@
   box-shadow: 4px 4px 8px var(--listbox-bg);
   overflow: hidden;
   font: var(--font-m);
-
-  // width: 100%;
 }
-
-.optionsBottomLeft {
-  top: 105%;
-  right: 0;
-}
-
-.optionsBottomRight {
-  top: 105%;
-  left: 0;
-}
-
-.optionsTopLeft {
-  bottom: 105%;
-  right: 0;
-}
-
-.optionsTopRight {
-  bottom: 105%;
-  left: 0;
-}
-
 
 .item {
   padding: 5px 20px;
