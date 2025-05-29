@@ -1,8 +1,8 @@
-@import 'reset';
-@import 'variables/global';
-@import 'themes/light';
-@import 'themes/dark';
-@import 'themes/pink';
+@use 'reset';
+@use 'variables/global';
+@use 'themes/light';
+@use 'themes/dark';
+@use 'themes/pink';
 
 body {
   interpolate-size: allow-keywords;

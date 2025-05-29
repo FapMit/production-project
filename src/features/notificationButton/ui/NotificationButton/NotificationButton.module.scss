@@ -9,6 +9,8 @@
   width: min-content;
   overflow-y: scroll;
   margin-right: -8px;
+  padding-right: 8px;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) transparent;
+  min-width: 200px;
 }
