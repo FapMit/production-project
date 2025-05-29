@@ -26,9 +26,9 @@ export const NotificationList = memo((props: NotificationListProps) => {
   if (isLoading) {
     return (
       <VStack gap="8" max className={classNames(cls.NotificationList, {}, [className])}>
-        <Skeleton height={80} width={'200px'} borderRadius={'8px'} />
-        <Skeleton height={80} width={'200px'} borderRadius={'8px'} />
-        <Skeleton height={80} width={'200px'} borderRadius={'8px'} />
+        <Skeleton height={80} width={'100%'} borderRadius={'8px'} />
+        <Skeleton height={80} width={'100%'} borderRadius={'8px'} />
+        <Skeleton height={80} width={'100%'} borderRadius={'8px'} />
       </VStack>
     );
   }
