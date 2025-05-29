@@ -1,5 +1,19 @@
 {
   "Читать далее...": "Read more...",
   "Статьи не найдены": "Articles not found",
-  "Произошла ошибка при загрузке статей": "An error occurred while loading articles"
+  "Произошла ошибка при загрузке статей": "An error occurred while loading articles",
+  "Все статьи": "All articles",
+  "Информационные технологии": "IT",
+  "Бизнес": "Business",
+  "Экономика": "Economy",
+  "Наука": "Science",
+  "Сортировка по": "Sort by",
+  "по": "by",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "дате создания": "creation date",
+  "названию": "title",
+  "просмотрам": "views",
+  "Поиск": "Search",
+  "Рекомендации": "Recommendations"
 }

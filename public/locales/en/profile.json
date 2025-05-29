@@ -11,5 +11,13 @@
   "Редактировать" : "Edit",
   "Сохранить" : "Save",
   "Отменить" : "Cancel",
-  "Профиль с таким ID не найден": "No profile ID provided"
+  "Профиль с таким ID не найден": "No profile ID provided",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Ошибка сервера": "Server Error",
+  "Некорректный возраст": "Incorrect Age",
+  "Некорректная страна": "Incorrect Country",
+  "Некорректный почтовый адрес": "Incorrect Postal Address",
+  "Данные не указаны": "No Data Provided",
+  "Выберите валюту": "Select Currency",
+  "Выберите страну": "Select Country"
 }

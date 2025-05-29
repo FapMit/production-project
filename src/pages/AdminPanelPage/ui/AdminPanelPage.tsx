@@ -12,7 +12,7 @@ const AdminPanelPage = ({ className }: AdminPanelPageProps) => {
 
   return ( 
     <Page className={classNames(cls.AdminPanelPage, {}, [className])}>
-      <p>{t('Admin Panel Page')}</p>
+      <p>{t('Панель администратора')}</p>
     </Page>
   );
 }

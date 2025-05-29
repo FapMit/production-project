@@ -20,7 +20,7 @@ interface ArticlesPageFiltersProps {
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const { className } = props
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
 
 
   const dispatch = useAppDispatch();
