@@ -1,6 +1,6 @@
 import { CSSProperties, useMemo } from "react";
-import defaultImage from "shared/assets/default/default.png";
-import { classNames, Mods } from "shared/lib/classNames/classNames";
+import defaultImage from "@/shared/assets/default/default.png";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import cls from "./Avatar.module.scss";
 
 

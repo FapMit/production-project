@@ -1,15 +1,15 @@
 import { commentActions, commentReducer } from "../../model/slices/commentsSlice";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Input } from "shared/ui/Input/Input";
-import { HStack } from "shared/ui/Stack";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
+import { HStack } from "@/shared/ui/Stack";
 import cls from "./CommentForm.module.scss";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getCommentError, getCommentText } from "../../model/selectors/commentsSelectors";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface CommentFormProps {
   className?: string;

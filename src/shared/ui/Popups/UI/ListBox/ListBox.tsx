@@ -1,8 +1,8 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
-import ArrowIcon from 'shared/assets/icons/arrowDown.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DropDownDirection } from 'shared/types/ui';
+import ArrowIcon from '@/shared/assets/icons/arrowDown.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropDownDirection } from '@/shared/types/ui';
 import { Button, ButtonTheme } from '../../../Button/Button';
 import { Icon } from '../../../Icon/Icon';
 import { HStack } from '../../../Stack';

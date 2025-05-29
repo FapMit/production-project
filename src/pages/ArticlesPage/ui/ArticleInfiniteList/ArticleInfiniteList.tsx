@@ -1,8 +1,8 @@
-import { ArticleList } from "entities/Article";
+import { ArticleList } from "@/entities/Article";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Text, TextTheme } from "shared/ui/Text/Text";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { getArticles } from "../../model/slices/articlesPageSlice";
 

@@ -2,8 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleList } from './ArticleList';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Article } from '../../model/types/Article';
 import { ArticleView } from "../../model/consts/articleConsts";
 
@@ -96,7 +96,6 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    virtualized: false,
   }
 } satisfies Meta<typeof ArticleList>;
 
@@ -111,28 +110,28 @@ export const LightTile: Story = {
 
 export const DarkTile: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const PinkTile: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
 
 export const LightList: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
     view: ArticleView.LIST,
   },
 };
 
 export const DarkList: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
     view: ArticleView.LIST,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -140,7 +139,7 @@ export const DarkList: Story = {
 
 export const PinkList: Story = {
   args: {
-    articles: [article,article,article],
+    articles: [article, article, article],
     view: ArticleView.LIST,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
