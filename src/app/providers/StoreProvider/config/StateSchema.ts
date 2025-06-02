@@ -2,7 +2,6 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "@/entities/Article";
 import { CommentsSchema } from "@/entities/Comment/model/types/commentsSchema";
-import { CounterSchema } from "@/entities/Counter";
 import { userSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
 import { ProfileSchema } from "@/features/editableProfileCard";
@@ -13,7 +12,6 @@ import { rtkApi } from "@/shared/api/rtkApi";
 
 
 export interface StateSchema {
-  counter: CounterSchema;
   user: userSchema;
   ui: UISchema;
 

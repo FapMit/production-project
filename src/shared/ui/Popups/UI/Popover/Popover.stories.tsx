@@ -7,7 +7,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { Button } from '../../../Button/Button';
 
 const meta = {
-  title: 'Shared/Popover',
+  title: 'Shared/Popups/Popover',
   component: Popover,
   parameters: {
     layout: 'fullscreen'

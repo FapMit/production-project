@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
-  title: 'Entities/RatingCard',
+  title: 'Entities/Rating/RatingCard',
   component: RatingCard,
   parameters: {
     layout: 'fullscreen'
@@ -18,7 +18,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {},
+  args: {
+    title: 'Заголовок',
+  },
+};
+
+export const WithRate: Story = {
+  args: {
+    rate: 4,
+  },
 };
 
 export const Dark: Story = {

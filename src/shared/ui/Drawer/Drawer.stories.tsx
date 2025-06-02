@@ -19,13 +19,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {
-    children: 'Text',
+    children: 'Any text, blocks',
+    isOpen: true,
   },
 };
 
 export const Dark: Story = {
   args: {
-    children: 'Text',
+    children: 'Any text, blocks',
+    isOpen: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

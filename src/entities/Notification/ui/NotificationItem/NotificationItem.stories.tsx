@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
-  title: 'Entities/NotificationItem',
+  title: 'Entities/Notification/NotificationItem',
   component: NotificationItem,
   parameters: {
     layout: 'fullscreen'

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { UserRole } from '@/entities/User';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { AvatarDropdown } from './AvatarDropdown';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
   title: 'Features/AvatarDropdown',
@@ -17,11 +17,24 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-  args: {},
+export const AdminAndManager: Story = {
+  args: {
+    dropdownDir: 'bottom right'
+  },
+  decorators: [StoreDecorator({
+    user: {
+      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.ADMIN] },
+    },
+  })]
 };
 
-export const Dark: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)],
+export const User: Story = {
+  args: {
+    dropdownDir: 'bottom right'
+  },
+  decorators: [StoreDecorator({
+    user: {
+      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.USER] },
+    },
+  })]
 };

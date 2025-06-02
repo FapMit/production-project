@@ -1,31 +1,46 @@
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import { http, HttpResponse } from 'msw';
 import ArticleRating from './ArticleRating';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
   title: 'features/ArticleRating',
   component: ArticleRating,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: { id: '1' }
+      }
+    }),
+  ],
+
 } satisfies Meta<typeof ArticleRating>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
+export const WithoutRate: Story = {
   args: {
-    articleId: '1',
   },
 };
 
-export const Dark: Story = {
+export const WithRate: Story = {
   args: {
-    articleId: '1',
   },
-  decorators: [ThemeDecorator(Theme.DARK)],
+  parameters: {
+    msw: {
+      handlers: [
+        http.get(`${__API__}/article-ratings`, () => {
+          return HttpResponse.json([
+            { rate: 3, feedback: 'Great article!' },
+          ]);
+        }),
+      ],
+    },
+  },
 };

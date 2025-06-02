@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { CountrySelect } from './CountrySelect';
 
 const meta = {
-  title: 'Entities/CountrySelect',
+  title: 'Entities/Country/CountrySelect',
   component: CountrySelect,
   parameters: {
     layout: 'fullscreen'

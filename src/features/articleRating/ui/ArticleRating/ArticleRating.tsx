@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 export interface ArticleRatingProps {
   className?: string;
-  articleId: string;
+  articleId?: string;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
@@ -16,7 +16,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const userData = useSelector(getUserAuthData);
 
   const { isLoading, data } = useArticleRating({
-    articleId,
+    articleId: articleId ?? '',
     userId: userData?.id ?? '',
   });
 
@@ -26,7 +26,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     try {
       rateArticleMutation({
         userId: userData?.id ?? '',
-        articleId,
+        articleId: articleId ?? '',
         rate: starsCount,
         feedback,
       });

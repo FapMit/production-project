@@ -1,13 +1,12 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ArticleDetailsPage from './ArticleDetailsPage';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { Article } from '@/entities/Article';
-import { ArticleType } from "@/entities/Article/model/consts/articleConsts";
-import { ArticleBlockType } from "@/entities/Article/model/consts/articleConsts";
+import { ArticleBlockType, ArticleType } from "@/entities/Article/model/consts/articleConsts";
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 const ArticleData: Article = {
   "id": "1",

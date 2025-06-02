@@ -7,7 +7,7 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
 const meta = {
-  title: 'Entities/ProfileCard',
+  title: 'Entities/Profile/ProfileCard',
   component: ProfileCard,
   parameters: {
     layout: 'fullscreen'

@@ -71,9 +71,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     <AppLink
       target={target}
       to={RoutePath.article_details + article.id}
-      className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+      className={classNames(cls.ArticleListItem, {}, [className])}
     >
-      <Card className={cls.card}>
+      <Card 
+        className={classNames(cls.card, {}, [className, cls[view]])}
+      >
         <div className={cls.imageWrapper}>
           <img src={article.img} className={cls.img} alt={article.title} />
           <Text text={article.createdAt} className={cls.date} />

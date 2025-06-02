@@ -6,7 +6,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { Button, ButtonTheme } from '../../../Button/Button';
 
 const meta = {
-  title: 'Shared/Dropdown',
+  title: 'Shared/Popups/Dropdown',
   component: Dropdown,
   parameters: {
     layout: 'fullscreen'

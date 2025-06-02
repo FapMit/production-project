@@ -9,7 +9,9 @@ export enum ArticleBlockType {
   CODE = 'CODE',
   TEXT = 'TEXT',
   IMAGE = 'IMAGE'
-}export enum ArticleType {
+}
+
+export enum ArticleType {
   ALL = 'ALL',
   IT = 'IT',
   SCIENCE = 'SCIENCE',

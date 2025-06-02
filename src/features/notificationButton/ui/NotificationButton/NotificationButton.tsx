@@ -10,13 +10,15 @@ import { Drawer } from "@/shared/ui/Drawer/Drawer";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import { Popover } from "@/shared/ui/Popups";
 import cls from "./NotificationButton.module.scss";
+import { DropDownDirection } from "@/shared/types/ui";
 
 interface NotificationButtonProps {
   className?: string;
+  dropdownDir?: DropDownDirection;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className } = props;
+  const { className, dropdownDir = "bottom left" } = props;
 
   const authData = useSelector(getUserAuthData);
 
@@ -45,7 +47,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <Popover
           className={classNames(cls.NotificationButton, {}, [className])}
           trigger={trigger}
-          direction="bottom left"
+          direction={dropdownDir}
         >
           <NotificationList id={authData.id} className={cls.notifications} />
         </Popover>

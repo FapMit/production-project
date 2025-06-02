@@ -11,8 +11,6 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
 
-  // if (!id) return <Text title={t("No profile ID provided")} />;
-
   return (
     <Page className={classNames('', {}, [className])}>
       <EditableProfileCard id={id} />

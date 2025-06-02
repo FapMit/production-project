@@ -7,3 +7,5 @@ node_modules
 .loki/report.json
 .vscode
 ./reports
+*.css.map
+*.css

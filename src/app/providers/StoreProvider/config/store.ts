@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
-import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
 import { $api } from "@/shared/api/api";
 import { createReducerManager } from "./reducerManager";
@@ -15,7 +14,6 @@ export function createReduxStore(
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    counter: counterReducer,
     user: userReducer,
     ui: UIReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,

@@ -8,16 +8,15 @@ const config: StorybookConfig = {
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
+    "@storybook/addon-queryparams",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
     '@storybook/addon-webpack5-compiler-babel',
-    'storybook-addon-mock',
+    'storybook-addon-mock/register',
+    'storybook-addon-useragent',
   ],
-  "framework": {
-    "name": "@storybook/react-webpack5",
-    "options": {
-    }
-  },
+  "framework": "@storybook/react-webpack5",
   staticDirs: ["../../public"],
 };
+
 export default config;

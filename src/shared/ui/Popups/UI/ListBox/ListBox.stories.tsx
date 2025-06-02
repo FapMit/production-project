@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
-  title: 'Shared/ListBox',
+  title: 'Shared/Popups/ListBox',
   component: ListBox,
   parameters: {
     layout: 'fullscreen',

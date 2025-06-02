@@ -1,10 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { http, HttpResponse } from 'msw';
-
-import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { Article } from '@/entities/Article';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import type { Meta, StoryObj } from '@storybook/react';
+import { http, HttpResponse } from 'msw';
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
   id: '1',

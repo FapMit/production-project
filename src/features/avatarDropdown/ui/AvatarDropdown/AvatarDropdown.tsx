@@ -7,13 +7,15 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
+import { DropDownDirection } from "@/shared/types/ui";
 
 interface AvatarDropdownProps {
   className?: string;
+  dropdownDir?: DropDownDirection;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-  const { className } = props
+  const { className, dropdownDir = "bottom left" } = props
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -32,7 +34,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   return (
     <Dropdown
       className={classNames('', {}, [className])}
-      direction="bottom left"
+      direction={dropdownDir}
 
       items={[
         ...(isAdminPanelAvailable ? [{

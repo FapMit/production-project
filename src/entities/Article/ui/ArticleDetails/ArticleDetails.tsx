@@ -24,7 +24,7 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string
+  id?: string
 }
 
 const reducers = {
@@ -64,6 +64,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       return null;
     }
   }, []);
+  
 
   useInitialEffect(() => {
     dispatch(fetchArticleById(id))
