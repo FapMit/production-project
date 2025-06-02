@@ -53,7 +53,7 @@ export default [
       "max-len": ["error", { code: 200, ignoreComments: true }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
-      "test-plugin/path-cheker": "error",
+      "test-plugin/path-cheker": ["error", {alias: '@'}],
     },
   },
   ...tseslint.configs.recommended,
