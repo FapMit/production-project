@@ -4,7 +4,7 @@ import AboutIcon from "@/shared/assets/icons/about.svg";
 import ArticlesIcon from "@/shared/assets/icons/articles.svg";
 import HomeIcon from "@/shared/assets/icons/home.svg";
 import ProfileIcon from "@/shared/assets/icons/profile.svg";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/shared/const/router";
 import { SidebarItemType } from "../types/sidebar";
 
 

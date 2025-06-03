@@ -4,6 +4,7 @@ import { RatingCard } from '@/entities/Rating';
 import { useArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
+import { getArticleDetailsIsLoading } from '@/entities/Article';
 
 export interface ArticleRatingProps {
   className?: string;
@@ -15,7 +16,9 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const { t } = useTranslation('article-details');
   const userData = useSelector(getUserAuthData);
 
-  const { isLoading, data } = useArticleRating({
+  const isPageLoading = useSelector(getArticleDetailsIsLoading);
+
+  const { data } = useArticleRating({
     articleId: articleId ?? '',
     userId: userData?.id ?? '',
   });
@@ -44,7 +47,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   }, [handleRateArticle])
 
 
-  if (isLoading) return null;
+  if (isPageLoading) return null;
 
   const rating = data?.[0];
 

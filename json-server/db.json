@@ -852,6 +852,18 @@
       "userId": "1",
       "text": "test",
       "id": "sr_iS5H"
+    },
+    {
+      "articleId": "12",
+      "userId": "1",
+      "text": "new comment",
+      "id": "yXCOjhc"
+    },
+    {
+      "articleId": "12",
+      "userId": "1",
+      "text": "214124",
+      "id": "oWkEC47"
     }
   ],
   "users": [

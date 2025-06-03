@@ -8,6 +8,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { useAddArticleComment, useArticleComments } from '../../api/articleCommentsApi';
 import cls from './ArticleComments.module.scss';
+import { getArticleDetailsIsLoading } from '@/entities/Article';
 
 interface ArticleCommentsProps {
   className?: string;
@@ -21,13 +22,15 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   const { isLoading, data: comments, refetch } = useArticleComments(id);
   const [addArticleComment, { }] = useAddArticleComment();
   const userData = useSelector(getUserAuthData);
+  const isPageLoading = useSelector(getArticleDetailsIsLoading);
+
 
   const onSendComment = useCallback((text: string) => {
     const commentInfo = { articleId: id, userId: userData?.id, text }
     addArticleComment(commentInfo).then(() => refetch())
   }, [addArticleComment, id, refetch, userData?.id])
 
-  if (isLoading) {
+  if (isPageLoading) {
     return null;
   }
 
