@@ -68,7 +68,8 @@ export const ListBox = (props: ListBoxProps) => {
             className={cls.buttonInner}
           >
             {value ?? defaultValue}
-            <Icon Svg={ArrowIcon} className={cls.buttonArrowIcon} />
+            <Icon Svg={ArrowIcon}
+              className={cls.buttonArrowIcon} />
           </Button>
         </HListBox.Button>
         <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>

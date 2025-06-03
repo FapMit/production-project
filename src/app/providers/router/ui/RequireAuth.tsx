@@ -21,14 +21,20 @@ export function RequireAuth(props: RequireAuthProps) {
       return true;
     }
     return roles.some(role => userRoles?.includes(role));
-  },[roles, userRoles])
+  }, [roles, userRoles])
 
   if (!auth) {
-    return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
+    return <Navigate to={RoutePath.main}
+      state={{ from: location }}
+      replace
+    />;
   }
 
   if (!hasRequiredRole) {
-    return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
+    return <Navigate to={RoutePath.forbidden}
+      state={{ from: location }}
+      replace
+    />;
   }
 
   return children;

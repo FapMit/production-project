@@ -21,12 +21,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <VStack max className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+      <VStack max
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
-          <Skeleton maxWidth={30} height={30} borderRadius={"50%"} />
-          <Skeleton maxWidth={300} height={16} />
+          <Skeleton maxWidth={30}
+            height={30}
+            borderRadius={"50%"} />
+          <Skeleton maxWidth={300}
+            height={16} />
         </div>
-        <Skeleton maxWidth={'none'} height={50} />
+        <Skeleton maxWidth={'none'}
+          height={50} />
       </VStack>
     )
   }
@@ -36,10 +41,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
   }
 
   return (
-    <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className])}>
-      <AppLink className={cls.header} to={`${RoutePath.profile}${comment.user.id}`}>
-        <Avatar size={30} circle alt={comment.user.email} src={comment.user.avatar} />
-        <Text title={comment.user.email} size={TextSize.S} />
+    <VStack max
+      gap="8"
+      className={classNames(cls.CommentCard, {}, [className])}>
+      <AppLink className={cls.header}
+        to={`${RoutePath.profile}${comment.user.id}`}>
+        <Avatar size={30}
+          circle
+          alt={comment.user.email}
+          src={comment.user.avatar} />
+        <Text title={comment.user.email}
+          size={TextSize.S} />
       </AppLink>
       <Text text={comment.text} />
     </VStack>

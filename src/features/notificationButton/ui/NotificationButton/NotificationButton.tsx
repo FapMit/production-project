@@ -34,7 +34,8 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
   const trigger =
     <Button onClick={onOpenDrawer} >
-      <Icon Svg={NotificationsIcon} className={cls.icon} />
+      <Icon Svg={NotificationsIcon}
+        className={cls.icon} />
     </Button>
 
   if (!authData) {
@@ -49,13 +50,16 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
           trigger={trigger}
           direction={dropdownDir}
         >
-          <NotificationList id={authData.id} className={cls.notifications} />
+          <NotificationList id={authData.id}
+            className={cls.notifications} />
         </Popover>
       </BrowserView>
 
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}lazy >
+        <Drawer isOpen={isOpen}
+          onClose={onCloseDrawer}
+          lazy >
           <NotificationList id={authData.id} />
         </Drawer >
       </MobileView>

@@ -31,7 +31,9 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
   }, [article?.id, navigate]);
 
   return (
-    <HStack justify="between" gap="16" className={classNames('', {}, [className])}>
+    <HStack justify="between"
+      gap="16"
+      className={classNames('', {}, [className])}>
       <Button
         theme={ButtonTheme.CLEAR}
         onClick={onBackToList}

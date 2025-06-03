@@ -39,7 +39,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   }
 
   return (
-    <HStack gap="16" className={classNames('', {}, [className])}>
+    <HStack gap="16"
+      className={classNames('', {}, [className])}>
       {
         viewTypes.map((viewType) => {
           return (

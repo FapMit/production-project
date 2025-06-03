@@ -52,7 +52,8 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
       ]}
 
       trigger={
-        <Avatar circle size={32}
+        <Avatar circle
+          size={32}
           alt={authData.email}
           src={authData.avatar}
         />

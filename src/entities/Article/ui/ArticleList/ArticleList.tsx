@@ -20,7 +20,8 @@ const getSkeletons = (view: ArticleView) => {
   return new Array(view === ArticleView.TILE ? 9 : 3)
     .fill(0)
     .map((item, index) => (
-      <ArticleListItemSkeleton key={index} view={view} />
+      <ArticleListItemSkeleton key={index}
+        view={view} />
     ))
 }
 
@@ -37,7 +38,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
   if (!isLoading && !articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className])}>
-        <Text size={TextSize.L} align={TextAlign.CENTER} title={t("Статьи не найдены")} theme={TextTheme.ERROR} />
+        <Text size={TextSize.L}
+          align={TextAlign.CENTER}
+          title={t("Статьи не найдены")}
+          theme={TextTheme.ERROR} />
       </div>
     )
   }

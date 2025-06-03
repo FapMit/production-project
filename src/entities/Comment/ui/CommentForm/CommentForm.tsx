@@ -46,11 +46,13 @@ export const CommentForm = (props: CommentFormProps) => {
   }
 
   if (error) {
-    return <Text text={error} theme={TextTheme.ERROR} />
+    return <Text text={error}
+      theme={TextTheme.ERROR} />
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}
+      removeAfterUnmount>
       <HStack className={classNames(cls.CommentForm, {}, [className])}>
         <Input
           className={cls.input}

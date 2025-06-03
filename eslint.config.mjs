@@ -6,6 +6,7 @@ import i18next from "eslint-plugin-i18next";
 import reactHooks from "eslint-plugin-react-hooks";
 import testPlugin from "@fapmit/eslint-plugin-test-plugin";
 import unusedImports from "eslint-plugin-unused-imports";
+import stylisticJsx from "@stylistic/eslint-plugin-jsx";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -29,9 +30,11 @@ export default [
       i18next: i18next,
       "test-plugin": testPlugin,
       "unused-imports": unusedImports,
+      "@stylistic/jsx": stylisticJsx
     },
 
     rules: {
+      "@stylistic/jsx/jsx-max-props-per-line": ["error", { "maximum": 1 }],
       "react/react-in-jsx-scope": "off",
       "react/no-deprecated": 0,
       "react/jsx-filename-extension": [

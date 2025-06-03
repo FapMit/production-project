@@ -20,7 +20,8 @@ export const StoreDecorator = (
   asyncReducers?: ReducersList
 ) => (StoryComponent: StoryFn) => {
   return (
-    <StorePorvider initialState={state} asyncReducers={{ ...defaultAsyncReducer, ...asyncReducers }}>
+    <StorePorvider initialState={state}
+      asyncReducers={{ ...defaultAsyncReducer, ...asyncReducers }}>
       <StoryComponent />
     </StorePorvider>
   )

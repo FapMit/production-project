@@ -31,7 +31,9 @@ export const Tabs = memo((props: TabsProps) => {
   },[onTabClick]);
 
   return (
-    <HStack max gap="8" className={classNames('', {}, [className])}>
+    <HStack max
+      gap="8"
+      className={classNames('', {}, [className])}>
       {tabs.map((tab) => (
         <Card
           className={cls.tab}

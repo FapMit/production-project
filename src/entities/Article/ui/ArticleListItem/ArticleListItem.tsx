@@ -27,9 +27,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, article, view, target } = props
   const { t } = useTranslation('articles');
 
-  const types = <Text text={article.type.join(', ')} className={cls.types} />;
+  const types = <Text text={article.type.join(', ')}
+    className={cls.types} />;
   const views = <HStack gap="8">
-    <Text text={String(article.views)} className={cls.views} />
+    <Text text={String(article.views)}
+      className={cls.views} />
     <Icon Svg={EyeIcon} />
   </HStack>
 
@@ -44,17 +46,27 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       >
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} circle src={article.user.avatar} alt={article.user.email} />
-            <Text text={article.user.email} className={cls.email} />
-            <Text text={article.createdAt} className={cls.date} />
+            <Avatar size={30}
+              circle
+              src={article.user.avatar}
+              alt={article.user.email} />
+            <Text text={article.user.email}
+              className={cls.email} />
+            <Text text={article.createdAt}
+              className={cls.date} />
           </div>
-          <Text title={article.title} className={cls.title} />
+          <Text title={article.title}
+            className={cls.title} />
           {types}
-          <img className={cls.img} src={article.img} alt={article.title} />
+          <img className={cls.img}
+            src={article.img}
+            alt={article.title} />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent block={textBlock}
+              className={cls.textBlock} />
           )}
-          <HStack max justify="between">
+          <HStack max
+            justify="between">
             <Button
               theme={ButtonTheme.OUTLINE}
             >
@@ -77,14 +89,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className={classNames(cls.card, {}, [className, cls[view]])}
       >
         <div className={cls.imageWrapper}>
-          <img src={article.img} className={cls.img} alt={article.title} />
-          <Text text={article.createdAt} className={cls.date} />
+          <img src={article.img}
+            className={cls.img}
+            alt={article.title} />
+          <Text text={article.createdAt}
+            className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
           {types}
           {views}
         </div>
-        <Text text={article.title} className={cls.title} />
+        <Text text={article.title}
+          className={cls.title} />
       </Card>
     </AppLink>
   );

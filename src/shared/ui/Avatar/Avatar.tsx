@@ -32,7 +32,9 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <div className={classNames(cls.Avatar, mods, [className])}>
-      <img src={!src ? defaultImage : src} alt={alt} style={styles} />
+      <img src={!src ? defaultImage : src}
+        alt={alt}
+        style={styles} />
     </div>
   );
 }

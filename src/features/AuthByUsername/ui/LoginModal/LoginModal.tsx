@@ -21,7 +21,8 @@ export const LoginModal = (props: LoginModalProps) => {
       onClose={onClose}
       lazy
     >
-      <Suspense fallback={<Loader style={{width: '100%', display: 'flex', justifyContent: 'center'}} size={LoaderSize.L}/>}>
+      <Suspense fallback={<Loader style={{width: '100%', display: 'flex', justifyContent: 'center'}}
+        size={LoaderSize.L}/>}>
         <LoginForm onSuccess={onClose} />
       </Suspense>
     </Modal>

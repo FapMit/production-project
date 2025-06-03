@@ -65,18 +65,26 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   }, [dispatch, fetchData]);
 
   return (
-    <VStack gap="16" max className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-      <HStack justify="between" align="center" gap="16" max>
+    <VStack gap="16"
+      max
+      className={classNames(cls.ArticlesPageFilters, {}, [className])}>
+      <HStack justify="between"
+        align="center"
+        gap="16"
+        max>
         <ArticleSortSelector
           order={order}
           sort={sort}
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticleViewSelector view={view}
+          onViewClick={onChangeView} />
       </HStack>
       <Card className={cls.search}>
-        <Input placeholder={t("Поиск")} value={search} onChange={onChangeSearch} />
+        <Input placeholder={t("Поиск")}
+          value={search}
+          onChange={onChangeSearch} />
       </Card>
       <ArticleTypeTabs
         onChangeType={onChangeType}

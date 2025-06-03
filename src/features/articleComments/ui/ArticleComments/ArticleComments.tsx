@@ -35,17 +35,22 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   }
 
   return (
-    <VStack max gap='16' className={classNames('', {}, [className])}>
+    <VStack max
+      gap='16'
+      className={classNames('', {}, [className])}>
       <Text
         size={TextSize.L}
         title={t('Комментарии')}
         className={cls.commentTitle}
       />
       <Suspense fallback={'Загрузка'}>
-        <CommentForm onSendComment={onSendComment} isLoading={isLoading || false} />
+        <CommentForm onSendComment={onSendComment}
+          isLoading={isLoading || false} />
       </Suspense>
 
-      {comments && <CommentList isLoading={isLoading} comments={comments} className={cls.commentList} />}
+      {comments && <CommentList isLoading={isLoading}
+        comments={comments}
+        className={cls.commentList} />}
     </VStack>
   );
 });

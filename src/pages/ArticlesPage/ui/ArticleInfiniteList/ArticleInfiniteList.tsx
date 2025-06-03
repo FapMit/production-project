@@ -24,7 +24,8 @@ const ArticleInfiniteList = (props: ArticleInfiniteListProps) => {
 
   if (error) {
     return (
-      <Text title={t("Произошла ошибка при загрузке статей")} theme={TextTheme.ERROR} />
+      <Text title={t("Произошла ошибка при загрузке статей")}
+        theme={TextTheme.ERROR} />
     );
   }
 

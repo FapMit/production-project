@@ -27,7 +27,8 @@ export const Dropdown = memo((props: DropdownProps) => {
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+    <Menu as="div"
+      className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
       <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item) => {
@@ -45,7 +46,9 @@ export const Dropdown = memo((props: DropdownProps) => {
           if (item.href) {
             return (
               <Menu.Item
-                key={item.href} as={AppLink} to={item.href}>
+                key={item.href}
+                as={AppLink}
+                to={item.href}>
                 {content}
               </Menu.Item>
             );
@@ -53,7 +56,9 @@ export const Dropdown = memo((props: DropdownProps) => {
 
           return (
             <Menu.Item
-              key={String(item.content)} as={Fragment} disabled={item.disabled}>
+              key={String(item.content)}
+              as={Fragment}
+              disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

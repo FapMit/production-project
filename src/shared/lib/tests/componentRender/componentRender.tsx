@@ -21,7 +21,8 @@ export function componentRender(component: ReactNode, options: componentRenderOp
 
   return render(
     <MemoryRouter initialEntries={[route]}>
-      <StorePorvider asyncReducers={asyncReducers} initialState={initialState}>
+      <StorePorvider asyncReducers={asyncReducers}
+        initialState={initialState}>
         <I18nextProvider i18n={i18nForTests}>
           {component}
         </I18nextProvider>
