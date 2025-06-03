@@ -27,8 +27,6 @@ interface ListBoxProps {
   direction?: DropDownDirection;
 }
 
-
-
 export const ListBox = (props: ListBoxProps) => {
   const {
     className,
@@ -60,7 +58,10 @@ export const ListBox = (props: ListBoxProps) => {
         onChange={onChange}
       >
         <HListBox.Button
-          disabled={readonly} className={popupCls.trigger}>
+          disabled={readonly} 
+          className={popupCls.trigger}
+          as='div'
+        >
           <Button
             theme={ButtonTheme.OUTLINE}
             disabled={readonly}

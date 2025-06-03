@@ -7,7 +7,7 @@
     "start": "webpack serve --env port=3000",
     "start:dev": "concurrently -k -s first \"npm run start:dev:server\" \"npm run start\"",
     "start:vite": "vite",
-    "start:vite:dev": "concurrently -k -s first \"npm run start:dev:server\" \"npm run start:vite\"",
+    "start:dev:vite": "concurrently -k -s first \"npm run start:dev:server\" \"npm run start:vite\"",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-pi-ebon.vercel.app",
     "build:dev": "webpack --env mode=development",
