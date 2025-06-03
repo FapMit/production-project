@@ -10,6 +10,7 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getCommentError, getCommentText } from "../../model/selectors/commentsSelectors";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text, TextTheme } from "@/shared/ui/Text";
 
 interface CommentFormProps {
   className?: string;
@@ -27,7 +28,6 @@ export const CommentForm = (props: CommentFormProps) => {
   const { t } = useTranslation('comments');
 
   const text = useSelector(getCommentText);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const error = useSelector(getCommentError);
 
   const dispatch = useAppDispatch();
@@ -43,6 +43,10 @@ export const CommentForm = (props: CommentFormProps) => {
 
   if (isLoading) {
     return null
+  }
+
+  if (error) {
+    return <Text text={error} theme={TextTheme.ERROR} />
   }
 
   return (

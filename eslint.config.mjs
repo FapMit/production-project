@@ -3,8 +3,9 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import i18next from "eslint-plugin-i18next";
-import reactHooks from 'eslint-plugin-react-hooks';
+import reactHooks from "eslint-plugin-react-hooks";
 import testPlugin from "@fapmit/eslint-plugin-test-plugin";
+import unusedImports from "eslint-plugin-unused-imports";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -21,12 +22,13 @@ export default [
       },
     },
 
-    plugins: { 
+    plugins: {
       pluginJs: pluginJs,
-      'react-hooks': reactHooks,
-      'react': pluginReact,
-      'i18next': i18next,
-      'test-plugin': testPlugin
+      "react-hooks": reactHooks,
+      react: pluginReact,
+      i18next: i18next,
+      "test-plugin": testPlugin,
+      "unused-imports": unusedImports,
     },
 
     rules: {
@@ -38,7 +40,10 @@ export default [
       ],
       "import/prefer-default-export": "off",
       "no-unused-vars": "warn",
-      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
       indent: [2, 2],
       "react/jsx-indent": [2, 2],
       "react/jsx-indent-props": [2, 2],
@@ -53,15 +58,31 @@ export default [
       "max-len": ["error", { code: 200, ignoreComments: true }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
-      "test-plugin/path-cheker": ["error", {alias: '@'}],
-      "test-plugin/public-api-imports": ["error", {
-        alias: '@',
-        testFilesPatterns: ["**/*.test.*", "**/StoreDecorator.tsx"],
-      }],
-      "test-plugin/layer-imports": ["error", {
-        alias: '@',
-        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
-      }],
+      "test-plugin/path-cheker": ["error", { alias: "@" }],
+      "test-plugin/public-api-imports": [
+        "error",
+        {
+          alias: "@",
+          testFilesPatterns: ["**/*.test.*", "**/StoreDecorator.tsx"],
+        },
+      ],
+      "test-plugin/layer-imports": [
+        "error",
+        {
+          alias: "@",
+          ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+        },
+      ],
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
     },
   },
   ...tseslint.configs.recommended,
