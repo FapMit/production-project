@@ -2,7 +2,7 @@ module.exports = (layer, componentName) => `import type { Meta, StoryObj } from 
 
 import { ${componentName} } from './${componentName}';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
   title: '${layer}/${componentName}',

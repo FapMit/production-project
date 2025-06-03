@@ -1,6 +1,6 @@
 import { Reducer } from "@reduxjs/toolkit";
-import { ReduxStopreWithManagers } from "@/app/providers/StoreProvider";
-import { StateSchema, StateSchemaKey } from "@/app/providers/StoreProvider/config/StateSchema";
+import { ReduxStoreWithManagers } from "@/app/providers/StoreProvider";
+import { StateSchema, StateSchemaKey } from "@/app/providers/StoreProvider";
 import { ReactNode, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 
@@ -21,7 +21,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     removeAfterUnmount
   } = props;
 
-  const store = useStore() as ReduxStopreWithManagers;
+  const store = useStore() as ReduxStoreWithManagers;
   const dispatch = useDispatch();
 
   useEffect(() => {

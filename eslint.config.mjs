@@ -58,6 +58,10 @@ export default [
         alias: '@',
         testFilesPatterns: ["**/*.test.*", "**/StoreDecorator.tsx"],
       }],
+      "test-plugin/layer-imports": ["error", {
+        alias: '@',
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+      }],
     },
   },
   ...tseslint.configs.recommended,
