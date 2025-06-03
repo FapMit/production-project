@@ -54,6 +54,10 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
       "test-plugin/path-cheker": ["error", {alias: '@'}],
+      "test-plugin/public-api-imports": ["error", {
+        alias: '@',
+        testFilesPatterns: ["**/*.test.*", "**/StoreDecorator.tsx"],
+      }],
     },
   },
   ...tseslint.configs.recommended,
