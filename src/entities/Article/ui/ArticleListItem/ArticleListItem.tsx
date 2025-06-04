@@ -1,7 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
-import { RoutePath } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
@@ -15,6 +14,7 @@ import { ArticleBlockType } from "../../model/consts/articleConsts";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
 import { HStack } from "@/shared/ui/Stack";
+import { getRouteArticleDetails } from "@/shared/const/router";
 
 interface ArticleListItemProps {
   className?: string;
@@ -41,7 +41,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id}
+        to={getRouteArticleDetails(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
@@ -82,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className])}
     >
       <Card 

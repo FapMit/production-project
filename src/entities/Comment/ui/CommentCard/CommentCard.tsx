@@ -1,4 +1,3 @@
-import { RoutePath } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
@@ -8,6 +7,7 @@ import { Text, TextSize } from "@/shared/ui/Text";
 import { memo } from "react";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
+import { getRouteProfile } from "@/shared/const/router";
 
 interface CommentCardProps {
   className?: string;
@@ -48,7 +48,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       gap="8"
       className={classNames(cls.CommentCard, {}, [className])}>
       <AppLink className={cls.header}
-        to={`${RoutePath.profile}${comment.user.id}`}>
+        to={getRouteProfile(comment.user.id)}>
         <Avatar size={30}
           circle
           alt={comment.user.email}

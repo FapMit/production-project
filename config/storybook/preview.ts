@@ -28,6 +28,14 @@ export const globalTypes = {
 
 const preview: Preview = {
   parameters: {
+    themes: {
+      default: 'dark',
+      list: [
+        { name: 'light', value: Theme.LIGHT, color: '#ffffff' },
+        { name: 'dark', value: Theme.DARK, color: '#000000' },
+        { name: 'pink', value: Theme.PINK, color: '#ffb005' },
+      ],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -47,7 +55,7 @@ const preview: Preview = {
     TranslationDecorator,
     ThemeDecorator(Theme.LIGHT),
     StoreDecorator({}),
-    SuspenseDecorator
+    SuspenseDecorator,
   ],
   loaders: [mswLoader],
 };

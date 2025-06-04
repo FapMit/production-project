@@ -6,7 +6,12 @@ const config: StorybookConfig = {
   ],
   "addons": [
     "@storybook/addon-webpack5-compiler-swc",
-    "@storybook/addon-essentials",
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
     "@storybook/addon-onboarding",
     "@storybook/addon-queryparams",
     "@chromatic-com/storybook",
@@ -14,6 +19,7 @@ const config: StorybookConfig = {
     '@storybook/addon-webpack5-compiler-babel',
     'storybook-addon-mock/register',
     'storybook-addon-useragent',
+    'storybook-addon-themes',
   ],
   "framework": "@storybook/react-webpack5",
   staticDirs: ["../../public"],
