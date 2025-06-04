@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ArticleSortSelector } from './ArticleSortSelector';
-import { ArticleSortField } from "../../model/consts/articleConsts";
+import { ArticleSortField } from '@/entities/Article';
 
 const meta = {
   title: 'Entities/Article/ArticleSortSelector',
