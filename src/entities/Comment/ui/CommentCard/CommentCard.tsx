@@ -1,13 +1,13 @@
-import { memo } from "react";
 import { RoutePath } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Skeleton } from "@/shared/ui/Skeleton";
+import { VStack } from "@/shared/ui/Stack";
 import { Text, TextSize } from "@/shared/ui/Text";
+import { memo } from "react";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
-import { VStack } from "@/shared/ui/Stack";
 
 interface CommentCardProps {
   className?: string;
@@ -22,12 +22,15 @@ export const CommentCard = memo((props: CommentCardProps) => {
   if (isLoading) {
     return (
       <VStack max
+        gap="16"
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton maxWidth={30}
+            width={30}
             height={30}
             borderRadius={"50%"} />
           <Skeleton maxWidth={300}
+            width={300}
             height={16} />
         </div>
         <Skeleton maxWidth={'none'}

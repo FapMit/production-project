@@ -16,7 +16,7 @@ i18n
 
     react: { 
       useSuspense: false //   <---- this will do the magic
-    }
+    },
 
     // resources: { ru: { translations: {} } },
   });
