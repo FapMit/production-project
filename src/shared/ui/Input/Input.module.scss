@@ -35,10 +35,6 @@
   animation: blink .5s forwards infinite;
 }
 
-.readonly {
-  // color: var(--succes-dark-color);
-}
-
 @keyframes blink {
   0% {
     opacity: 0;
