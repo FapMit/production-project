@@ -897,8 +897,7 @@
       "password": "123",
       "roles": [
         "MANAGER"
-      ],
-      "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
+      ]
     }
   ],
   "profile": [
@@ -925,6 +924,17 @@
       "city": "Рязань",
       "email": "ivan@gmail.com",
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Глеб",
+      "lastname": "Глебов",
+      "age": 80,
+      "gender": "Мужской",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Новосибирск",
+      "email": "gleb@gmail.com"
     }
   ],
   "article-ratings": [
