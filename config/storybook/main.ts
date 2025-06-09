@@ -12,7 +12,6 @@ const config: StorybookConfig = {
         backgrounds: false,
       },
     },
-    "@storybook/addon-onboarding",
     "@storybook/addon-queryparams",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
