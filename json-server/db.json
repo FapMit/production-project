@@ -898,6 +898,14 @@
       "roles": [
         "MANAGER"
       ]
+    },
+    {
+      "id": "4",
+      "email": "test-user-e2e",
+      "password": "test-user-e2e",
+      "roles": [
+        "ADMIN"
+      ]
     }
   ],
   "profile": [
@@ -935,6 +943,17 @@
       "country": "Russia",
       "city": "Новосибирск",
       "email": "gleb@gmail.com"
+    },
+    {
+      "id": "4",
+      "firstname": "Test",
+      "lastname": "User",
+      "age": 10,
+      "gender": "Женский",
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Минск",
+      "email": "test@user.test"
     }
   ],
   "article-ratings": [
