@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отчет по тестам</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 2rem;
+      background-color: #313131;
+    }
+    .link {
+      font: 3em sans-serif;
+      color: #fff;
+      border: 1px solid #fff;
+      display: inline-block;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      transition: all .3s ease-in-out;
+    }
+    .link:hover {
+      background-color: #fff;
+      color: #313131;
+    }
+  </style>
 </head>
+
 <body>
-  <div style="display: flex; flex-direction:column; gap: 2rem">
-    <a href="./unit/report.html">Unit report</a>
-    <hr>
-    <a href=".loki/report.html">Screenshot report</a>
+  <div class="main">
+    <a class="link" href="./unit/report.html">Unit report</a>
+    <a class="link" href=".loki/report.html">Screenshot report</a>
   </div>
 </body>
+
 </html>
