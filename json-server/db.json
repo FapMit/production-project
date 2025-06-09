@@ -905,7 +905,8 @@
       "password": "test-user-e2e",
       "roles": [
         "ADMIN"
-      ]
+      ],
+      "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
     }
   ],
   "profile": [
@@ -953,7 +954,8 @@
       "currency": "RUB",
       "country": "Belarus",
       "city": "Минск",
-      "email": "test@user.test"
+      "email": "test@user.test",
+      "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
     }
   ],
   "article-ratings": [

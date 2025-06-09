@@ -23,7 +23,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
     return (
       <VStack max
         gap="16"
-        className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+        data-testid="CommentCard.Loading"
+      >
         <div className={cls.header}>
           <Skeleton maxWidth={30}
             width={30}
@@ -46,7 +48,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
   return (
     <VStack max
       gap="8"
-      className={classNames(cls.CommentCard, {}, [className])}>
+      className={classNames(cls.CommentCard, {}, [className])}
+      data-testid="CommentCard.Content"
+    >
       <AppLink className={cls.header}
         to={getRouteProfile(comment.user.id)}>
         <Avatar size={30}
