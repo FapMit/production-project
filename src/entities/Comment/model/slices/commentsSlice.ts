@@ -1,11 +1,12 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { buildSlice } from "@/shared/lib/store";
+import { PayloadAction } from "@reduxjs/toolkit";
 import { CommentsSchema } from "../types/commentsSchema";
 
 const initialState: CommentsSchema = {
   text: "",
 }
 
-export const commentSlice = createSlice({
+export const commentSlice = buildSlice({
   name: "Comment",
   initialState,
   reducers: {
@@ -15,5 +16,4 @@ export const commentSlice = createSlice({
   },
 });
 
-export const { actions: commentActions } = commentSlice;
-export const { reducer: commentReducer } = commentSlice;
+export const { actions: commentActions, reducer: commentReducer, useActions: useCommentActions } = commentSlice;
