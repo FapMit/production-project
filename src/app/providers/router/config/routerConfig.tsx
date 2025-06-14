@@ -1,13 +1,13 @@
-import { UserRole } from "@/entities/User";
-import { AboutPage } from "@/pages/AboutPage";
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
-import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage";
-import { ArticleEditPage } from "@/pages/ArticleEditPage";
-import { ArticlesPage } from "@/pages/ArticlesPage";
-import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { MainPage } from "@/pages/MainPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { ProfilePage } from "@/pages/ProfilePage";
+import { UserRole } from '@/entities/User';
+import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 import {
   AppRoutes,
   getRouteAbout,
@@ -19,19 +19,18 @@ import {
   getRouteForbidden,
   getRouteMain,
   getRouteNotFound,
-  getRouteProfile
-} from "@/shared/const/router";
-import { AppRoutesProps } from "@/shared/types/router";
-
+  getRouteProfile,
+} from '@/shared/const/router';
+import { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
     path: getRouteMain(),
-    element: <MainPage />
+    element: <MainPage />,
   },
   [AppRoutes.ABOUT]: {
     path: getRouteAbout(),
-    element: <AboutPage />
+    element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
     path: getRouteProfile(':id'),
@@ -62,16 +61,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteAdminPanel(),
     element: <AdminPanelPage />,
     authOnly: true,
-    roles: [UserRole.ADMIN, UserRole.MANAGER]
+    roles: [UserRole.ADMIN, UserRole.MANAGER],
   },
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
-    element: <ForbiddenPage />
+    element: <ForbiddenPage />,
   },
 
   // LAST
   [AppRoutes.NOT_FOUND]: {
     path: getRouteNotFound(),
-    element: <NotFoundPage />
+    element: <NotFoundPage />,
   },
 };

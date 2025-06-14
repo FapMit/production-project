@@ -1,1 +1,1 @@
-export { commentActions, commentReducer } from "./model/slices/commentsSlice";
+export { commentActions, commentReducer } from './model/slices/commentsSlice';

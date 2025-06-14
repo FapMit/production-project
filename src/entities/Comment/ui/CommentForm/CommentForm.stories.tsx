@@ -7,7 +7,7 @@ const meta = {
   title: 'Entities/Comment/CommentForm',
   component: CommentForm,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -19,14 +19,14 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   args: {
     isLoading: false,
-    onSendComment: () => {}
+    onSendComment: () => {},
   },
 };
 
 export const Dark: Story = {
   args: {
     isLoading: false,
-    onSendComment: () => {}
+    onSendComment: () => {},
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

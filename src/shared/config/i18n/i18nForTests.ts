@@ -14,8 +14,8 @@ i18n
       escapeValue: false, // not needed for react!!
     },
 
-    react: { 
-      useSuspense: false //   <---- this will do the magic
+    react: {
+      useSuspense: false, //   <---- this will do the magic
     },
 
     // resources: { ru: { translations: {} } },

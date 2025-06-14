@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Overlay',
   component: Overlay,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

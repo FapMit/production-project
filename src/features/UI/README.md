@@ -14,6 +14,6 @@
 
 `UISchema` - Тип скролла
 
-- Slice 
+- Slice
 
 `UIReducer, UIActions` - редюсер и экшены скролла

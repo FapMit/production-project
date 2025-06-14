@@ -6,10 +6,7 @@
   "views": 103000,
   "createdAt": "01.01.2025",
   "userId": "1",
-  "type": [
-    "IT",
-    "BUSINESS"
-  ],
+  "type": ["IT", "BUSINESS"],
   "blocks": [
     {
       "id": "1",
@@ -74,9 +71,7 @@
     "id": "1",
     "email": "admin",
     "password": "123",
-    "roles": [
-      "ADMIN"
-    ],
+    "roles": ["ADMIN"],
     "avatar": "https://cdn.vectorstock.com/i/500p/76/08/mysterious-man-in-a-hood-on-dark-background-vector-30927608.jpg"
   }
 }

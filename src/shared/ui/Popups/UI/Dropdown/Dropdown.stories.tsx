@@ -9,7 +9,7 @@ const meta = {
   title: 'Shared/Popups/Dropdown',
   component: Dropdown,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -22,17 +22,19 @@ export const Light: Story = {
   args: {
     items: [
       {
-        content: 'Первый элемент'
+        content: 'Первый элемент',
       },
       {
         content: 'Второй элемент',
-        disabled: true
+        disabled: true,
       },
       {
-        content: 'Третий элемент'
-      }
+        content: 'Третий элемент',
+      },
     ],
-    trigger: <Button theme={ButtonTheme.BACKGROUND}>{'Выпадающее меню'}</Button>
+    trigger: (
+      <Button theme={ButtonTheme.BACKGROUND}>{'Выпадающее меню'}</Button>
+    ),
   },
 };
 
@@ -40,17 +42,19 @@ export const Dark: Story = {
   args: {
     items: [
       {
-        content: 'Первый элемент'
+        content: 'Первый элемент',
       },
       {
         content: 'Второй элемент',
-        disabled: true
+        disabled: true,
       },
       {
-        content: 'Третий элемент'
-      }
+        content: 'Третий элемент',
+      },
     ],
-    trigger: <Button theme={ButtonTheme.BACKGROUND}>{'Выпадающее меню'}</Button>
+    trigger: (
+      <Button theme={ButtonTheme.BACKGROUND}>{'Выпадающее меню'}</Button>
+    ),
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

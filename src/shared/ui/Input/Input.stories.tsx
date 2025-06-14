@@ -7,12 +7,10 @@ const meta = {
   title: 'Shared/Input',
   component: Input,
   parameters: {
-    
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: { onClick: fn() },
 } satisfies Meta<typeof Input>;
 

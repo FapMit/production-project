@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Text',
   component: Text,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -20,14 +20,14 @@ type Story = StoryObj<typeof meta>;
 export const TitleAndDescriptionLight: Story = {
   args: {
     title: 'Title title title',
-    text: 'Text text text'
+    text: 'Text text text',
   },
 };
 
 export const TitleAndDescriptionDark: Story = {
   args: {
     title: 'Title title title',
-    text: 'Text text text'
+    text: 'Text text text',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -57,19 +57,19 @@ export const onlyTitleLight: Story = {
 export const onlyTitleDark: Story = {
   args: {
     title: 'Title title title',
-  },  
+  },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const onlyDescriptionLight: Story = {
   args: {
-    text: 'Text text text'
+    text: 'Text text text',
   },
 };
 
 export const onlyDescriptionDark: Story = {
   args: {
-    text: 'Text text text'
+    text: 'Text text text',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -78,7 +78,7 @@ export const SizeS: Story = {
   args: {
     title: 'Title title title',
     text: 'Text text text',
-    size: TextSize.S
+    size: TextSize.S,
   },
 };
 
@@ -86,7 +86,7 @@ export const SizeM: Story = {
   args: {
     title: 'Title title title',
     text: 'Text text text',
-    size: TextSize.M
+    size: TextSize.M,
   },
 };
 
@@ -94,7 +94,7 @@ export const SizeL: Story = {
   args: {
     title: 'Title title title',
     text: 'Text text text',
-    size: TextSize.L
+    size: TextSize.L,
   },
 };
 
@@ -102,6 +102,6 @@ export const SizeXL: Story = {
   args: {
     title: 'Title title title',
     text: 'Text text text',
-    size: TextSize.XL
+    size: TextSize.XL,
   },
 };

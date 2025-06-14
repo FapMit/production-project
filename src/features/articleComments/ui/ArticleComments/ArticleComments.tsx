@@ -6,7 +6,10 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { useAddArticleComment, useArticleComments } from '../../api/articleCommentsApi';
+import {
+  useAddArticleComment,
+  useArticleComments,
+} from '../../api/articleCommentsApi';
 import cls from './ArticleComments.module.scss';
 import { getArticleDetailsIsLoading } from '@/entities/Article';
 
@@ -20,22 +23,25 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   const { t } = useTranslation('comments');
 
   const { isLoading, data: comments, refetch } = useArticleComments(id);
-  const [addArticleComment, { }] = useAddArticleComment();
+  const [addArticleComment, {}] = useAddArticleComment();
   const userData = useSelector(getUserAuthData);
   const isPageLoading = useSelector(getArticleDetailsIsLoading);
 
-
-  const onSendComment = useCallback((text: string) => {
-    const commentInfo = { articleId: id, userId: userData?.id, text }
-    addArticleComment(commentInfo).then(() => refetch())
-  }, [addArticleComment, id, refetch, userData?.id])
+  const onSendComment = useCallback(
+    (text: string) => {
+      const commentInfo = { articleId: id, userId: userData?.id, text };
+      addArticleComment(commentInfo).then(() => refetch());
+    },
+    [addArticleComment, id, refetch, userData?.id],
+  );
 
   if (isPageLoading) {
     return null;
   }
 
   return (
-    <VStack max
+    <VStack
+      max
       gap='16'
       className={classNames('', {}, [className])}>
       <Text
@@ -44,13 +50,19 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
         className={cls.commentTitle}
       />
       <Suspense fallback={'Загрузка'}>
-        <CommentForm onSendComment={onSendComment}
-          isLoading={isLoading || false} />
+        <CommentForm
+          onSendComment={onSendComment}
+          isLoading={isLoading || false}
+        />
       </Suspense>
 
-      {comments && <CommentList isLoading={isLoading}
-        comments={comments}
-        className={cls.commentList} />}
+      {comments && (
+        <CommentList
+          isLoading={isLoading}
+          comments={comments}
+          className={cls.commentList}
+        />
+      )}
     </VStack>
   );
 });

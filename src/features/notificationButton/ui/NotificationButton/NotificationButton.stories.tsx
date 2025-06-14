@@ -6,30 +6,30 @@ import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';
 import { Notification } from '@/entities/Notification';
-import { http, HttpResponse } from 'msw'; 
+import { http, HttpResponse } from 'msw';
 
 const mockNotifications: Notification[] = [
   {
     id: '1',
     title: 'Заголовок 1',
-    description: 'Описание'
+    description: 'Описание',
   },
   {
     id: '2',
     title: 'Заголовок 2',
-    description: 'Описание'
+    description: 'Описание',
   },
   {
     id: '3',
     title: 'Заголовок 3',
-    description: 'Описание'
+    description: 'Описание',
   },
   {
     id: '4',
     title: 'Заголовок 4',
-    description: 'Описание'
+    description: 'Описание',
   },
-]
+];
 
 const meta = {
   title: 'Features/NotificationButton',
@@ -39,9 +39,7 @@ const meta = {
     msw: {
       handlers: [
         http.get(`${__API__}/notifications`, async () => {
-          return HttpResponse.json([
-            ...mockNotifications
-          ]);
+          return HttpResponse.json([...mockNotifications]);
         }),
       ],
     },
@@ -55,36 +53,52 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {
-    dropdownDir: 'bottom right'
+    dropdownDir: 'bottom right',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.USER] },
-    },
-  })]
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin@admin.ru',
+          roles: [UserRole.USER],
+        },
+      },
+    }),
+  ],
 };
 
 export const Mobile: Story = {
   args: {
-    dropdownDir: 'bottom right'
+    dropdownDir: 'bottom right',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.USER] },
-    },
-  })]
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin@admin.ru',
+          roles: [UserRole.USER],
+        },
+      },
+    }),
+  ],
 };
 
 export const Dark: Story = {
   args: {
-    dropdownDir: 'bottom right'
+    dropdownDir: 'bottom right',
   },
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       user: {
-        authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.USER] },
+        authData: {
+          id: '1',
+          email: 'admin@admin.ru',
+          roles: [UserRole.USER],
+        },
       },
-    })
+    }),
   ],
 };

@@ -8,7 +8,7 @@ const meta = {
   title: 'Features/AvatarDropdown',
   component: AvatarDropdown,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -19,22 +19,34 @@ type Story = StoryObj<typeof meta>;
 
 export const AdminAndManager: Story = {
   args: {
-    dropdownDir: 'bottom right'
+    dropdownDir: 'bottom right',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.ADMIN] },
-    },
-  })]
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin@admin.ru',
+          roles: [UserRole.ADMIN],
+        },
+      },
+    }),
+  ],
 };
 
 export const User: Story = {
   args: {
-    dropdownDir: 'bottom right'
+    dropdownDir: 'bottom right',
   },
-  decorators: [StoreDecorator({
-    user: {
-      authData: { id: '1', email: 'admin@admin.ru', roles: [UserRole.USER] },
-    },
-  })]
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin@admin.ru',
+          roles: [UserRole.USER],
+        },
+      },
+    }),
+  ],
 };

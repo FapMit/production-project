@@ -12,41 +12,50 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  decorators: [StoreDecorator({
-    user: {},
-  })],
+  decorators: [
+    StoreDecorator({
+      user: {},
+    }),
+  ],
 };
 export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: {},
-  })],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      user: {},
+    }),
+  ],
 };
 
 export const AuthLight: Story = {
-  decorators: [StoreDecorator({
-    user: {
-      authData: {
-        id: '1',
-        email: 'admin',
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin',
+        },
       },
-    },
-  })],
+    }),
+  ],
 };
 export const AuthDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: {
-      authData: {
-        id: '1',
-        email: 'admin',
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
+          email: 'admin',
+        },
       },
-    },
-  })],
+    }),
+  ],
 };

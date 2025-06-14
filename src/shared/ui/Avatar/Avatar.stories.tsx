@@ -11,10 +11,8 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
-  args: {
-  }
+  argTypes: {},
+  args: {},
 } satisfies Meta<typeof Avatar>;
 
 export default meta;

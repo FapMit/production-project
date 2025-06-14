@@ -8,7 +8,7 @@ const meta = {
   title: 'Entities/Comment/CommentCard',
   component: CommentCard,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -25,14 +25,14 @@ export const Light: Story = {
       user: {
         id: '1',
         email: 'email',
-      }
+      },
     },
   },
 };
 
 export const LightLoading: Story = {
   args: {
-    isLoading: true
+    isLoading: true,
   },
 };
 
@@ -44,7 +44,7 @@ export const Dark: Story = {
       user: {
         id: '1',
         email: 'email',
-      }
+      },
     },
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -52,7 +52,7 @@ export const Dark: Story = {
 
 export const DarkLoading: Story = {
   args: {
-    isLoading: true
+    isLoading: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -65,7 +65,7 @@ export const Pink: Story = {
       user: {
         id: '1',
         email: 'email',
-      }
+      },
     },
   },
   decorators: [ThemeDecorator(Theme.PINK)],
@@ -73,7 +73,7 @@ export const Pink: Story = {
 
 export const PinkLoading: Story = {
   args: {
-    isLoading: true
+    isLoading: true,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };

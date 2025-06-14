@@ -3,7 +3,7 @@ let currentArticleId = '';
 describe('Пользователь заходит на страницу статьи', () => {
   beforeEach(() => {
     cy.login();
-    cy.createArticle().then((article)=>{
+    cy.createArticle().then((article) => {
       currentArticleId = article.id;
       cy.visit(`/articles/${article.id}`);
     });
@@ -38,10 +38,12 @@ describe('Пользователь заходит на страницу стат
 
   it('и оценивает статью (на фикстурах)', () => {
     const rateCount = 3;
-    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
+    cy.intercept('GET', '**/articles/*', {
+      fixture: 'article-details.json',
+    });
     cy.getByTestId('ArticleDetails');
     cy.getByTestId('RatingCard').scrollIntoView();
     cy.setRate(rateCount, 'feedback');
     cy.get('[data-selected=true]').should('have.length', rateCount);
   });
-})
+});

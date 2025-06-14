@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Code',
   component: Code,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -43,17 +43,17 @@ const text = `export const Code = memo((props: CodeProps) => {
       </pre>
     </div>
   );
-});`
+});`;
 
 export const Light: Story = {
   args: {
-    text
+    text,
   },
 };
 
 export const Dark: Story = {
   args: {
-    text
+    text,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

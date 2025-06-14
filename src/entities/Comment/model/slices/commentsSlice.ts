@@ -1,13 +1,13 @@
-import { buildSlice } from "@/shared/lib/store";
-import { PayloadAction } from "@reduxjs/toolkit";
-import { CommentsSchema } from "../types/commentsSchema";
+import { buildSlice } from '@/shared/lib/store';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { CommentsSchema } from '../types/commentsSchema';
 
 const initialState: CommentsSchema = {
-  text: "",
-}
+  text: '',
+};
 
 export const commentSlice = buildSlice({
-  name: "Comment",
+  name: 'Comment',
   initialState,
   reducers: {
     setText: (state, action: PayloadAction<string>) => {
@@ -16,4 +16,8 @@ export const commentSlice = buildSlice({
   },
 });
 
-export const { actions: commentActions, reducer: commentReducer, useActions: useCommentActions } = commentSlice;
+export const {
+  actions: commentActions,
+  reducer: commentReducer,
+  useActions: useCommentActions,
+} = commentSlice;

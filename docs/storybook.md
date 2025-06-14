@@ -6,6 +6,7 @@
 Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
 
 Запустить сторибук можно командой:
+
 - `npm run storybook`
 
 Подробнее о [Storybook](/docs/storybook.md)
@@ -24,12 +25,10 @@ const meta = {
   title: 'Shared/Button',
   component: Button,
   parameters: {
-    
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 

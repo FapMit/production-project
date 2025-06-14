@@ -8,7 +8,7 @@ const meta = {
   title: 'Pages/AdminPanelPage',
   component: AdminPanelPage,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

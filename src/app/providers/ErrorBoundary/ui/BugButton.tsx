@@ -1,13 +1,13 @@
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Компонент для проверки работы ошибок
 export const BugButton = () => {
   const [error, setError] = useState<boolean>(false);
   const { t } = useTranslation();
 
-  const onThrowError = () => setError(true)
+  const onThrowError = () => setError(true);
 
   useEffect(() => {
     if (error) {
@@ -15,10 +15,11 @@ export const BugButton = () => {
     }
   }, [error]);
 
-  return ( 
-    <Button onClick={onThrowError}
+  return (
+    <Button
+      onClick={onThrowError}
       theme={ButtonTheme.OUTLINE}>
       {t('Вызвать ошибку')}
     </Button>
   );
-}
+};

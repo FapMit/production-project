@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Tabs',
   component: Tabs,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

@@ -9,7 +9,7 @@ const meta = {
   title: 'Entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -43,4 +43,3 @@ export const Pink: Story = {
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
-

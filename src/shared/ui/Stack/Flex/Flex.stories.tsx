@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Stack/Flex',
   component: Flex,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -17,7 +17,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const child = <><div>11111</div><div>2222222</div><div>3333333</div></>
+const child = (
+  <>
+    <div>11111</div>
+    <div>2222222</div>
+    <div>3333333</div>
+  </>
+);
 
 export const Row: Story = {
   args: {
@@ -31,7 +37,7 @@ export const RowGap4: Story = {
   args: {
     children: child,
     direction: 'row',
-    gap: '4'
+    gap: '4',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -40,7 +46,7 @@ export const RowGap8: Story = {
   args: {
     children: child,
     direction: 'row',
-    gap: '8'
+    gap: '8',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -49,7 +55,7 @@ export const RowGap16: Story = {
   args: {
     children: child,
     direction: 'row',
-    gap: '16'
+    gap: '16',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -58,7 +64,7 @@ export const RowGap32: Story = {
   args: {
     children: child,
     direction: 'row',
-    gap: '32'
+    gap: '32',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -85,7 +91,7 @@ export const rowJustifyCenter: Story = {
   args: {
     children: child,
     direction: 'row',
-    justify: 'center'
+    justify: 'center',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -94,7 +100,7 @@ export const rowJustifyStart: Story = {
   args: {
     children: child,
     direction: 'row',
-    justify: 'start'
+    justify: 'start',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -103,7 +109,7 @@ export const rowJustifyEnd: Story = {
   args: {
     children: child,
     direction: 'row',
-    justify: 'end'
+    justify: 'end',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -120,7 +126,7 @@ export const ColumnGap32: Story = {
   args: {
     children: child,
     direction: 'column',
-    gap: '32'
+    gap: '32',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -147,7 +153,7 @@ export const columnAlignCenter: Story = {
   args: {
     children: child,
     direction: 'column',
-    align: 'center'
+    align: 'center',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

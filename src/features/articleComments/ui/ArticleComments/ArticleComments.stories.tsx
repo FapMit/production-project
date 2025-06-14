@@ -8,7 +8,7 @@ const meta = {
   title: 'features/ArticleComments',
   component: ArticleComments,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

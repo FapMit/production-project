@@ -11,12 +11,10 @@ const formData = {
   currency: Currency.USD,
   firstname: 'Admin',
   lastname: 'Adminov',
-}
+};
 
 describe('fetchProfileData', () => {
-
   test('success', async () => {
-
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: formData }));
 

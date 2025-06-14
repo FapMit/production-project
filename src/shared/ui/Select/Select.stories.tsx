@@ -11,10 +11,8 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
-  args: {
-  }
+  argTypes: {},
+  args: {},
 } satisfies Meta<typeof Select>;
 
 export default meta;
@@ -27,7 +25,7 @@ export const Light: Story = {
       { value: '1', content: 'First' },
       { value: '2', content: 'Second' },
       { value: '3', content: 'Third' },
-    ]
+    ],
   },
 };
 
@@ -38,7 +36,7 @@ export const Dark: Story = {
       { value: '1', content: 'First' },
       { value: '2', content: 'Second' },
       { value: '3', content: 'Third' },
-    ]
+    ],
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

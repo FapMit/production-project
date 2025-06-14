@@ -9,7 +9,7 @@ const meta = {
   title: 'Entities/Currency/CurrencySelect',
   component: CurrencySelect,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
-  decorators: [StoreDecorator({})]
+  decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {

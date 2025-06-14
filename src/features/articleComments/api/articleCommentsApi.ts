@@ -7,19 +7,19 @@ const commentsApi = rtkApi.injectEndpoints({
         url: '/comments',
         params: {
           articleId,
-          _expand: 'user'
-        }
+          _expand: 'user',
+        },
       }),
     }),
     addArticleComment: build.mutation({
       query: (body) => ({
         url: '/comments',
         method: 'POST',
-        body
-      })
-    })
-  })
-})
+        body,
+      }),
+    }),
+  }),
+});
 
 export const useArticleComments = commentsApi.useGetArticleCommentsQuery;
 export const useAddArticleComment = commentsApi.useAddArticleCommentMutation;

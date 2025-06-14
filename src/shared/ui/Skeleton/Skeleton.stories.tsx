@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Skeleton',
   component: Skeleton,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

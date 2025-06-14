@@ -1,15 +1,15 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./PageLoader.module.scss";
-import { Loader } from "@/shared/ui/Loader";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './PageLoader.module.scss';
+import { Loader } from '@/shared/ui/Loader';
 
 interface PageLoaderProps {
   className?: string;
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => {
-  return ( 
+  return (
     <div className={classNames(cls.PageLoader, {}, [className])}>
-      <Loader/>
+      <Loader />
     </div>
   );
-}
+};

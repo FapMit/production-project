@@ -8,20 +8,20 @@ const mockNotifications: Notification[] = [
   {
     id: '1',
     title: 'Заголовок 1',
-    description: 'Описание'
+    description: 'Описание',
   },
   {
     id: '2',
     title: 'Заголовок 2',
-    description: 'Описание'
+    description: 'Описание',
   },
-]
+];
 
 const meta = {
   title: 'Entities/Notification/NotificationList',
   component: NotificationList,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -37,10 +37,8 @@ export const Light: Story = {
   parameters: {
     msw: {
       handlers: [
-        http.get(`${__API__}/notifications`,async () => {
-          return HttpResponse.json([
-            ...mockNotifications
-          ]);
+        http.get(`${__API__}/notifications`, async () => {
+          return HttpResponse.json([...mockNotifications]);
         }),
       ],
     },
@@ -54,7 +52,7 @@ export const LoadingAndNoNotifications: Story = {
   parameters: {
     msw: {
       handlers: [
-        http.get(`${__API__}/notifications`,async () => {
+        http.get(`${__API__}/notifications`, async () => {
           await delay(2000);
         }),
       ],

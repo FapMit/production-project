@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/AppImage',
   component: AppImage,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

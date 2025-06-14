@@ -1,12 +1,12 @@
-import { memo } from "react";
-import ListIcon from "@/shared/assets/icons/list.svg";
-import TileIcon from "@/shared/assets/icons/tile.svg";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { Icon } from "@/shared/ui/Icon";
-import cls from "./ArticleViewSelector.module.scss";
-import { HStack } from "@/shared/ui/Stack";
-import { ArticleView } from "@/entities/Article";
+import { memo } from 'react';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import TileIcon from '@/shared/assets/icons/tile.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import cls from './ArticleViewSelector.module.scss';
+import { HStack } from '@/shared/ui/Stack';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
   className?: string;
@@ -22,40 +22,36 @@ const viewTypes = [
   {
     view: ArticleView.TILE,
     icon: TileIcon,
-  }
-]
+  },
+];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const {
-    className,
-    view,
-    onViewClick
-  } = props;
+  const { className, view, onViewClick } = props;
 
   const onClick = (newView: ArticleView) => {
     return () => {
       onViewClick?.(newView);
-    }
-  }
+    };
+  };
 
   return (
-    <HStack gap="16"
+    <HStack
+      gap='16'
       className={classNames('', {}, [className])}>
-      {
-        viewTypes.map((viewType) => {
-          return (
-            <Button
-              onClick={onClick(viewType.view)}
-              key={viewType.view}
-            >
-              <Icon
-                Svg={viewType.icon}
-                className={classNames(cls.viewSvg, { [cls.selected]: viewType.view === view })}
-              />
-            </Button>
-          )
-        })
-      }
+      {viewTypes.map((viewType) => {
+        return (
+          <Button
+            onClick={onClick(viewType.view)}
+            key={viewType.view}>
+            <Icon
+              Svg={viewType.icon}
+              className={classNames(cls.viewSvg, {
+                [cls.selected]: viewType.view === view,
+              })}
+            />
+          </Button>
+        );
+      })}
     </HStack>
   );
 });

@@ -8,7 +8,7 @@ const meta = {
   title: 'Pages/ArticlesPage/ArticlesPageFilters',
   component: ArticlesPageFilters,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

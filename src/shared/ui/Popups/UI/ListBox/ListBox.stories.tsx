@@ -13,8 +13,12 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   decorators: [
-    Story => <div style={{padding: '100px'}}><Story/></div>
-  ]
+    (Story) => (
+      <div style={{ padding: '100px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof ListBox>;
 
 export default meta;
@@ -25,12 +29,12 @@ export const Light: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 2'
-      }
+        content: 'value 2',
+      },
     ],
     defaultValue: 'value 2',
     onChange: () => {},
@@ -42,16 +46,16 @@ export const Disabled: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 2'
-      }
+        content: 'value 2',
+      },
     ],
     defaultValue: 'value 2',
     onChange: () => {},
-    readonly: true
+    readonly: true,
   },
 };
 
@@ -60,12 +64,12 @@ export const WithLabel: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 2'
-      }
+        content: 'value 2',
+      },
     ],
     defaultValue: 'value 2',
     onChange: () => {},
@@ -78,12 +82,12 @@ export const Dark: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 2'
-      }
+        content: 'value 2',
+      },
     ],
     defaultValue: 'value 2',
     onChange: () => {},
@@ -96,12 +100,12 @@ export const BottomRight: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 212412412412441241'
-      }
+        content: 'value 212412412412441241',
+      },
     ],
     defaultValue: 'value 2',
     direction: 'bottom right',
@@ -115,12 +119,12 @@ export const BottomLeft: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 212412412412441241'
-      }
+        content: 'value 212412412412441241',
+      },
     ],
     defaultValue: 'value 2',
     direction: 'bottom left',
@@ -134,12 +138,12 @@ export const TopRight: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 212412412412441241'
-      }
+        content: 'value 212412412412441241',
+      },
     ],
     defaultValue: 'value 2',
     direction: 'top right',
@@ -153,12 +157,12 @@ export const TopLeft: Story = {
     items: [
       {
         value: 'value 1',
-        content: 'value 1'
+        content: 'value 1',
       },
       {
         value: 'value 2',
-        content: 'value 212412412412441241'
-      }
+        content: 'value 212412412412441241',
+      },
     ],
     defaultValue: 'value 2',
     direction: 'top left',

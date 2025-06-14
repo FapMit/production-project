@@ -1,13 +1,17 @@
-import { UserRole } from "@/entities/User";
-import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
-import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
-import { screen } from "@testing-library/react";
-import { AppRouter } from "./AppRouter";
+import { UserRole } from '@/entities/User';
+import {
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteProfile,
+} from '@/shared/const/router';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { screen } from '@testing-library/react';
+import { AppRouter } from './AppRouter';
 
 describe('app/router/AppRouter', () => {
   test('Страница должна отрендериться', async () => {
     componentRender(<AppRouter />, {
-      route: getRouteAbout()
+      route: getRouteAbout(),
     });
 
     const page = await screen.findByTestId('AboutPage');
@@ -16,7 +20,7 @@ describe('app/router/AppRouter', () => {
 
   test('Страница не найдена', async () => {
     componentRender(<AppRouter />, {
-      route: '/afasfas'
+      route: '/afasfas',
     });
 
     const page = await screen.findByTestId('NotFoundPage');
@@ -37,10 +41,9 @@ describe('app/router/AppRouter', () => {
       route: getRouteProfile('1'),
       initialState: {
         user: {
-          authData: {
-          },
-        }
-      }
+          authData: {},
+        },
+      },
     });
 
     const page = await screen.findByTestId('ProfilePage');
@@ -52,10 +55,9 @@ describe('app/router/AppRouter', () => {
       route: getRouteAdminPanel(),
       initialState: {
         user: {
-          authData: {
-          },
-        }
-      }
+          authData: {},
+        },
+      },
     });
 
     const page = await screen.findByTestId('ForbiddenPage');
@@ -70,8 +72,8 @@ describe('app/router/AppRouter', () => {
           authData: {
             roles: [UserRole.ADMIN],
           },
-        }
-      }
+        },
+      },
     });
 
     const page = await screen.findByTestId('AdminPanelPage');

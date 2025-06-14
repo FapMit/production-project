@@ -8,11 +8,11 @@ const notificationApi = rtkApi.injectEndpoints({
         url: '/notifications',
         params: {
           userId,
-          _expand: 'user'
-        }
+          _expand: 'user',
+        },
       }),
     }),
-  })
-})
+  }),
+});
 
 export const useNotifications = notificationApi.useGetUserNotificationsQuery;

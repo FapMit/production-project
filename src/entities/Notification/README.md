@@ -8,7 +8,7 @@
 
 - Components
 
-`NotificationList` -  Компонент со списком уведомленй
+`NotificationList` - Компонент со списком уведомленй
 
 - Types
 

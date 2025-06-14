@@ -8,7 +8,7 @@ const meta = {
   title: 'features/EditableProfileCard/EditableProfileCard',
   component: EditableProfileCard,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

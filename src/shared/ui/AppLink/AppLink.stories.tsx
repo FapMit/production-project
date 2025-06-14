@@ -11,11 +11,10 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: {
     to: '/',
-  }
+  },
 } satisfies Meta<typeof AppLink>;
 
 export default meta;

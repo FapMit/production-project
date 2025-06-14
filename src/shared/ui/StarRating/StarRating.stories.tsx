@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/StarRating',
   component: StarRating,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -18,13 +18,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-  },
+  args: {},
 };
 
 export const LightSelected3: Story = {
   args: {
-    selectedStars: 3
+    selectedStars: 3,
   },
 };
 

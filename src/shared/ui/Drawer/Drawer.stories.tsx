@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Drawer',
   component: Drawer,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

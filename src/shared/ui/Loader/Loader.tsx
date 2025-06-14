@@ -1,12 +1,12 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Loader.module.scss";
-import { HTMLAttributes } from "react";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Loader.module.scss';
+import { HTMLAttributes } from 'react';
 
 export enum LoaderSize {
   S = 'loader__s',
   M = 'loader__m',
   L = 'loader__l',
-  XL = 'loader__xl'
+  XL = 'loader__xl',
 }
 
 interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
@@ -23,20 +23,19 @@ export const Loader = (props: LoaderProps) => {
     ...otherProps
   } = props;
 
-  const mods: Record<string,boolean> = {
+  const mods: Record<string, boolean> = {
     [cls[size]]: true,
-    [cls['centered']]: centered
-  }
+    [cls['centered']]: centered,
+  };
 
-  return ( 
-    <div 
-      className={classNames(cls.Loader, mods, [className])} 
-      {...otherProps}
-    >
+  return (
+    <div
+      className={classNames(cls.Loader, mods, [className])}
+      {...otherProps}>
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
   );
-}
+};

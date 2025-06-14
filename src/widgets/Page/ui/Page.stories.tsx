@@ -9,7 +9,7 @@ const meta = {
   title: 'Shared/Page',
   component: Page,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -20,13 +20,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {
-    children: <div>{i18n.t('Page content')}</div>
+    children: <div>{i18n.t('Page content')}</div>,
   },
 };
 
 export const Dark: Story = {
   args: {
-    children: <div>{i18n.t('Page content')}</div>
+    children: <div>{i18n.t('Page content')}</div>,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

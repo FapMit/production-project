@@ -8,7 +8,7 @@ const meta = {
   title: 'Entities/Rating/RatingCard',
   component: RatingCard,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

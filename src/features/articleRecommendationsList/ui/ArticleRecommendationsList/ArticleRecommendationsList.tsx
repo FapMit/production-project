@@ -12,32 +12,34 @@ interface ArticleRecommendationsListProps {
   className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-  const { className } = props;
-  const { t } = useTranslation('articles');
+export const ArticleRecommendationsList = memo(
+  (props: ArticleRecommendationsListProps) => {
+    const { className } = props;
+    const { t } = useTranslation('articles');
 
-  const { data: articles, error } = useArticleRecommendationsList(6);
+    const { data: articles, error } = useArticleRecommendationsList(6);
 
-  const isPageLoading = useSelector(getArticleDetailsIsLoading);
+    const isPageLoading = useSelector(getArticleDetailsIsLoading);
 
-  if (isPageLoading || error || !articles) {
-    return null
-  }
+    if (isPageLoading || error || !articles) {
+      return null;
+    }
 
-  return (
-    <VStack gap='8'
-      className={classNames('', {}, [className])}
-      data-testid="ArticleRecommendationsList"  
-    >
-      <Text
-        size={TextSize.L}
-        title={t('Рекомендации')}
-      />
-      <ArticleList
-        className={cls.recommendations}
-        articles={articles}
-        target={'_blank'}
-      />
-    </VStack>
-  );
-});
+    return (
+      <VStack
+        gap='8'
+        className={classNames('', {}, [className])}
+        data-testid='ArticleRecommendationsList'>
+        <Text
+          size={TextSize.L}
+          title={t('Рекомендации')}
+        />
+        <ArticleList
+          className={cls.recommendations}
+          articles={articles}
+          target={'_blank'}
+        />
+      </VStack>
+    );
+  },
+);

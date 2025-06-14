@@ -9,7 +9,7 @@ const meta = {
   title: 'Entities/Article/ArticleSortSelector',
   component: ArticleSortSelector,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -32,4 +32,3 @@ export const Dark: Story = {
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
-

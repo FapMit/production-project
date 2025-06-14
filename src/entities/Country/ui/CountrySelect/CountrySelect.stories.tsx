@@ -8,7 +8,7 @@ const meta = {
   title: 'Entities/Country/CountrySelect',
   component: CountrySelect,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
-  decorators: [StoreDecorator({})]
+  decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {

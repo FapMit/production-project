@@ -8,7 +8,7 @@ const meta = {
   title: 'Entities/Notification/NotificationItem',
   component: NotificationItem,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -23,7 +23,7 @@ export const Light: Story = {
       id: '1',
       title: 'Выиграл в лотерею',
       description: 'Выиграл 10000 рублей',
-    }
+    },
   },
 };
 
@@ -33,7 +33,7 @@ export const Dark: Story = {
       id: '1',
       title: 'Выиграл в лотерею',
       description: 'Выиграл 10000 рублей',
-    }
+    },
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

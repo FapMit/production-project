@@ -10,7 +10,7 @@ const meta = {
   title: 'Entities/Article/ArticleTypeTabs',
   component: ArticleTypeTabs,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

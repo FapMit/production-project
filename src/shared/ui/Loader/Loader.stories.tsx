@@ -11,46 +11,42 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
-  args: {
-  }
+  argTypes: {},
+  args: {},
 } satisfies Meta<typeof Loader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {
-  },
+  args: {},
 };
 
 export const Dark: Story = {
-  args: {
-  },
+  args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const LightS: Story = {
   args: {
-    size: LoaderSize.S
+    size: LoaderSize.S,
   },
 };
 
 export const LightM: Story = {
   args: {
-    size: LoaderSize.M
+    size: LoaderSize.M,
   },
 };
 
 export const LightL: Story = {
   args: {
-    size: LoaderSize.L
+    size: LoaderSize.L,
   },
 };
 
 export const LightXL: Story = {
   args: {
-    size: LoaderSize.XL
+    size: LoaderSize.XL,
   },
 };

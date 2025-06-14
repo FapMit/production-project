@@ -8,7 +8,7 @@ const meta = {
   title: 'Entities/Comment/CommentList',
   component: CommentList,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -26,7 +26,7 @@ export const Light: Story = {
         user: {
           id: '1',
           email: 'email',
-        }
+        },
       },
       {
         id: '2',
@@ -34,9 +34,9 @@ export const Light: Story = {
         user: {
           id: '2',
           email: 'email2',
-        }
+        },
       },
-    ]
+    ],
   },
 };
 
@@ -49,7 +49,7 @@ export const Dark: Story = {
         user: {
           id: '1',
           email: 'email',
-        }
+        },
       },
       {
         id: '2',
@@ -57,9 +57,9 @@ export const Dark: Story = {
         user: {
           id: '2',
           email: 'email2',
-        }
+        },
       },
-    ]
+    ],
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -73,7 +73,7 @@ export const Pink: Story = {
         user: {
           id: '1',
           email: 'email',
-        }
+        },
       },
       {
         id: '2',
@@ -81,21 +81,19 @@ export const Pink: Story = {
         user: {
           id: '2',
           email: 'email2',
-        }
+        },
       },
-    ]
+    ],
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };
 
 export const NoComments: Story = {
-  args: {
-
-  },
+  args: {},
 };
 
 export const Loading: Story = {
   args: {
-    isLoading: true
+    isLoading: true,
   },
 };

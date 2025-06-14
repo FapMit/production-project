@@ -9,7 +9,7 @@ const meta = {
   title: 'Pages/ArticleDetailsPage/Header',
   component: ArticleDetailsPageHeader,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -23,22 +23,23 @@ export const Light: Story = {
 };
 
 export const LightCanEdit: Story = {
-  args: {
-  },
-  decorators: [StoreDecorator({
-    articleDetails: {
-      data: {
-        user: {
-          id: '1'
-        }
-      }
-    },
-    user: {
-      authData: {
-        id: '1'
-      }
-    }
-  })],
+  args: {},
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        data: {
+          user: {
+            id: '1',
+          },
+        },
+      },
+      user: {
+        authData: {
+          id: '1',
+        },
+      },
+    }),
+  ],
 };
 
 export const Dark: Story = {

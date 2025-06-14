@@ -3,7 +3,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleInfiniteList from './ArticleInfiniteList';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import { Article, ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import {
+  Article,
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+} from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { http, HttpResponse } from 'msw';
 
@@ -17,7 +22,7 @@ const mockArticles: Article[] = [
     createdAt: '26.02.2022',
     type: [],
     blocks: [],
-    user: { id: '1', email: 'admin' }
+    user: { id: '1', email: 'admin' },
   },
   {
     id: '2',
@@ -28,16 +33,15 @@ const mockArticles: Article[] = [
     createdAt: '26.02.2022',
     type: [],
     blocks: [],
-    user: { id: '1', email: 'admin' }
-  }
-]
-
+    user: { id: '1', email: 'admin' },
+  },
+];
 
 const meta = {
   title: 'Pages/ArticlesPage/ArticleInfiniteList',
   component: ArticleInfiniteList,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -60,7 +64,7 @@ export const Light: Story = {
   decorators: [
     StoreDecorator({
       user: {
-        authData: { id: '1' }
+        authData: { id: '1' },
       },
       articlesPage: {
         isLoading: false,

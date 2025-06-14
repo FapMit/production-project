@@ -11,7 +11,7 @@ const meta = {
   title: 'Pages/ProfilePage',
   component: ProfilePage,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -28,24 +28,29 @@ const data = {
   currency: Currency.USD,
   firstname: 'Admin',
   lastname: 'Adminov',
-}
+};
 
 export const Light: Story = {
   args: {},
-  decorators: [StoreDecorator({
-    profile: {
-      form: data,
-      readonly: true,
-    }
-  })]
+  decorators: [
+    StoreDecorator({
+      profile: {
+        form: data,
+        readonly: true,
+      },
+    }),
+  ],
 };
 
 export const Dark: Story = {
   args: {},
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-      form: data,
-      readonly: true,
-    }
-  })],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      profile: {
+        form: data,
+        readonly: true,
+      },
+    }),
+  ],
 };

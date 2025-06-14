@@ -7,12 +7,10 @@ const meta = {
   title: 'Features/LoginForm',
   component: LoginForm,
   parameters: {
-
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: {},
 } satisfies Meta<typeof LoginForm>;
 
@@ -21,27 +19,33 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    onSuccess: () => { }
+    onSuccess: () => {},
   },
-  decorators: [StoreDecorator({
-    loginForm: { email: 'admin', password: '123' }
-  })]
+  decorators: [
+    StoreDecorator({
+      loginForm: { email: 'admin', password: '123' },
+    }),
+  ],
 };
 
 export const withError: Story = {
   args: {
-    onSuccess: () => { }
+    onSuccess: () => {},
   },
-  decorators: [StoreDecorator({
-    loginForm: { email: 'admin', password: '123', error: 'Ошибка' }
-  })]
+  decorators: [
+    StoreDecorator({
+      loginForm: { email: 'admin', password: '123', error: 'Ошибка' },
+    }),
+  ],
 };
 
 export const loading: Story = {
   args: {
-    onSuccess: () => { }
+    onSuccess: () => {},
   },
-  decorators: [StoreDecorator({
-    loginForm: { email: 'admin', password: '123', isLoading: true }
-  })]
+  decorators: [
+    StoreDecorator({
+      loginForm: { email: 'admin', password: '123', isLoading: true },
+    }),
+  ],
 };

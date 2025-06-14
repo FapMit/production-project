@@ -8,7 +8,7 @@ const meta = {
   title: 'Pages/ArticleEditPage',
   component: ArticleEditPage,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

@@ -1,16 +1,16 @@
-import { NotificationList } from "@/entities/Notification";
-import { getUserAuthData } from "@/entities/User";
-import { memo, useCallback, useState } from "react";
-import { BrowserView, MobileView } from "react-device-detect";
-import { useSelector } from "react-redux";
-import NotificationsIcon from "@/shared/assets/icons/notifications.svg";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { Drawer } from "@/shared/ui/Drawer";
-import { Icon } from "@/shared/ui/Icon";
-import { Popover } from "@/shared/ui/Popups";
-import cls from "./NotificationButton.module.scss";
-import { DropDownDirection } from "@/shared/types/ui";
+import { NotificationList } from '@/entities/Notification';
+import { getUserAuthData } from '@/entities/User';
+import { memo, useCallback, useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { useSelector } from 'react-redux';
+import NotificationsIcon from '@/shared/assets/icons/notifications.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Icon } from '@/shared/ui/Icon';
+import { Popover } from '@/shared/ui/Popups';
+import cls from './NotificationButton.module.scss';
+import { DropDownDirection } from '@/shared/types/ui';
 
 interface NotificationButtonProps {
   className?: string;
@@ -18,7 +18,7 @@ interface NotificationButtonProps {
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className, dropdownDir = "bottom left" } = props;
+  const { className, dropdownDir = 'bottom left' } = props;
 
   const authData = useSelector(getUserAuthData);
 
@@ -32,11 +32,14 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     setIsOpen(false);
   }, []);
 
-  const trigger =
-    <Button onClick={onOpenDrawer} >
-      <Icon Svg={NotificationsIcon}
-        className={cls.icon} />
+  const trigger = (
+    <Button onClick={onOpenDrawer}>
+      <Icon
+        Svg={NotificationsIcon}
+        className={cls.icon}
+      />
     </Button>
+  );
 
   if (!authData) {
     return null;
@@ -48,23 +51,23 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <Popover
           className={classNames(cls.NotificationButton, {}, [className])}
           trigger={trigger}
-          direction={dropdownDir}
-        >
-          <NotificationList id={authData.id}
-            className={cls.notifications} />
+          direction={dropdownDir}>
+          <NotificationList
+            id={authData.id}
+            className={cls.notifications}
+          />
         </Popover>
       </BrowserView>
 
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen}
+        <Drawer
+          isOpen={isOpen}
           onClose={onCloseDrawer}
-          lazy >
+          lazy>
           <NotificationList id={authData.id} />
-        </Drawer >
+        </Drawer>
       </MobileView>
     </>
   );
-
-
 });

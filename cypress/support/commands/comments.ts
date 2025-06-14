@@ -1,4 +1,3 @@
-
 export const addComment = (text: string) => {
   cy.getByTestId('CommentForm.Input').type(text);
   cy.getByTestId('CommentForm.SendButton').click();

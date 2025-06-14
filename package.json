@@ -11,6 +11,7 @@
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-pi-ebon.vercel.app",
     "build:dev": "webpack --env mode=development",
+    "prettier": "npx prettier **/*.{ts,tsx,json} --write ",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:css": "npx stylelint \"**/*.scss\"",
@@ -29,7 +30,10 @@
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint"
+    "**/*.{ts,tsx}": [
+      "eslint",
+      "prettier --list-different"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -56,6 +60,7 @@
     "@storybook/react": "^8.6.6",
     "@storybook/react-webpack5": "^8.6.14",
     "@storybook/test": "^8.6.6",
+    "@stylistic/eslint-plugin": "^4.4.1",
     "@stylistic/eslint-plugin-jsx": "^4.4.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -77,9 +82,11 @@
     "cypress": "^14.4.1",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-i18next": "^6.1.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.11.4",
@@ -99,6 +106,7 @@
     "mini-css-extract-plugin": "^2.5.3",
     "msw": "^2.8.4",
     "msw-storybook-addon": "^2.0.4",
+    "prettier": "3.5.3",
     "react-refresh": "^0.16.0",
     "react-refresh-typescript": "^2.0.10",
     "reg-cli": "^0.18.10",
@@ -110,6 +118,7 @@
     "storybook-addon-themes": "^6.1.0",
     "style-loader": "^3.3.1",
     "stylelint": "^16.15.0",
+    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard-scss": "^14.0.0",
     "ts-loader": "^9.2.6",
     "ts-morph": "^26.0.0",

@@ -8,7 +8,7 @@ const meta = {
   title: 'Pages/AboutPage',
   component: AboutPage,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

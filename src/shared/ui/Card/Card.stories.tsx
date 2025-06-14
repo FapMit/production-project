@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Card',
   component: Card,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -19,13 +19,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {
-    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quas.',
+    children:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quas.',
   },
 };
 
 export const Dark: Story = {
   args: {
-    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quas.',
+    children:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quas.',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

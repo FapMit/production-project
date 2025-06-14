@@ -10,7 +10,7 @@ const meta = {
   title: 'Entities/Profile/ProfileCard',
   component: ProfileCard,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -27,7 +27,7 @@ const profileData = {
   currency: Currency.USD,
   firstname: 'Admin',
   lastname: 'Adminov',
-}
+};
 
 export const Light: Story = {
   args: {
@@ -50,7 +50,7 @@ export const WithoutData: Story = {
 export const CanChange: Story = {
   args: {
     data: profileData,
-    readonly: false
+    readonly: false,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

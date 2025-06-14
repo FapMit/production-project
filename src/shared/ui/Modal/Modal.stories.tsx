@@ -8,7 +8,7 @@ const meta = {
   title: 'Shared/Modal',
   component: Modal,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
@@ -20,14 +20,14 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isOpen: true
+    isOpen: true,
   },
 };
 
 export const Dark: Story = {
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isOpen: true
+    isOpen: true,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -35,7 +35,7 @@ export const Dark: Story = {
 export const Pink: Story = {
   args: {
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isOpen: true
+    isOpen: true,
   },
   decorators: [ThemeDecorator(Theme.PINK)],
 };

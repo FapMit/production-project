@@ -14,31 +14,26 @@ const meta = {
   decorators: [
     StoreDecorator({
       user: {
-        authData: { id: '1' }
-      }
+        authData: { id: '1' },
+      },
     }),
   ],
-
 } satisfies Meta<typeof ArticleRating>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const WithoutRate: Story = {
-  args: {
-  },
+  args: {},
 };
 
 export const WithRate: Story = {
-  args: {
-  },
+  args: {},
   parameters: {
     msw: {
       handlers: [
         http.get(`${__API__}/article-ratings`, () => {
-          return HttpResponse.json([
-            { rate: 3, feedback: 'Great article!' },
-          ]);
+          return HttpResponse.json([{ rate: 3, feedback: 'Great article!' }]);
         }),
       ],
     },

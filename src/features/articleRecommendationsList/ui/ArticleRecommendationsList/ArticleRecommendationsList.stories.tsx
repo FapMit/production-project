@@ -14,8 +14,8 @@ const article: Article = {
   createdAt: '26.02.2022',
   user: { id: '1', email: 'admin' },
   type: [],
-  blocks: []
-}
+  blocks: [],
+};
 
 const meta = {
   title: 'features/ArticleRecommendationsList',

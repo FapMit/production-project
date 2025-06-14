@@ -16,7 +16,7 @@ const mockArticles: Article[] = [
     createdAt: '26.02.2022',
     type: [],
     blocks: [],
-    user: { id: '1', email: 'admin' }
+    user: { id: '1', email: 'admin' },
   },
   {
     id: '2',
@@ -27,9 +27,9 @@ const mockArticles: Article[] = [
     createdAt: '26.02.2022',
     type: [],
     blocks: [],
-    user: { id: '1', email: 'admin' }
-  }
-]
+    user: { id: '1', email: 'admin' },
+  },
+];
 
 const meta = {
   title: 'Pages/ArticlesPage/ArticlesPage',
@@ -45,9 +45,12 @@ const meta = {
     },
     msw: {
       handlers: [
-        http.get(`${__API__}/articles?_expand=user&_limit=9&_page=1&_sort=created&_order=asc`, () => {
-          return HttpResponse.json(mockArticles);
-        }),
+        http.get(
+          `${__API__}/articles?_expand=user&_limit=9&_page=1&_sort=created&_order=asc`,
+          () => {
+            return HttpResponse.json(mockArticles);
+          },
+        ),
       ],
     },
   },

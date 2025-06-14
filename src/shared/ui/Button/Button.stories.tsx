@@ -9,12 +9,10 @@ const meta = {
   title: 'Shared/Button',
   component: Button,
   parameters: {
-    
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -75,9 +73,7 @@ export const OutlineDark: Story = {
     children: 'Кнопка обводка темная',
     theme: ButtonTheme.OUTLINE,
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK)
-  ]
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const BackgroundTheme: Story = {
@@ -171,6 +167,6 @@ export const Disabled: Story = {
     children: 'Дисаблет',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     size: ButtonSize.L,
-    disabled: true
+    disabled: true,
   },
 };

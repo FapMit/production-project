@@ -1,13 +1,13 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink } from "@/shared/ui/AppLink";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { VStack } from "@/shared/ui/Stack";
-import { Text, TextSize } from "@/shared/ui/Text";
-import { memo } from "react";
-import { Comment } from "../../model/types/comment";
-import cls from "./CommentCard.module.scss";
-import { getRouteProfile } from "@/shared/const/router";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { memo } from 'react';
+import { Comment } from '../../model/types/comment';
+import cls from './CommentCard.module.scss';
+import { getRouteProfile } from '@/shared/const/router';
 
 interface CommentCardProps {
   className?: string;
@@ -16,29 +16,34 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-  const { className, comment, isLoading } = props
-
+  const { className, comment, isLoading } = props;
 
   if (isLoading) {
     return (
-      <VStack max
-        gap="16"
+      <VStack
+        max
+        gap='16'
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
-        data-testid="CommentCard.Loading"
-      >
+        data-testid='CommentCard.Loading'>
         <div className={cls.header}>
-          <Skeleton maxWidth={30}
+          <Skeleton
+            maxWidth={30}
             width={30}
             height={30}
-            borderRadius={"50%"} />
-          <Skeleton maxWidth={300}
+            borderRadius={'50%'}
+          />
+          <Skeleton
+            maxWidth={300}
             width={300}
-            height={16} />
+            height={16}
+          />
         </div>
-        <Skeleton maxWidth={'none'}
-          height={50} />
+        <Skeleton
+          maxWidth={'none'}
+          height={50}
+        />
       </VStack>
-    )
+    );
   }
 
   if (!comment) {
@@ -46,19 +51,24 @@ export const CommentCard = memo((props: CommentCardProps) => {
   }
 
   return (
-    <VStack max
-      gap="8"
+    <VStack
+      max
+      gap='8'
       className={classNames(cls.CommentCard, {}, [className])}
-      data-testid="CommentCard.Content"
-    >
-      <AppLink className={cls.header}
+      data-testid='CommentCard.Content'>
+      <AppLink
+        className={cls.header}
         to={getRouteProfile(comment.user.id)}>
-        <Avatar size={30}
+        <Avatar
+          size={30}
           circle
           alt={comment.user.email}
-          src={comment.user.avatar} />
-        <Text title={comment.user.email}
-          size={TextSize.S} />
+          src={comment.user.avatar}
+        />
+        <Text
+          title={comment.user.email}
+          size={TextSize.S}
+        />
       </AppLink>
       <Text text={comment.text} />
     </VStack>
