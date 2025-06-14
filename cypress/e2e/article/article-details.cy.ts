@@ -35,4 +35,13 @@ describe('Пользователь заходит на страницу стат
     cy.setRate(rateCount, 'feedback');
     cy.get('[data-selected=true]').should('have.length', rateCount);
   });
+
+  it('и оценивает статью (на фикстурах)', () => {
+    const rateCount = 3;
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
+    cy.getByTestId('ArticleDetails');
+    cy.getByTestId('RatingCard').scrollIntoView();
+    cy.setRate(rateCount, 'feedback');
+    cy.get('[data-selected=true]').should('have.length', rateCount);
+  });
 })

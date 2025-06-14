@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
-import { RatingCard } from '@/entities/Rating';
-import { useArticleRating, useRateArticle } from '../../api/articleRatingApi';
-import { getUserAuthData } from '@/entities/User';
-import { useSelector } from 'react-redux';
 import { getArticleDetailsIsLoading } from '@/entities/Article';
+import { RatingCard } from '@/entities/Rating';
+import { getUserAuthData } from '@/entities/User';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useArticleRating, useRateArticle } from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
   className?: string;
@@ -52,8 +52,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const rating = data?.[0];
 
   return (
-    <RatingCard
-      className={className}
+    <RatingCard className={className}
       title={t('Оцените статью')}
       feedbackTitle={t('Оставьте свой отзыв о статье, это поможет нам улучшить качество')}
       hasFeedback
