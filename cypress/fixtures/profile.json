@@ -1,0 +1,12 @@
+{
+  "id": "1",
+  "firstname": "Test",
+  "lastname": "User",
+  "age": 10,
+  "gender": "Женский",
+  "currency": "RUB",
+  "country": "Belarus",
+  "city": "Минск",
+  "email": "test@user.test",
+  "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
+}
