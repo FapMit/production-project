@@ -835,6 +835,9 @@
       "email": "admin",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://cdn.vectorstock.com/i/500p/76/08/mysterious-man-in-a-hood-on-dark-background-vector-30927608.jpg"
     },
     {
@@ -842,19 +845,28 @@
       "email": "user",
       "password": "123",
       "roles": ["USER"],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
     },
     {
       "id": "3",
       "email": "manager",
       "password": "123",
-      "roles": ["MANAGER"]
+      "roles": ["MANAGER"],
+      "features": {
+        "isArticleRatingEnabled": false
+      }
     },
     {
       "id": "4",
       "email": "test-user-e2e",
       "password": "test-user-e2e",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
     }
   ],

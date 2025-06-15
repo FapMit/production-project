@@ -13,6 +13,7 @@ import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
+import { getFeatureFlag } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -26,6 +27,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
 
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+
   return (
     <DynamicModuleLoader
       reducers={reducers}
@@ -35,7 +38,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         data-testid='ArticleDetailsPage'>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        <ArticleRating articleId={id} />
+        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
         <ArticleRecommendationsList />
         <ArticleComments id={id} />
       </Page>
