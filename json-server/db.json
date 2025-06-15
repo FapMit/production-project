@@ -42,7 +42,10 @@
       "views": 103000,
       "createdAt": "01.01.2025",
       "userId": "1",
-      "type": ["IT", "BUSINESS"],
+      "type": [
+        "IT",
+        "BUSINESS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -112,7 +115,10 @@
       "views": 300,
       "createdAt": "05.01.2025",
       "userId": "2",
-      "type": ["IT", "ECONOMY"],
+      "type": [
+        "IT",
+        "ECONOMY"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -139,7 +145,10 @@
       "views": 241,
       "createdAt": "09.02.2025",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -209,7 +218,9 @@
       "views": 1000,
       "createdAt": "10.03.2025",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -236,7 +247,10 @@
       "views": 1500,
       "createdAt": "25.03.2025",
       "userId": "2",
-      "type": ["IT", "BUSINESS"],
+      "type": [
+        "IT",
+        "BUSINESS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -263,7 +277,9 @@
       "views": 7,
       "createdAt": "01.02.2025",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -333,7 +349,10 @@
       "views": 5000,
       "createdAt": "10.02.2025",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -360,7 +379,9 @@
       "views": 333,
       "createdAt": "15.02.2025",
       "userId": "2",
-      "type": ["ECONOMY"],
+      "type": [
+        "ECONOMY"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -387,7 +408,9 @@
       "views": 56000,
       "createdAt": "23.02.2025",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -457,7 +480,10 @@
       "views": 1500,
       "createdAt": "25.02.2025",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -484,7 +510,10 @@
       "views": 7700,
       "createdAt": "01.03.2025",
       "userId": "2",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -511,7 +540,9 @@
       "views": 1345,
       "createdAt": "03.03.2025",
       "userId": "1",
-      "type": ["BUSINESS"],
+      "type": [
+        "BUSINESS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -581,7 +612,10 @@
       "views": 13330,
       "createdAt": "16.03.2025",
       "userId": "1",
-      "type": ["IT", "BUSINESS"],
+      "type": [
+        "IT",
+        "BUSINESS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -608,7 +642,10 @@
       "views": 5550,
       "createdAt": "06.04.2025",
       "userId": "2",
-      "type": ["IT", "BUSINESS"],
+      "type": [
+        "IT",
+        "BUSINESS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -635,7 +672,10 @@
       "views": 444,
       "createdAt": "18.04.2025",
       "userId": "1",
-      "type": ["IT", "ECONOMY"],
+      "type": [
+        "IT",
+        "ECONOMY"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -705,7 +745,10 @@
       "views": 1111,
       "createdAt": "01.05.2025",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -834,7 +877,9 @@
       "id": "1",
       "email": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true
       },
@@ -844,7 +889,9 @@
       "id": "2",
       "email": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": false
       },
@@ -854,7 +901,9 @@
       "id": "3",
       "email": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "features": {
         "isArticleRatingEnabled": false
       }
@@ -863,7 +912,9 @@
       "id": "4",
       "email": "test-user-e2e",
       "password": "test-user-e2e",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true
       },
@@ -972,6 +1023,12 @@
       "rate": 3,
       "feedback": "",
       "id": "W91eY2l"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 3,
+      "id": "fMwgT02"
     }
   ]
 }

@@ -13,7 +13,9 @@ import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
+import { Text, TextAlign } from '@/shared/ui/Text';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -27,7 +29,18 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
 
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+  const rating = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => (
+      <Card>
+        <Text
+          align={TextAlign.CENTER}
+          title='Оценить статью пока нельзя'
+        />
+      </Card>
+    ),
+  });
 
   return (
     <DynamicModuleLoader
@@ -38,7 +51,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         data-testid='ArticleDetailsPage'>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+        {rating}
         <ArticleRecommendationsList />
         <ArticleComments id={id} />
       </Page>
