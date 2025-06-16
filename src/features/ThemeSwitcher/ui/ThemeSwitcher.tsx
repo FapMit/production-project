@@ -4,10 +4,12 @@ import LightIcon from '@/shared/assets/icons/themeLight.svg';
 import DarkIcon from '@/shared/assets/icons/themeDark.svg';
 import PinkIcon from '@/shared/assets/icons/themePink.svg';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Theme } from '@/shared/const/theme';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { saveJsonSettings } from '@/entities/User';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -15,6 +17,14 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
+  const dispatch = useAppDispatch();
+
+  const toggleThemeHandler = useCallback(() => {
+    toggleTheme((newTheme) => {
+      console.log('тема поменялась на ' + newTheme);
+      dispatch(saveJsonSettings({ theme: newTheme }));
+    });
+  }, [dispatch, toggleTheme]);
 
   let themeIcon;
 
@@ -39,7 +49,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       size={ButtonSize.L}
       square
       className={classNames(cls.ThemeProvider, {}, [className])}
-      onClick={toggleTheme}>
+      onClick={toggleThemeHandler}>
       {themeIcon}
     </Button>
   );

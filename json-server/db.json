@@ -883,6 +883,11 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_pink_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBennOpened": false
+      },
       "avatar": "https://cdn.vectorstock.com/i/500p/76/08/mysterious-man-in-a-hood-on-dark-background-vector-30927608.jpg"
     },
     {
@@ -895,6 +900,11 @@
       "features": {
         "isArticleRatingEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBennOpened": false
+      },
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
     },
     {
@@ -906,6 +916,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBennOpened": false
       }
     },
     {
@@ -917,6 +932,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBennOpened": false
       },
       "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
     }
