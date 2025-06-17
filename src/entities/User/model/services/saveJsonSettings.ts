@@ -20,12 +20,12 @@ export const saveJsonSettings = createAsyncThunk<
   }
 
   try {
-    const response = await dispatch(setJsonSettingsMutation(
-      {
+    const response = await dispatch(
+      setJsonSettingsMutation({
         userId: uesrData.id,
-        jsonSettings: { ...currentSettings, ...newJsonSettings }
-      }
-    )).unwrap();
+        jsonSettings: { ...currentSettings, ...newJsonSettings },
+      }),
+    ).unwrap();
     if (!response.jsonSettings) {
       return rejectWithValue(i18n.t('error'));
     }

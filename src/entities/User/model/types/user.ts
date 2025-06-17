@@ -2,8 +2,6 @@ import { FeatureFlags } from '@/shared/types/featureFlags';
 import { UserRole } from '../consts/userConsts';
 import { JsonSettings } from './jsonSettings';
 
-
-
 export interface User {
   id: string;
   email: string;
