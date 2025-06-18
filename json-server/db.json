@@ -884,7 +884,7 @@
         "isArticleRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_pink_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBennOpened": false,
         "isArticlesPageWasOpened": true
