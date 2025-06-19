@@ -2,10 +2,10 @@ import { memo } from 'react';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import TileIcon from '@/shared/assets/icons/tile.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
+import { Button } from '@/shared/ui/deprecated/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import cls from './ArticleViewSelector.module.scss';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {

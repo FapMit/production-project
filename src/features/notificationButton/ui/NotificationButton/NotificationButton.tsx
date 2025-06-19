@@ -5,10 +5,10 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import NotificationsIcon from '@/shared/assets/icons/notifications.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Icon } from '@/shared/ui/Icon';
-import { Popover } from '@/shared/ui/Popups';
+import { Button } from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Popover } from '@/shared/ui/deprecated/Popups';
 import cls from './NotificationButton.module.scss';
 import { DropDownDirection } from '@/shared/types/ui';
 

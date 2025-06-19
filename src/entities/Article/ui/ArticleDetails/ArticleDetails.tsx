@@ -1,9 +1,14 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import {
+  Text,
+  TextAlign,
+  TextSize,
+  TextTheme,
+} from '@/shared/ui/deprecated/Text';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -20,7 +25,7 @@ import cls from './ArticleDetails.module.scss';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleBlock } from '../../model/types/Article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';

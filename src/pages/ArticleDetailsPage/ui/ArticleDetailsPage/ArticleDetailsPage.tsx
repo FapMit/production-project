@@ -14,8 +14,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/Card';
-import { Text, TextAlign } from '@/shared/ui/Text';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
 
 interface ArticleDetailsPageProps {
   className?: string;

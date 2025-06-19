@@ -6,8 +6,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from '@/shared/types/sort';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -18,7 +18,7 @@ import {
 import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
