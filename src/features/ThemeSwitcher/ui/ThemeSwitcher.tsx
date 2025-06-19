@@ -26,20 +26,44 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     });
   }, [dispatch, toggleTheme]);
 
-  let themeIcon;
+  let ThemeIcon;
 
   switch (theme) {
     case Theme.LIGHT:
-      themeIcon = <Icon Svg={DarkIcon} />;
+      ThemeIcon = (
+        <Icon
+          Svg={DarkIcon}
+          width={32}
+          height={32}
+        />
+      );
       break;
     case Theme.DARK:
-      themeIcon = <Icon Svg={PinkIcon} />;
+      ThemeIcon = (
+        <Icon
+          Svg={PinkIcon}
+          width={32}
+          height={32}
+        />
+      );
       break;
     case Theme.PINK:
-      themeIcon = <Icon Svg={LightIcon} />;
+      ThemeIcon = (
+        <Icon
+          Svg={LightIcon}
+          width={32}
+          height={32}
+        />
+      );
       break;
     default:
-      themeIcon = <Icon Svg={DarkIcon} />;
+      ThemeIcon = (
+        <Icon
+          Svg={DarkIcon}
+          width={32}
+          height={32}
+        />
+      );
       break;
   }
 
@@ -50,7 +74,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       square
       className={classNames(cls.ThemeProvider, {}, [className])}
       onClick={toggleThemeHandler}>
-      {themeIcon}
+      {ThemeIcon}
     </Button>
   );
 });

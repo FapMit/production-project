@@ -17,7 +17,11 @@ export const AppLogo = (props: AppLogoProps) => {
       className={classNames(cls.appLogoWrapper, {}, [className])}>
       <div className={cls.gradientBig}></div>
       <div className={cls.gradientSmall}></div>
-      <AppLogoSvg className={cls.appLogo} />
+      <AppLogoSvg
+        className={cls.appLogo}
+        width={60}
+        height={60}
+      />
     </HStack>
   );
 };

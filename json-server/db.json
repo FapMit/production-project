@@ -877,7 +877,9 @@
       "id": "1",
       "email": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true,
         "isAppRedesigned": true
@@ -892,7 +894,9 @@
       "id": "2",
       "email": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": false
       },
@@ -906,7 +910,9 @@
       "id": "3",
       "email": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "features": {
         "isArticleRatingEnabled": false
       },
@@ -919,7 +925,9 @@
       "id": "4",
       "email": "test-user-e2e",
       "password": "test-user-e2e",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true
       },

@@ -48,6 +48,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
               className={classNames(cls.viewSvg, {
                 [cls.selected]: viewType.view === view,
               })}
+              width={32}
+              height={32}
             />
           </Button>
         );
