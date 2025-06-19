@@ -17,6 +17,15 @@ body {
   width: 100%;
 }
 
+.app_redisigned {
+  font: var(--font-l-redisigned);
+  background-color: var(--bg-redesigned);
+  color: var(--text-redesigned);
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
 .app_modal,
 .app_drawer {
   font: var(--font-l);

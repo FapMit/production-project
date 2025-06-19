@@ -877,16 +877,13 @@
       "id": "1",
       "email": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
-        "isFirstVisit": true,
-        "settingsPageHasBennOpened": false,
+        "theme": "app_dark_theme",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://cdn.vectorstock.com/i/500p/76/08/mysterious-man-in-a-hood-on-dark-background-vector-30927608.jpg"
@@ -895,16 +892,12 @@
       "id": "2",
       "email": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "features": {
         "isArticleRatingEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_pink_theme",
-        "isFirstVisit": true,
-        "settingsPageHasBennOpened": false,
+        "theme": "app_light_theme",
         "isArticlesPageWasOpened": true
       },
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
@@ -913,16 +906,12 @@
       "id": "3",
       "email": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "features": {
         "isArticleRatingEnabled": false
       },
       "jsonSettings": {
         "theme": "app_dark_theme",
-        "isFirstVisit": true,
-        "settingsPageHasBennOpened": false,
         "isArticlesPageWasOpened": true
       }
     },
@@ -930,16 +919,12 @@
       "id": "4",
       "email": "test-user-e2e",
       "password": "test-user-e2e",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "features": {
         "isArticleRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
-        "isFirstVisit": true,
-        "settingsPageHasBennOpened": false
+        "theme": "app_dark_theme"
       },
       "avatar": "https://static-00.iconduck.com/assets.00/cypress-icon-2048x2048-swmlmjca.png"
     }

@@ -7,6 +7,15 @@
   transition: max-width .3s ease-in-out;
 }
 
+.Sidebar_Redisigned {
+  max-width: var(--sidebar-width-redisigned);
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: var(--light-bg-redesigned);
+  border-radius: var(--sidebar-border-radius-redisigned);
+  transition: max-width .3s ease-in-out;
+  overflow: hidden;
+}
 .switchers {
   position: absolute;
   bottom: 20px;
@@ -57,4 +66,15 @@
   right: -32px;
   bottom: 32px;
   z-index: var(--collapse-btn-z-index);
+}
+.collapseBtn_Redisigned {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: var(--collapse-btn-z-index);
+}
+
+.appLogo {
+  padding-top: 20px;
 }

@@ -15,7 +15,7 @@
   --font-size-2xl: 40px;
   --font-line-2xl: 48px;
   --font-2xl: var(--font-size-2xl) / var(--font-line-2xl) var(--font-family-main);
-  
+
   // Размеры
   --navbar-height: 50px;
   --sidebar-width: 300px;
@@ -31,5 +31,17 @@
   --error-light-color: #f00;
   --error-dark-color: #ce0505;
   --succes-light-color: #0f0;
-  --succes-dark-color:#147614;
+  --succes-dark-color: #147614;
+  
+    // redisigned
+    --font-family-text-redisigned: 'Nunito Sans', sans-serif;
+    --font-family-title-redisigned: 'Roboto', sans-serif;
+    --font-s-redisigned: var(--font-size-s) / var(--font-line-s) var(--font-family-text-redisigned);
+    --font-m-redisigned: var(--font-size-m) / var(--font-line-m) var(--font-family-text-redisigned);
+    --font-l-redisigned: var(--font-size-l) / var(--font-line-l) var(--font-family-title-redisigned);
+    --font-xl-redisigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-title-redisigned);
+    --font-2xl-redisigned: var(--font-size-2xl) / var(--font-line-2xl) var(--font-family-title-redisigned);
+  
+    --sidebar-width-redisigned: 220px;
+    --sidebar-border-radius-redisigned: 32px;
 }

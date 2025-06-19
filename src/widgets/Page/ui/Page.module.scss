@@ -8,6 +8,9 @@
   scrollbar-color: var(--inverted-bg-color) var(--bg-color);
 }
 
+.PageRedesigned {
+  overflow-y: auto;
+}
 .pageContainer {  
   max-width: 1460px;
   width: 100%;

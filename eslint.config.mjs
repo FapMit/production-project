@@ -37,8 +37,8 @@ export default [
 
     rules: {
       // '@stylistic/indent': ['error', 2],
-      // '@stylistic/jsx/jsx-max-props-per-line': ['error', { maximum: 3 }],
-      // indent: [2, 2],
+      // '@stylistic/jsx/jsx-max-props-per-line': ['error', { maximum: 1 }],
+      // indent: ['error', 2],
       // "react/jsx-indent": [2, 2],
       // "react/jsx-indent-props": [2, 2],
       // "max-len": ["error", { code: 200, ignoreComments: true }],

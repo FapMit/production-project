@@ -1,10 +1,21 @@
-:root:has(.app_light_theme){
-  --bg-color: #cecece;  
+:root:has(.app_light_theme) {
+  --bg-color: #cecece;
   --inverted-bg-color: #1c1c1c;
   --primary-color: #574e4d;
   --inverted-primary-color: #f80;
   --secondary-color: #000;
   --inverted-secondary-color: #fff;
+
+  // redesigned
+  --dark-bg-redesigned: #FFF;
+  --bg-redesigned: #EFF5F6;
+  --light-bg-redesigned: #E2EEF1;
+  --text-redesigned: #141C1F;
+  --hint-redesigned: #ADBCC0;
+  --cancel-redesigned: #F77;
+  --save-redesigned: #62DE85;
+  --icon-redesigned: #5ED3F3;
+  --accent-redesigned: #00C8FF;
 
   // skeleton
   --skeleton-color: #fff;
