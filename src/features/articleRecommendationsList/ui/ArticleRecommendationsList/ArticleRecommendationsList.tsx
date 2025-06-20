@@ -3,7 +3,7 @@ import { useArticleRecommendationsList } from '../../api/articleRecommendationsA
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import cls from './ArticleRecommendationsList.module.scss';
 import { useSelector } from 'react-redux';
@@ -27,9 +27,10 @@ export const ArticleRecommendationsList = memo(
 
     return (
       <VStack
-        gap='8'
+        gap="8"
         className={classNames('', {}, [className])}
-        data-testid='ArticleRecommendationsList'>
+        data-testid="ArticleRecommendationsList"
+      >
         <Text
           size={TextSize.L}
           title={t('Рекомендации')}

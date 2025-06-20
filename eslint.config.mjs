@@ -30,14 +30,13 @@ export default [
       i18next: i18next,
       'test-plugin': testPlugin,
       'unused-imports': unusedImports,
-      // '@stylistic/jsx': stylisticJsx,
       'eslint-plugin-prettier': eslintPluginPrettierRecommended,
       '@stylistic': stylistic,
     },
 
     rules: {
-      // '@stylistic/indent': ['error', 2],
-      // '@stylistic/jsx/jsx-max-props-per-line': ['error', { maximum: 1 }],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/jsx-max-props-per-line': ['error', { maximum: 2 }],
       // indent: ['error', 2],
       // "react/jsx-indent": [2, 2],
       // "react/jsx-indent-props": [2, 2],

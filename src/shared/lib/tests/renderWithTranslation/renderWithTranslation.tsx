@@ -5,7 +5,7 @@ import i18nForTests from '@/shared/config/i18n/i18nForTests';
 
 export function renderWithTranslation(component: ReactNode) {
   return render(
-    <Suspense fallback=''>
+    <Suspense fallback="">
       <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
     </Suspense>,
   );

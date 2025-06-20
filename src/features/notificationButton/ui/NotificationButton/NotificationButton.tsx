@@ -53,19 +53,15 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         <Popover
           className={classNames(cls.NotificationButton, {}, [className])}
           trigger={trigger}
-          direction={dropdownDir}>
-          <NotificationList
-            id={authData.id}
-            className={cls.notifications}
-          />
+          direction={dropdownDir}
+        >
+          <NotificationList id={authData.id} className={cls.notifications} />
         </Popover>
       </BrowserView>
 
       <MobileView>
         {trigger}
-        <Drawer
-          isOpen={isOpen}
-          onClose={onCloseDrawer}
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}
           lazy>
           <NotificationList id={authData.id} />
         </Drawer>

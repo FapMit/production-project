@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/deprecated/Button';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import cls from './ArticleViewSelector.module.scss';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
@@ -36,13 +36,15 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 
   return (
     <HStack
-      gap='16'
-      className={classNames('', {}, [className])}>
+      gap="16"
+      className={classNames('', {}, [className])}
+    >
       {viewTypes.map((viewType) => {
         return (
           <Button
             onClick={onClick(viewType.view)}
-            key={viewType.view}>
+            key={viewType.view}
+          >
             <Icon
               Svg={viewType.icon}
               className={classNames(cls.viewSvg, {

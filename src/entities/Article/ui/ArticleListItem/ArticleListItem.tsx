@@ -8,7 +8,7 @@ import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -39,7 +39,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     />
   );
   const views = (
-    <HStack gap='8'>
+    <HStack gap="8">
       <Text
         text={String(article.views)}
         className={cls.views}
@@ -58,7 +58,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         target={target}
         to={getRouteArticleDetails(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-        data-testid='ArticleListItem'>
+        data-testid="ArticleListItem"
+      >
         <Card className={cls.card}>
           <div className={cls.header}>
             <Avatar
@@ -108,7 +109,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           )}
           <HStack
             max
-            justify='between'>
+            justify="between"
+          >
             <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее...')}</Button>
             {views}
           </HStack>
@@ -122,7 +124,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       target={target}
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className])}
-      data-testid='ArticleListItem'>
+      data-testid="ArticleListItem"
+    >
       <Card className={classNames(cls.card, {}, [className, cls[view]])}>
         <div className={cls.imageWrapper}>
           <AppImage

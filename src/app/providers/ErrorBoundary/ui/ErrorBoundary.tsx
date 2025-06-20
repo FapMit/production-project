@@ -38,7 +38,7 @@ export class ErrorBoundary extends Component<
     if (hasError) {
       // You can render any custom fallback UI
       return (
-        <Suspense fallback=''>
+        <Suspense fallback="">
           <PageError />
         </Suspense>
       );

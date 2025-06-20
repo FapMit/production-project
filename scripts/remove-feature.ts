@@ -75,7 +75,7 @@ const replaceToggleFunction = (node: Node) => {
   if (featureState === 'off' && offFunction) {
     node.replaceWithText(offFunction?.getBody().getText() ?? '');
   }
-}
+};
 
 const getAttributeNodeByName = (
   jsxAttributes: JsxAttribute[],
@@ -129,7 +129,10 @@ files.forEach((sourceFile) => {
       replaceToggleFunction(node);
     }
 
-    if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
+    if (
+      node.isKind(SyntaxKind.JsxSelfClosingElement) &&
+      isToggleComponent(node)
+    ) {
       replaceComponent(node);
     }
   });

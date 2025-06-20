@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { memo } from 'react';
 import { Comment } from '../../model/types/comment';
@@ -22,9 +22,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
     return (
       <VStack
         max
-        gap='16'
+        gap="16"
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
-        data-testid='CommentCard.Loading'>
+        data-testid="CommentCard.Loading"
+      >
         <div className={cls.header}>
           <Skeleton
             maxWidth={30}
@@ -53,12 +54,14 @@ export const CommentCard = memo((props: CommentCardProps) => {
   return (
     <VStack
       max
-      gap='8'
+      gap="8"
       className={classNames(cls.CommentCard, {}, [className])}
-      data-testid='CommentCard.Content'>
+      data-testid="CommentCard.Content"
+    >
       <AppLink
         className={cls.header}
-        to={getRouteProfile(comment.user.id)}>
+        to={getRouteProfile(comment.user.id)}
+      >
         <Avatar
           size={30}
           circle

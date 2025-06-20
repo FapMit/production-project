@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
 import { Button, ButtonTheme } from '../../../Button/Button';
 import { Icon } from '../../../Icon/Icon';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
@@ -47,21 +47,24 @@ export const ListBox = (props: ListBoxProps) => {
   const optionsClasses = [mapDirectionClass[direction]];
 
   return (
-    <HStack gap='8'>
+    <HStack gap="8">
       {label && <span className={cls.Label}>{label + '>'}</span>}
       <HListBox
         disabled={readonly}
         as={'div'}
         className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={value}
-        onChange={onChange}>
+        onChange={onChange}
+      >
         <HListBox.Button
           className={popupCls.trigger}
-          as='div'>
+          as="div"
+        >
           <Button
             theme={ButtonTheme.OUTLINE}
             disabled={readonly}
-            className={cls.buttonInner}>
+            className={cls.buttonInner}
+          >
             {value ?? defaultValue}
             <Icon
               Svg={ArrowIcon}
@@ -70,20 +73,23 @@ export const ListBox = (props: ListBoxProps) => {
           </Button>
         </HListBox.Button>
         <HListBox.Options
-          className={classNames(cls.options, {}, optionsClasses)}>
+          className={classNames(cls.options, {}, optionsClasses)}
+        >
           {items.map((item) => (
             <HListBox.Option
               key={item.value}
               value={item.value}
               disabled={item.disabled}
-              as={Fragment}>
+              as={Fragment}
+            >
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.item, {
                     [cls.selected]: selected,
                     [cls.active]: active,
                     [cls.disabled]: item.disabled,
-                  })}>
+                  })}
+                >
                   {item.content}
                 </li>
               )}

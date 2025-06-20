@@ -1,26 +1,29 @@
 import AppLogoSvg from '@/shared/assets/icons/logotype.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { HStack } from '../../deprecated/Stack';
+import { HStack } from '../Stack';
 import cls from './AppLogo.module.scss';
 
 interface AppLogoProps {
   className?: string;
+  size?: number;
 }
 
 export const AppLogo = (props: AppLogoProps) => {
-  const { className } = props;
+  const { className, size = 50 } = props;
 
   return (
     <HStack
       max
-      justify='center'
-      className={classNames(cls.appLogoWrapper, {}, [className])}>
+      justify="center"
+      className={classNames(cls.appLogoWrapper, {}, [className])}
+    >
       <div className={cls.gradientBig}></div>
       <div className={cls.gradientSmall}></div>
       <AppLogoSvg
         className={cls.appLogo}
-        width={60}
-        height={60}
+        style={{ maxWidth: size, maxHeight: size }}
+        // width={size}
+        // height={size}
       />
     </HStack>
   );

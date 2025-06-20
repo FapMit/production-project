@@ -3,7 +3,7 @@ import { Button, ButtonTheme } from './Button';
 
 describe('Button', () => {
   test('test render', () => {
-    render(<Button className='test'>test</Button>);
+    render(<Button className="test">test</Button>);
     expect(screen.getByText('test')).toBeInTheDocument();
   });
 

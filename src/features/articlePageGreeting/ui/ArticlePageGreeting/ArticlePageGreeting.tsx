@@ -30,9 +30,7 @@ export const ArticlePageGreeting = memo(() => {
 
   if (isMobile) {
     return (
-      <Drawer
-        lazy
-        onClose={onClose}
+      <Drawer lazy onClose={onClose}
         isOpen={isOpen}>
         {text}
       </Drawer>
@@ -40,9 +38,7 @@ export const ArticlePageGreeting = memo(() => {
   }
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
+    <Modal isOpen={isOpen} onClose={onClose}
       lazy>
       {text}
     </Modal>

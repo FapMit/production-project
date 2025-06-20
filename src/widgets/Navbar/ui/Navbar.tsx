@@ -4,7 +4,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -32,12 +32,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <ToggleFeatures
-        feature='isAppRedesigned'
+        feature="isAppRedesigned"
         on={
           <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
             <HStack
-              gap='16'
-              className={cls.actions}>
+              gap="16"
+              className={cls.actions}
+            >
               <NotificationButton />
               <AvatarDropdown />
             </HStack>
@@ -57,8 +58,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           {t('Создать статью')}
         </AppLink> */}
             <HStack
-              gap='16'
-              className={cls.actions}>
+              gap="16"
+              className={cls.actions}
+            >
               <NotificationButton />
               <AvatarDropdown />
             </HStack>
@@ -77,7 +79,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         onClick={onShow}
-        className={cls.link}>
+        className={cls.link}
+      >
         {t('Войти')}
       </Button>
 

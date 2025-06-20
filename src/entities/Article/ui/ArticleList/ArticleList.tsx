@@ -24,12 +24,7 @@ interface ArticleListProps {
 const getSkeletons = (view: ArticleView) => {
   return new Array(view === ArticleView.TILE ? 9 : 3)
     .fill(0)
-    .map((item, index) => (
-      <ArticleListItemSkeleton
-        key={index}
-        view={view}
-      />
-    ));
+    .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 };
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -57,7 +52,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
   return (
     <div
       className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-      data-testid='ArticleList'>
+      data-testid="ArticleList"
+    >
       {articles.map((article) => (
         <ArticleListItem
           article={article}

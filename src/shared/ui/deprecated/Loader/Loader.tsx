@@ -34,9 +34,7 @@ export const Loader = (props: LoaderProps) => {
   };
 
   return (
-    <div
-      className={classNames(cls.Loader, mods, [className])}
-      {...otherProps}>
+    <div className={classNames(cls.Loader, mods, [className])} {...otherProps}>
       <div></div>
       <div></div>
       <div></div>

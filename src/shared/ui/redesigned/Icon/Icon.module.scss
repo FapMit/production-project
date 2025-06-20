@@ -1,0 +1,22 @@
+.Icon {
+  color: var(--icon-redesigned);
+  transition: all 0.3s ease-in-out;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover .Icon {
+    color: var(--accent-redesigned);
+  }
+}

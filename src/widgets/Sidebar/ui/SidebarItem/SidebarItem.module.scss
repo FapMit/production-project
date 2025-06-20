@@ -1,8 +1,4 @@
 .link {
-//   display: flex;
-//   gap: 10px;
-//   justify-content: center;
-//   align-items: center;
   white-space: nowrap;
 
   & span {
@@ -15,11 +11,43 @@
     padding: 3px;
     fill: var(--inverted-primary-color);
   }
+
+  &.collapsed span {
+    opacity: 0;
+    display: none;
+    transition:
+      opacity 0.3s ease-in-out,
+      display 1s;
+  }
 }
 
+.linkRedesigned {
+  white-space: nowrap;
+  width: 100%;
 
-.link.collapsed  span {
-  opacity: 0;
-  display: none;
-  transition: opacity .3s ease-in-out, display 1s;
+  .svgIcon {
+    margin-left: 9px;
+    min-width: max-content;
+  }
+
+  & span {
+    opacity: 1;
+  }
+
+  &:hover svg {
+    color: var(--accent-redesigned);
+  }
+
+  &.collapsed span {
+    opacity: 0;
+    width: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &.linkActive {
+    background: linear-gradient(89.97deg, #1d59ff4d 1.15%, rgb(94 211 243 / 0%) 99.97%);
+    border-left: 2px solid rgb(94 211 243 / 100%);
+    color: var(--accent-redesigned);
+    padding: 8px 0;
+  }
 }

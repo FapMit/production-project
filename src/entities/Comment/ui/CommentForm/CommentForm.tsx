@@ -5,7 +5,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -66,21 +66,24 @@ export const CommentForm = (props: CommentFormProps) => {
   return (
     <DynamicModuleLoader
       reducers={reducers}
-      removeAfterUnmount>
+      removeAfterUnmount
+    >
       <HStack
         className={classNames(cls.CommentForm, {}, [className])}
-        data-testid='CommentForm'>
+        data-testid="CommentForm"
+      >
         <Input
           className={cls.input}
           placeholder={t('Введите текст')}
           value={text}
           onChange={onCommentTextChange}
-          data-testid='CommentForm.Input'
+          data-testid="CommentForm.Input"
         />
         <Button
           onClick={onSendHandler}
           theme={ButtonTheme.OUTLINE}
-          data-testid='CommentForm.SendButton'>
+          data-testid="CommentForm.SendButton"
+        >
           {t('Отправить')}
         </Button>
       </HStack>

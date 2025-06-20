@@ -27,7 +27,8 @@ export const Code = memo((props: CodeProps) => {
       <Button
         className={cls.copyBtn}
         theme={ButtonTheme.CLEAR}
-        onClick={onCopy}>
+        onClick={onCopy}
+      >
         <CopyIcon />
       </Button>
       <pre className={cls.Code}>

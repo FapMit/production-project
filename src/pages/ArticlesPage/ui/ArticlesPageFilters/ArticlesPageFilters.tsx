@@ -18,7 +18,7 @@ import {
 import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
@@ -89,14 +89,16 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
   return (
     <VStack
-      gap='16'
+      gap="16"
       max
-      className={classNames(cls.ArticlesPageFilters, {}, [className])}>
+      className={classNames(cls.ArticlesPageFilters, {}, [className])}
+    >
       <HStack
-        justify='between'
-        align='center'
-        gap='16'
-        max>
+        justify="between"
+        align="center"
+        gap="16"
+        max
+      >
         <ArticleSortSelector
           order={order}
           sort={sort}

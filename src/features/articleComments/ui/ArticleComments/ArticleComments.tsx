@@ -4,7 +4,7 @@ import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import {
   useAddArticleComment,
@@ -42,8 +42,9 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   return (
     <VStack
       max
-      gap='16'
-      className={classNames('', {}, [className])}>
+      gap="16"
+      className={classNames('', {}, [className])}
+    >
       <Text
         size={TextSize.L}
         title={t('Комментарии')}

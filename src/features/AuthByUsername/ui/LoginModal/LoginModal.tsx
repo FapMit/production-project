@@ -13,9 +13,7 @@ export const LoginModal = (props: LoginModalProps) => {
   const { onClose, isOpen } = props;
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
+    <Modal isOpen={isOpen} onClose={onClose}
       lazy>
       <Suspense
         fallback={
@@ -27,7 +25,8 @@ export const LoginModal = (props: LoginModalProps) => {
             }}
             size={LoaderSize.L}
           />
-        }>
+        }
+      >
         <LoginForm onSuccess={onClose} />
       </Suspense>
     </Modal>

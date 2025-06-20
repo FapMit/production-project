@@ -40,7 +40,7 @@ const options = {
 
 describe('features/EditableProfileCard', () => {
   test('Readonly mode must change', async () => {
-    componentRender(<EditableProfileCard id='1' />, options);
+    componentRender(<EditableProfileCard id="1" />, options);
     await userEvent.click(
       screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
@@ -50,7 +50,7 @@ describe('features/EditableProfileCard', () => {
   });
 
   test('When canceling, the changed data should be reset', async () => {
-    componentRender(<EditableProfileCard id='1' />, options);
+    componentRender(<EditableProfileCard id="1" />, options);
     await userEvent.click(
       screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
@@ -81,7 +81,7 @@ describe('features/EditableProfileCard', () => {
   });
 
   test('An error should appear', async () => {
-    componentRender(<EditableProfileCard id='1' />, options);
+    componentRender(<EditableProfileCard id="1" />, options);
     await userEvent.click(
       screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
@@ -100,7 +100,7 @@ describe('features/EditableProfileCard', () => {
   test('If there are no validation errors, then a PUT request should be sent to the server', async () => {
     const mockPutReq = jest.spyOn($api, 'put');
 
-    componentRender(<EditableProfileCard id='1' />, options);
+    componentRender(<EditableProfileCard id="1" />, options);
     await userEvent.click(
       screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );

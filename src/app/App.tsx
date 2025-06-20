@@ -26,10 +26,10 @@ const App = () => {
 
   return (
     <ToggleFeatures
-      feature='isAppRedesigned'
+      feature="isAppRedesigned"
       on={
         <div className={classNames('app_redisigned', {}, [theme])}>
-          <Suspense fallback=''>
+          <Suspense fallback="">
             <MainLayout
               header={<Navbar />}
               sidebar={<Sidebar />}
@@ -40,9 +40,9 @@ const App = () => {
       }
       off={
         <div className={classNames('app', {}, [theme])}>
-          <Suspense fallback=''>
+          <Suspense fallback="">
             <Navbar />
-            <div className='content-page'>
+            <div className="content-page">
               <Sidebar />
               <AppRouter />
             </div>

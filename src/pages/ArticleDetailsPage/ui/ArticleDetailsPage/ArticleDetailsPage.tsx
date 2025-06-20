@@ -30,22 +30,21 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <DynamicModuleLoader
-      reducers={reducers}
-      removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page
         className={classNames(cls.ArticleDetailsPage, {}, [className])}
-        data-testid='ArticleDetailsPage'>
+        data-testid="ArticleDetailsPage"
+      >
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <ToggleFeatures
-          feature='isArticleRatingEnabled'
+          feature="isArticleRatingEnabled"
           on={<ArticleRating articleId={id} />}
           off={
             <Card>
               <Text
                 align={TextAlign.CENTER}
-                title='Оценить статью пока нельзя'
+                title="Оценить статью пока нельзя"
               />
             </Card>
           }

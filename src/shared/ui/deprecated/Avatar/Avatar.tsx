@@ -35,13 +35,8 @@ export const Avatar = (props: AvatarProps) => {
     [size],
   );
 
-  const fallback = (
-    <Skeleton
-      width={size}
-      height={size}
-      borderRadius='50%'
-    />
-  );
+  const fallback = <Skeleton width={size} height={size}
+    borderRadius="50%" />;
 
   const errorFallback = (
     <img

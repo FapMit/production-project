@@ -1,0 +1,18 @@
+.primary {
+  color: var(--text-redesigned);
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
+}
+
+.red {
+  color: var(--cancel-redesigned);
+
+  &:hover {
+    opacity: .8;
+    stroke-opacity: .8;
+    fill-opacity: .8;
+  }
+}

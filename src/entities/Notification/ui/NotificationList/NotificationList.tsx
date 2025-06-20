@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useNotifications } from '../../api/notificationApi';
 import cls from './NotificationList.module.scss';
 import { Text } from '@/shared/ui/deprecated/Text';
@@ -24,9 +24,10 @@ export const NotificationList = memo((props: NotificationListProps) => {
   if (isLoading) {
     return (
       <VStack
-        gap='8'
+        gap="8"
         max
-        className={classNames(cls.NotificationList, {}, [className])}>
+        className={classNames(cls.NotificationList, {}, [className])}
+      >
         <Skeleton
           height={80}
           width={'100%'}
@@ -56,9 +57,10 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
   return (
     <VStack
-      gap='8'
+      gap="8"
       max
-      className={classNames(cls.NotificationList, {}, [className])}>
+      className={classNames(cls.NotificationList, {}, [className])}
+    >
       {notifications?.map((n) => (
         <NotificationItem
           key={n.id}

@@ -14,8 +14,9 @@ describe('EditableProfileCard.cy.tsx', () => {
               },
             },
           },
-        }}>
-        <EditableProfileCard id='1' />
+        }}
+      >
+        <EditableProfileCard id="1" />
       </TestProvider>,
     );
     // описываем тест кейс

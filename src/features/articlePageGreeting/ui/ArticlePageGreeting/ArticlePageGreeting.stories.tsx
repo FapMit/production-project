@@ -8,7 +8,7 @@ const meta = {
   title: 'features/ArticlePageGreeting',
   component: ArticlePageGreeting,
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},

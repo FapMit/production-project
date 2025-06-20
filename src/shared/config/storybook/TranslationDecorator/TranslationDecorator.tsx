@@ -12,7 +12,7 @@ export const TranslationDecorator = (StoryComponent: StoryFn, context: any) => {
   }, [locale]);
 
   return (
-    <Suspense fallback=''>
+    <Suspense fallback="">
       <I18nextProvider i18n={i18nForTests}>
         <StoryComponent />
       </I18nextProvider>
