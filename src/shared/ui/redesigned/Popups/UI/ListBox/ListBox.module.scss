@@ -1,0 +1,43 @@
+.Label {
+  font: var(--font-m);
+}
+
+.buttonInner {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+  max-width: max-content;
+}
+
+.buttonArrowIcon {
+  width: 16px;
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+}
+
+.options {
+  position: absolute;
+  z-index: 100000;
+  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+  font: var(--font-m);
+}
+
+.item {
+  padding: 5px 20px;
+  text-wrap: nowrap;
+  cursor: pointer;
+
+  &.active {
+    background: var(--inverted-primary-color);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.selected {
+    background-color: var(--succes-dark-color);
+    color: var(--inverted-bg-color);
+  }
+}

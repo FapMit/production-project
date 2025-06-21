@@ -12,11 +12,6 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFalback?: ReactElement;
 }
 
-/**
- * @deprecated
- * Устарел, используйте новые компоненты из папки redesigned
- */
-
 export const AppImage = memo((props: AppImageProps) => {
   const {
     className,
@@ -47,6 +42,12 @@ export const AppImage = memo((props: AppImageProps) => {
     return errorFalback;
   }
 
-  return <img className={className} src={src}
-    alt={alt} {...otherProps} />;
+  return (
+    <img
+      className={className}
+      src={src}
+      alt={alt}
+      {...otherProps}
+    />
+  );
 });

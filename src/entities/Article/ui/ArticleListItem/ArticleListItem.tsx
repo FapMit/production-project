@@ -1,7 +1,7 @@
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';

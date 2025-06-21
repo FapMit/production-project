@@ -9,10 +9,13 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { DropDownDirection } from '@/shared/types/ui';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -36,31 +39,57 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   if (!authData) return null;
 
+  const items = [
+    ...(isAdminPanelAvailable
+      ? [
+        {
+          content: t('Админка'),
+          href: getRouteAdminPanel(),
+        },
+      ]
+      : []),
+    {
+      content: t('Профиль'),
+      href: getRouteProfile(authData.id),
+    },
+    {
+      content: t('Выйти'),
+      onClick: onLogout,
+    },
+  ];
+
   return (
-    <Dropdown
-      className={classNames('', {}, [className])}
-      direction={dropdownDir}
-      items={[
-        ...(isAdminPanelAvailable
-          ? [
-            {
-              content: t('Админка'),
-              href: getRouteAdminPanel(),
-            },
-          ]
-          : []),
-        {
-          content: t('Профиль'),
-          href: getRouteProfile(authData.id),
-        },
-        {
-          content: t('Выйти'),
-          onClick: onLogout,
-        },
-      ]}
-      trigger={
-        <Avatar circle size={32}
-          alt={authData.email} src={authData.avatar} />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Dropdown
+          className={classNames('', {}, [className])}
+          direction={dropdownDir}
+          items={items}
+          trigger={
+            <Avatar
+              circle
+              size={40}
+              alt={authData.email}
+              src={authData.avatar}
+            />
+          }
+        />
+      }
+      off={
+        <DropdownDeprecated
+          className={classNames('', {}, [className])}
+          direction={dropdownDir}
+          items={items}
+          trigger={
+            <AvatarDeprecated
+              circle
+              size={32}
+              alt={authData.email}
+              src={authData.avatar}
+            />
+          }
+        />
       }
     />
   );

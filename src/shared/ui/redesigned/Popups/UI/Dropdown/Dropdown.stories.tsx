@@ -1,0 +1,56 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Dropdown } from './Dropdown';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { Button } from '../../../Button/Button';
+
+const meta = {
+  title: 'Shared/Popups/Dropdown',
+  component: Dropdown,
+  parameters: {
+    layout: 'fullscreen',
+  },
+  tags: ['autodocs'],
+  argTypes: {},
+} satisfies Meta<typeof Dropdown>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Light: Story = {
+  args: {
+    items: [
+      {
+        content: 'Первый элемент',
+      },
+      {
+        content: 'Второй элемент',
+        disabled: true,
+      },
+      {
+        content: 'Третий элемент',
+      },
+    ],
+    trigger: <Button variant="outline">{'Выпадающее меню'}</Button>,
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    items: [
+      {
+        content: 'Первый элемент',
+      },
+      {
+        content: 'Второй элемент',
+        disabled: true,
+      },
+      {
+        content: 'Третий элемент',
+      },
+    ],
+    trigger: <Button variant="outline">{'Выпадающее меню'}</Button>,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};

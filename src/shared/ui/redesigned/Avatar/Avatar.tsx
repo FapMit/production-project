@@ -3,8 +3,8 @@ import defaultArticleImage from '@/shared/assets/default/articleDefault.jpg';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { CSSProperties, useMemo } from 'react';
 import { AppImage } from '../../redesigned/AppImage';
-import { Skeleton } from '../Skeleton';
 import cls from './Avatar.module.scss';
+import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
   className?: string;
@@ -14,11 +14,6 @@ interface AvatarProps {
   circle?: boolean;
   isArticle?: boolean;
 }
-
-/**
- * @deprecated
- * Устарел, используйте новые компоненты из папки redesigned
- */
 
 export const Avatar = (props: AvatarProps) => {
   const { className, src, alt, size, circle = false, isArticle } = props;

@@ -54,12 +54,12 @@
   z-index: var(--collapse-btn-z-index);
 }
 
-.SidebarRedisigned {
-  max-width: var(--sidebar-width-redisigned);
+.SidebarRedesigned {
+  max-width: var(--sidebar-width-redesigned);
   width: 100%;
   height: calc(100vh - 64px);
   background: var(--light-bg-redesigned);
-  border-radius: var(--sidebar-border-radius-redisigned);
+  border-radius: var(--sidebar-border-radius-redesigned);
   transition: max-width 0.3s ease-in-out;
   overflow: hidden;
   position: relative;
@@ -71,7 +71,7 @@
   .items {
     margin-left: 0;
     padding-top: 0;
-    width: 100%;
+    min-width: 284px;
   }
 
   .collapseBtnWrapper {
@@ -83,7 +83,6 @@
     justify-content: end;
     align-items: center;
     height: 128px;
-    width: 100%;
   }
 
   .collapseBtn {

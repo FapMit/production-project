@@ -1,0 +1,19 @@
+.Avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: auto;
+  width: fit-content;
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  border: 2px solid var(--accent-redesigned);
+}

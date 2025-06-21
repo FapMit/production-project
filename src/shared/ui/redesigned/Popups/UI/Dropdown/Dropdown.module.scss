@@ -1,0 +1,40 @@
+.Dropdown {
+  position: relative;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: var(--text-redesigned);
+  font: var(--font-l-redesigned);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 12px 25px;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--text-redesigned);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--accent-redesigned);
+    background: var(--light-bg-redesigned);
+  }
+}
