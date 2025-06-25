@@ -6,6 +6,10 @@
   color: var(--text-redesigned);
 }
 
+.noWrap {
+  text-wrap: nowrap;
+}
+
 .accent {
   .title {
     color: var(--accent-redesigned);

@@ -22,6 +22,8 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import cls from './EditableProfileCard.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -162,36 +164,73 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       reducers={reducers}
       removeAfterUnmount
     >
-      <VStack
-        max
-        gap="16"
-        className={classNames('', {}, [className])}
-      >
-        <EditableProfileCardHeader />
-        {validateErrors?.length &&
-          validateErrors.map((err) => (
-            <Text
-              key={err}
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslates[err]}
-              data-testid="EditableProfileCard.Error"
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <VStack
+            max
+            gap="16"
+            className={classNames(cls.EditableProfileCard, {}, [className])}
+          >
+            <EditableProfileCardHeader />
+            {validateErrors?.length &&
+              validateErrors.map((err) => (
+                <Text
+                  key={err}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[err]}
+                  data-testid="EditableProfileCard.Error"
+                />
+              ))}
+            <ProfileCard
+              data={formData}
+              isLoading={isLoading}
+              error={error}
+              readonly={readonly}
+              onChangeFirstName={onChangeFirstName}
+              onChangeLastName={onChangeLastName}
+              onChangeAge={onChangeAge}
+              onChangeCity={onChangeCity}
+              onChangeAvatar={onChangeAvatar}
+              onChangeEmail={onChangeEmail}
+              onChangeCurrency={onChangeCurrency}
+              onChangeCountry={onChangeCountry}
             />
-          ))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstName={onChangeFirstName}
-          onChangeLastName={onChangeLastName}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeAvatar={onChangeAvatar}
-          onChangeEmail={onChangeEmail}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
-      </VStack>
+          </VStack>
+        }
+        off={
+          <VStack
+            max
+            gap="16"
+            className={classNames('', {}, [className])}
+          >
+            <EditableProfileCardHeader />
+            {validateErrors?.length &&
+              validateErrors.map((err) => (
+                <Text
+                  key={err}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[err]}
+                  data-testid="EditableProfileCard.Error"
+                />
+              ))}
+            <ProfileCard
+              data={formData}
+              isLoading={isLoading}
+              error={error}
+              readonly={readonly}
+              onChangeFirstName={onChangeFirstName}
+              onChangeLastName={onChangeLastName}
+              onChangeAge={onChangeAge}
+              onChangeCity={onChangeCity}
+              onChangeAvatar={onChangeAvatar}
+              onChangeEmail={onChangeEmail}
+              onChangeCurrency={onChangeCurrency}
+              onChangeCountry={onChangeCountry}
+            />
+          </VStack>
+        }
+      />
     </DynamicModuleLoader>
   );
 });

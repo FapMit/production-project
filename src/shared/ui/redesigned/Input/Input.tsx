@@ -2,6 +2,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 import { InputHTMLAttributes, memo, ReactNode, useEffect, useRef } from 'react';
 import { HStack } from '../Stack';
+import { Text } from '../Text';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -12,9 +13,10 @@ interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
   type?: string;
-  supportText?: string;
+  label?: string;
   placeholder?: string;
-  icon?: ReactNode;
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
   onChange?: (value: string) => void;
   readonly?: boolean;
 }
@@ -25,11 +27,12 @@ export const Input = memo((props: InputProps) => {
     value,
     onChange,
     placeholder,
-    supportText,
-    icon,
+    label,
     type = 'text',
     autoFocus,
     readonly,
+    addonLeft,
+    addonRight,
     ...otherProps
   } = props;
 
@@ -47,19 +50,24 @@ export const Input = memo((props: InputProps) => {
 
   const mods: Mods = {
     [cls.readonly]: readonly,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight),
   };
 
   return (
     <HStack
-      className={classNames(cls.InputWrapper, mods, [className])}
+      className={classNames(cls.InputWrapper, {}, [className])}
       gap="8"
     >
-      {supportText && (
-        <div className={cls.supportText}>{`${supportText}:`}</div>
+      {label && (
+        <Text
+          nowrap
+          text={label + ':'}
+        />
       )}
 
-      <div className={cls.InputWithIcon}>
-        {icon && <div className={cls.icon}>{icon}</div>}
+      <div className={classNames(cls.InputWithIcon, mods, [])}>
+        {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
         <input
           ref={ref}
           type={type}
@@ -70,6 +78,7 @@ export const Input = memo((props: InputProps) => {
           placeholder={placeholder}
           {...otherProps}
         />
+        {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
       </div>
     </HStack>
   );

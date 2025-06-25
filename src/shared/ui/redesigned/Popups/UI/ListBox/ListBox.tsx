@@ -50,7 +50,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       gap="8"
       className={classNames(cls.ListBox, {}, [])}
     >
-      {label && <span className={cls.Label}>{label + '>'}</span>}
+      {label && <span className={cls.Label}>{label + ':'}</span>}
       <HListBox
         disabled={readonly}
         as={'div'}
@@ -67,12 +67,14 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
             disabled={readonly}
             className={cls.buttonInner}
             fullWidth
+            addonRight={
+              <Icon
+                Svg={ArrowIcon}
+                className={cls.buttonArrowIcon}
+              />
+            }
           >
             {selectedItem?.content ?? defaultValue}
-            <Icon
-              Svg={ArrowIcon}
-              className={cls.buttonArrowIcon}
-            />
           </Button>
         </HListBox.Button>
         <HListBox.Options

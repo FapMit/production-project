@@ -48,7 +48,7 @@ export const ArticlesFilters = (props: ArticlesFiltersProps) => {
           placeholder={t('Найти')}
           value={search}
           onChange={onChangeSearch}
-          icon={<Icon Svg={searchIcon} />}
+          addonLeft={<Icon Svg={searchIcon} />}
         />
         <ArticleTypeTabs
           onChangeType={onChangeType}

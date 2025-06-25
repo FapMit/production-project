@@ -4,9 +4,15 @@
   padding: 5px 15px;
   transition: all 0.3s;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   text-align: start;
+  position: relative;
+  width: 100%;
+
+  &:focus-visible {
+    color: var(--accent-redesigned);
+  }
 
   &:hover {
     color: var(--accent-redesigned);
@@ -16,6 +22,30 @@
   &.disabled {
     opacity: 0.5;
   }
+
+  &.withAddonLeft {
+    padding-left: 32px;
+  }
+
+  &.withAddonRight {
+    padding-right: 32px;
+  }
+}
+
+.addonLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.addonRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
 }
 
 .clear {
@@ -29,10 +59,53 @@
   border: 1px solid var(--text-redesigned);
   background: none;
   color: var(--text-redesigned);
+
+  &:hover {
+    border-color: var(--accent-redesigned);
+    transition: all 0.3s;
+  }
+
+  &:focus-visible {
+    border-color: var(--accent-redesigned);
+  }
 }
 
 .light {
   background-color: var(--light-bg-redesigned);
+
+  &:focus-visible {
+    border: 1px solid var(--accent-redesigned);
+  }
+}
+
+.success {
+  border: 1px solid var(--save-redesigned);
+  background: none;
+  color: var(--text-redesigned);
+
+  &:hover {
+    color: var(--save-redesigned);
+    transition: all 0.3s;
+  }
+
+  &:focus-visible {
+    color: var(--save-redesigned);
+  }
+}
+
+.danger {
+  border: 1px solid var(--cancel-redesigned);
+  background: none;
+  color: var(--text-redesigned);
+
+  &:hover {
+    color: var(--cancel-redesigned);
+    transition: all 0.3s;
+  }
+
+  &:focus-visible {
+    color: var(--cancel-redesigned);
+  }
 }
 
 .s {

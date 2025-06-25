@@ -9,7 +9,10 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { Text } from '@/shared/ui/deprecated/Text';
 
 interface EditableProfileCardHeaderProps {
@@ -42,6 +45,10 @@ export const EditableProfileCardHeader = memo(
       dispath(updateProfileData());
     }, [dispath]);
 
+    console.log(profileData);
+
+    if (!profileData) return null;
+
     return (
       <HStack
         justify="between"
@@ -53,29 +60,29 @@ export const EditableProfileCardHeader = memo(
         {canEdit && (
           <>
             {readonly ? (
-              <Button
+              <ButtonDeprecated
                 theme={ButtonTheme.OUTLINE}
                 onClick={onEdit}
                 data-testid="EditableProfileCardHeader.EditButton"
               >
                 {t('Редактировать')}
-              </Button>
+              </ButtonDeprecated>
             ) : (
               <HStack gap="8">
-                <Button
+                <ButtonDeprecated
                   theme={ButtonTheme.OUTLINE_RED}
                   onClick={onCancelEdit}
                   data-testid="EditableProfileCardHeader.CancelButton"
                 >
                   {t('Отменить')}
-                </Button>
-                <Button
+                </ButtonDeprecated>
+                <ButtonDeprecated
                   theme={ButtonTheme.OUTLINE_GREEN}
                   onClick={onSave}
                   data-testid="EditableProfileCardHeader.SaveButton"
                 >
                   {t('Сохранить')}
-                </Button>
+                </ButtonDeprecated>
               </HStack>
             )}
           </>

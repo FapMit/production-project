@@ -1,5 +1,6 @@
 .ListBox {
   justify-content: start;
+  width: 100%;
 
   &:has(.options[data-headlessui-state]) .buttonInner {
     border-bottom-right-radius: 0;

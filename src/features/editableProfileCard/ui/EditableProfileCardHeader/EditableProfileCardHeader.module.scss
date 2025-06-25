@@ -1,0 +1,20 @@
+.EditableProfileCardHeader {
+  margin-bottom: 32px;
+  position: relative;
+}
+.ButtonLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: fit-content;
+  border-radius: 16px;
+}
+.ButtonRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: fit-content;
+  border-radius: 16px;
+}
