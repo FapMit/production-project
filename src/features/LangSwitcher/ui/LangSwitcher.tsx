@@ -26,7 +26,7 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
       feature="isAppRedesigned"
       on={
         <Button
-          className={classNames(cls.LangSwitcher, {}, [className])}
+          className={classNames(cls.LangSwitcherRedesigned, {}, [className])}
           variant="clear"
           onClick={toggle}
         >

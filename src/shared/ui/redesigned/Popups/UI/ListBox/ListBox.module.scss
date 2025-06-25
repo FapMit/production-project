@@ -1,26 +1,74 @@
+.ListBox {
+  justify-content: start;
+
+  &:has(.options[data-headlessui-state]) .buttonInner {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top: 1px solid var(--accent-redesigned);
+    border-left: 1px solid var(--accent-redesigned);
+    border-right: 1px solid var(--accent-redesigned);
+
+    &:hover {
+      color: var(--text-redesigned);
+    }
+
+    &:hover .buttonArrowIcon {
+      color: var(--hint-redesigned);
+    }
+  }
+}
+
 .Label {
   font: var(--font-m);
 }
 
 .buttonInner {
-  display: flex;
-  align-items: center;
-  justify-content: start;
   gap: 16px;
-  max-width: max-content;
-}
+  background: var(--light-bg-redesigned);
+  border-radius: 18px;
+  text-transform: capitalize;
+  border: 1px solid var(--light-bg-redesigned);
 
-.buttonArrowIcon {
-  width: 16px;
-  fill: var(--primary-color);
-  stroke: var(--primary-color);
+  &:focus-visible {
+    outline: 1px solid var(--accent-redesigned);
+  }
+
+  .buttonArrowIcon {
+    color: var(--hint-redesigned);
+  }
+
+  &:hover .buttonArrowIcon {
+    color: var(--accent-redesigned);
+  }
 }
 
 .options {
   position: absolute;
   z-index: 100000;
-  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
-  font: var(--font-m);
+  font: var(--font-m-redesigned);
+  text-transform: capitalize;
+  width: 100%;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-color: var(--light-bg-redesigned);
+
+  opacity: 0;
+  height: 0;
+
+  &[data-headlessui-state] {
+    animation: optionsAnim 0.3s forwards;
+  }
+}
+
+@keyframes optionsAnim {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: fit-content;
+  }
 }
 
 .item {
@@ -29,7 +77,7 @@
   cursor: pointer;
 
   &.active {
-    background: var(--inverted-primary-color);
+    background-color: var(--light-bg-redesigned);
   }
 
   &.disabled {
@@ -37,7 +85,6 @@
   }
 
   &.selected {
-    background-color: var(--succes-dark-color);
-    color: var(--inverted-bg-color);
+    background-color: var(--light-bg-redesigned);
   }
 }

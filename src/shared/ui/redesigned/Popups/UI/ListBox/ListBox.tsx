@@ -1,6 +1,6 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
-import ArrowIcon from '@/shared/assets/icons/arrowDown.svg';
+import { Fragment, ReactNode, useMemo } from 'react';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
 import { Icon } from '../../../Icon/Icon';
@@ -8,26 +8,26 @@ import { HStack } from '../../../../redesigned/Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
-import { Button, ButtonTheme } from '../../../../deprecated/Button';
+import { Button } from '../../../Button';
 
-export interface ListBoxItem {
-  value: string;
+export interface ListBoxItem<T extends string> {
+  value: T;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
   className?: string;
-  items: ListBoxItem[];
-  value?: string;
+  items: ListBoxItem<T>[];
+  value?: T;
   defaultValue?: string;
-  onChange: <T extends string>(value: T) => void;
+  onChange: (value: T) => void;
   label?: string;
   readonly?: boolean;
   direction?: DropDownDirection;
 }
 
-export const ListBox = (props: ListBoxProps) => {
+export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
   const {
     className,
     items,
@@ -41,8 +41,15 @@ export const ListBox = (props: ListBoxProps) => {
 
   const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
+  const selectedItem = useMemo(() => {
+    return items.find((item) => item.value === value);
+  }, [items, value]);
+
   return (
-    <HStack gap="8">
+    <HStack
+      gap="8"
+      className={classNames(cls.ListBox, {}, [])}
+    >
       {label && <span className={cls.Label}>{label + '>'}</span>}
       <HListBox
         disabled={readonly}
@@ -56,11 +63,12 @@ export const ListBox = (props: ListBoxProps) => {
           as="div"
         >
           <Button
-            theme={ButtonTheme.OUTLINE}
+            variant="light"
             disabled={readonly}
             className={cls.buttonInner}
+            fullWidth
           >
-            {value ?? defaultValue}
+            {selectedItem?.content ?? defaultValue}
             <Icon
               Svg={ArrowIcon}
               className={cls.buttonArrowIcon}

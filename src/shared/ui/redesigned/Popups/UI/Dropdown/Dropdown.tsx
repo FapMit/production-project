@@ -1,11 +1,11 @@
 import { Menu } from '@headlessui/react';
-import { Fragment, memo, ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
-import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
+import { AppLink } from '../../../AppLink';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -34,35 +34,90 @@ export const Dropdown = memo((props: DropdownProps) => {
       <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item) => {
-          const content = ({ active }: { active: boolean }) => (
-            <button
-              type="button"
-              disabled={item.disabled}
-              onClick={item.onClick}
-              className={classNames(cls.item, { [cls.active]: active }, [])}
-            >
-              {item.content}
-            </button>
-          );
-
           if (item.href) {
             return (
-              <Menu.Item key={item.href} as={AppLink}
-                to={item.href}>
-                {content}
+              <Menu.Item
+                key={String(item.content)}
+                as={AppLink}
+                disabled={item.disabled}
+                to={item.href}
+              >
+                {({ active }) => (
+                  <div
+                    className={classNames(
+                      cls.item,
+                      {
+                        [cls.active]: active,
+                      },
+                      [],
+                    )}
+                  >
+                    {item.content}
+                  </div>
+                )}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item
-              key={String(item.content)}
-              as={Fragment}
-              disabled={item.disabled}
-            >
-              {content}
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  type="button"
+                  disabled={item.disabled}
+                  onClick={item.onClick}
+                  className={classNames(
+                    cls.item,
+                    {
+                      [cls.active]: active,
+                    },
+                    [],
+                  )}
+                >
+                  {item.content}
+                </button>
+              )}
             </Menu.Item>
           );
+          // return (
+          //   <Menu.Item
+          //     key={String(item.content)}
+          //     as={Fragment}
+          //     disabled={item.disabled}
+          //   >
+          //     {({ active }: { active: boolean }) =>
+          //       item.href ? (
+          //         <AppLink
+          //           to={item.href}
+          //           className={classNames(
+          //             cls.item,
+          //             {
+          //               [cls.active]: active,
+          //             },
+          //             [],
+          //           )}
+          //         >
+          //           {item.content}
+          //         </AppLink>
+          //       ) : (
+          //         <button
+          //           type="button"
+          //           disabled={item.disabled}
+          //           onClick={item.onClick}
+          //           className={classNames(
+          //             cls.item,
+          //             {
+          //               [cls.active]: active,
+          //             },
+          //             [],
+          //           )}
+          //         >
+          //           {item.content}
+          //         </button>
+          //       )
+          //     }
+          //   </Menu.Item>
+          // );
         })}
       </Menu.Items>
     </Menu>

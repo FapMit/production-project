@@ -6,3 +6,25 @@
 .selected {
   fill: var(--view-selected);
 }
+
+.ArticleViewSelectorRedesigned {
+  background: var(--dark-bg-redesigned);
+  border-radius: 32px;
+  border: 1px solid var(--dark-bg-redesigned);
+  overflow: hidden;
+
+  .viewSvg {
+    padding: 10px;
+  }
+
+  button:has(.viewSvg) {
+    &:focus-visible .viewSvg {
+      color: var(--accent-redesigned);
+      background: var(--hint-redesigned);
+    }
+  }
+
+  .selected {
+    background: var(--light-bg-redesigned);
+  }
+}

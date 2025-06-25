@@ -1,3 +1,13 @@
 .LangSwitcher {
   width: fit-content;
 }
+
+.LangSwitcherRedesigned {
+  width: 32px;
+  height: 32px;
+
+  &:focus-visible {
+    outline: 1px solid var(--accent-redesigned);
+    color: var(--accent-redesigned);
+  }
+}

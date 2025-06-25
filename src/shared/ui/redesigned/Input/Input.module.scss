@@ -1,0 +1,40 @@
+.InputWrapper {
+  width: 100%;
+
+  .supportText {
+    margin-right: 5px;
+    font: var(--font-m-redesigned);
+    white-space: nowrap;
+  }
+
+  .InputWithIcon {
+    position: relative;
+    width: 100%;
+
+    .icon {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 32px;
+    }
+
+    .Input {
+      font: var(--font-m-redesigned);
+      width: 100%;
+      color: var(--hint-redesigned);
+      padding: 5px 0 5px 40px;
+      background: transparent;
+      border: 1px solid var(--icon-redesigned);
+      border-radius: 48px;
+
+      &::placeholder {
+        color: var(--hint-redesigned);
+      }
+
+      &:focus {
+        border-color: var(--accent-redesigned);
+      }
+    }
+  }
+}

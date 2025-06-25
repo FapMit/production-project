@@ -5,15 +5,21 @@
   &.withoutPaddings {
     padding: 0;
   }
+
+  &.max {
+    width: 100%;
+  }
 }
 
 .normal {
   background: var(--dark-bg-redesigned);
-  pointer-events: none;
 }
 
 .outlined {
   border: 1px solid var(--accent-redesigned);
+}
+.outlinedInverted {
+  border: 1px solid var(--dark-bg-redesigned);
 }
 
 .light {

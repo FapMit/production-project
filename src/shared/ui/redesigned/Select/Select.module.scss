@@ -1,0 +1,27 @@
+.Wrapper {
+  width: 100%;
+}
+
+.Label {
+  font: var(--font-m-redesigned);
+}
+
+.SelectWrapper {
+  background: var(--light-bg-redesigned);
+  border-radius: 34px;
+  padding: 5px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Select {
+  background: transparent;
+  color: var(--text-redesigned);
+  font: var(--font-m-redesigned);
+}
+
+.Option {
+  color: var(--text-redesigned);
+  background: var(--bg-redesigned);
+}

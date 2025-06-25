@@ -1,0 +1,11 @@
+.tab {
+  cursor: pointer;
+  font: var(--font-m-redesigned);
+  padding: 8px 16px;
+  border-radius: inherit;
+  justify-content: start;
+
+  &:focus-visible {
+    outline: 1px solid var(--accent-redesigned);
+  }
+}

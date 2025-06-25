@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: start;
 
   &:hover {
     color: var(--accent-redesigned);
@@ -28,6 +29,10 @@
   border: 1px solid var(--text-redesigned);
   background: none;
   color: var(--text-redesigned);
+}
+
+.light {
+  background-color: var(--light-bg-redesigned);
 }
 
 .s {

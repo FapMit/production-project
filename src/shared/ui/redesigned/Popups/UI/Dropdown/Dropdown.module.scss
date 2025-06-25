@@ -14,6 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: inherit;
+
+  &:focus-visible div {
+    border: 1px solid var(--accent-redesigned);
+  }
 }
 
 .menu {
@@ -24,7 +29,7 @@
 }
 
 .item {
-  padding: 12px 25px;
+  padding: 5px 15px;
   width: 100%;
   background: none;
   outline: none;
@@ -32,9 +37,10 @@
   color: var(--text-redesigned);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font: var(--font-m-redesigned);
 
-  &:hover {
+  &.active {
     color: var(--accent-redesigned);
-    background: var(--light-bg-redesigned);
+    background-color: var(--light-bg-redesigned);
   }
 }

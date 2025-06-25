@@ -5,6 +5,10 @@
   &:hover {
     color: var(--accent-redesigned);
   }
+
+  &:focus-visible {
+    outline: 1px solid var(--accent-redesigned);
+  }
 }
 
 .red {

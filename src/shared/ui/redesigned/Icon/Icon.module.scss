@@ -19,4 +19,12 @@
   &:hover .Icon {
     color: var(--accent-redesigned);
   }
+
+  &:focus-visible {
+    outline: 1px solid var(--accent-redesigned);
+
+    & .Icon {
+      color: var(--accent-redesigned);
+    }
+  }
 }

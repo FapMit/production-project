@@ -22,6 +22,12 @@ export const Light: Story = {
   args: {
     sort: ArticleSortField.VIEWS,
     order: 'asc',
+    onChangeOrder(newOrder) {
+      console.log(newOrder);
+    },
+    onChangeSort(newSort) {
+      console.log(newSort);
+    },
   },
 };
 
@@ -29,6 +35,12 @@ export const Dark: Story = {
   args: {
     sort: ArticleSortField.VIEWS,
     order: 'asc',
+    onChangeOrder(newOrder) {
+      console.log(newOrder);
+    },
+    onChangeSort(newSort) {
+      console.log(newSort);
+    },
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
