@@ -40,7 +40,8 @@
 }
 
 .Label {
-  font: var(--font-m);
+  font: var(--font-m-redesigned);
+  text-wrap: nowrap;
 }
 
 .options {

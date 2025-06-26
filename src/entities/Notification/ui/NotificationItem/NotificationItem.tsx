@@ -24,6 +24,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
           variant="outlined"
           className={classNames(cls.NotificationItem, {}, [className])}
           padding="16"
+          max
         >
           <Text
             title={item.title}
