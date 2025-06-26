@@ -30,7 +30,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader
+      reducers={reducers}
+      removeAfterUnmount
+    >
       <Page
         className={classNames(cls.ArticleDetailsPage, {}, [className])}
         data-testid="ArticleDetailsPage"

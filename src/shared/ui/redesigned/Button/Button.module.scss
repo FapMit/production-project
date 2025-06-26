@@ -8,7 +8,7 @@
   align-items: center;
   text-align: start;
   position: relative;
-  width: 100%;
+  width: fit-content;
 
   &:focus-visible {
     color: var(--accent-redesigned);
@@ -68,6 +68,25 @@
   &:focus-visible {
     border-color: var(--accent-redesigned);
   }
+}
+
+.primary {
+  border: 1px solid var(--icon-redesigned);
+  background: none;
+  color: var(--text-redesigned);
+
+  &:hover {
+    border-color: var(--accent-redesigned);
+    transition: all 0.3s;
+  }
+
+  &:focus-visible {
+    border-color: var(--accent-redesigned);
+  }
+}
+
+.rounded {
+  border-radius: 16px;
 }
 
 .light {

@@ -17,14 +17,12 @@ export const AppLogo = (props: AppLogoProps) => {
       justify="center"
       className={classNames(cls.appLogoWrapper, {}, [className])}
     >
-      <div className={cls.gradientBig}></div>
-      <div className={cls.gradientSmall}></div>
       <AppLogoSvg
         className={cls.appLogo}
         style={{ maxWidth: size, maxHeight: size }}
-        // width={size}
-        // height={size}
       />
+      <div className={cls.gradientBig}></div>
+      <div className={cls.gradientSmall}></div>
     </HStack>
   );
 };

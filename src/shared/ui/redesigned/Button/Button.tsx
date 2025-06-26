@@ -2,7 +2,13 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 
-export type ButtonVariant = 'clear' | 'outline' | 'light' | 'success' | 'danger';
+export type ButtonVariant =
+  | 'clear'
+  | 'outline'
+  | 'light'
+  | 'success'
+  | 'danger'
+  | 'primary';
 
 export type ButtonSize = 's' | 'm' | 'l' | 'xl';
 
@@ -16,6 +22,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   addonRight?: ReactNode;
   addonLeft?: ReactNode;
+  rounded?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -29,6 +36,7 @@ export const Button = memo((props: ButtonProps) => {
     fullWidth,
     addonRight,
     addonLeft,
+    rounded,
     ...otherProps
   } = props;
 
@@ -38,6 +46,7 @@ export const Button = memo((props: ButtonProps) => {
     [cls.fullWidth]: fullWidth,
     [cls.withAddonLeft]: Boolean(addonLeft),
     [cls.withAddonRight]: Boolean(addonRight),
+    [cls.rounded]: rounded,
   };
 
   return (

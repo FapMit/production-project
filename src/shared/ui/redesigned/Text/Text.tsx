@@ -16,7 +16,7 @@ interface TextProps {
   align?: TextAlign;
   size?: TextSize;
   nowrap?: boolean;
-
+  bold?: boolean;
   'data-testid'?: string;
 }
 
@@ -38,6 +38,7 @@ export const Text = memo((props: TextProps) => {
     align = 'left',
     size = 'm',
     nowrap,
+    bold,
     'data-testid': dataTestId = 'Text',
   } = props;
 
@@ -49,7 +50,7 @@ export const Text = memo((props: TextProps) => {
     <div
       className={classNames(
         cls.Text,
-        { [cls.noWrap]: nowrap },
+        { [cls.noWrap]: nowrap, [cls.bold]: bold },
         additionalClasses,
       )}
       data-testid={dataTestId}

@@ -81,6 +81,6 @@ export function useArticleFilters() {
     onChangeOrder,
     onChangeSort,
     onChangeSearch,
-    onChangeType
-  }
+    onChangeType,
+  };
 }

@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-  Text,
+  Text as TextDeprecated,
   TextAlign,
   TextSize,
   TextTheme,
@@ -12,6 +12,9 @@ import { Article } from '../../model/types/Article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import cls from './ArticleList.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Flex } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 interface ArticleListProps {
   className?: string;
@@ -24,7 +27,12 @@ interface ArticleListProps {
 const getSkeletons = (view: ArticleView) => {
   return new Array(view === ArticleView.TILE ? 9 : 3)
     .fill(0)
-    .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
+    .map((item, index) => (
+      <ArticleListItemSkeleton
+        key={index}
+        view={view}
+      />
+    ));
 };
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -39,30 +47,79 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   if (!isLoading && !articles.length) {
     return (
-      <div className={classNames(cls.ArticleList, {}, [className])}>
-        <Text
-          size={TextSize.L}
-          align={TextAlign.CENTER}
-          title={t('Статьи не найдены')}
-          theme={TextTheme.ERROR}
-        />
-      </div>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <Flex
+            className={classNames('', {}, [className])}
+            direction="column"
+            max
+            justify="center"
+            align="center"
+          >
+            <Text
+              size="l"
+              align="center"
+              title={t('Статьи не найдены')}
+              variant="error"
+            />
+          </Flex>
+        }
+        off={
+          <div className={classNames(cls.ArticleList, {}, [className])}>
+            <TextDeprecated
+              size={TextSize.L}
+              align={TextAlign.CENTER}
+              title={t('Статьи не найдены')}
+              theme={TextTheme.ERROR}
+            />
+          </div>
+        }
+      />
     );
   }
   return (
-    <div
-      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-      data-testid="ArticleList"
-    >
-      {articles.map((article) => (
-        <ArticleListItem
-          article={article}
-          view={view}
-          target={target}
-          key={article.id}
-        />
-      ))}
-      {isLoading && getSkeletons(view)}
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Flex
+          className={classNames(cls.ArticleListRedesigned, {}, [
+            className,
+            // cls[view],
+          ])}
+          direction="row"
+          gap="16"
+          wrap="wrap"
+          justify="center"
+          data-testid="ArticleList"
+        >
+          {articles.map((article) => (
+            <ArticleListItem
+              article={article}
+              view={view}
+              target={target}
+              key={article.id}
+            />
+          ))}
+          {isLoading && getSkeletons(view)}
+        </Flex>
+      }
+      off={
+        <div
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+          data-testid="ArticleList"
+        >
+          {articles.map((article) => (
+            <ArticleListItem
+              article={article}
+              view={view}
+              target={target}
+              key={article.id}
+            />
+          ))}
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+    />
   );
 });

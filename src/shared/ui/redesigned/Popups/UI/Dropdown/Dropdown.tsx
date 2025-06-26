@@ -60,7 +60,7 @@ export const Dropdown = memo((props: DropdownProps) => {
           }
 
           return (
-            <Menu.Item>
+            <Menu.Item key={String(item.content)}>
               {({ active }) => (
                 <button
                   type="button"
@@ -79,45 +79,6 @@ export const Dropdown = memo((props: DropdownProps) => {
               )}
             </Menu.Item>
           );
-          // return (
-          //   <Menu.Item
-          //     key={String(item.content)}
-          //     as={Fragment}
-          //     disabled={item.disabled}
-          //   >
-          //     {({ active }: { active: boolean }) =>
-          //       item.href ? (
-          //         <AppLink
-          //           to={item.href}
-          //           className={classNames(
-          //             cls.item,
-          //             {
-          //               [cls.active]: active,
-          //             },
-          //             [],
-          //           )}
-          //         >
-          //           {item.content}
-          //         </AppLink>
-          //       ) : (
-          //         <button
-          //           type="button"
-          //           disabled={item.disabled}
-          //           onClick={item.onClick}
-          //           className={classNames(
-          //             cls.item,
-          //             {
-          //               [cls.active]: active,
-          //             },
-          //             [],
-          //           )}
-          //         >
-          //           {item.content}
-          //         </button>
-          //       )
-          //     }
-          //   </Menu.Item>
-          // );
         })}
       </Menu.Items>
     </Menu>

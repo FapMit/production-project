@@ -1,5 +1,4 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './FiltersContainer.module.scss';
 import { ArticlesFilters } from '@/widgets/ArticlesFilters';
 import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
 
@@ -23,7 +22,7 @@ export const FiltersContainer = (props: FiltersContainerProps) => {
 
   return (
     <ArticlesFilters
-      className={classNames(cls.FiltersContainer, {}, [className])}
+      className={classNames('', {}, [className])}
       order={order}
       sort={sort}
       search={search}

@@ -1,6 +1,7 @@
 .Card {
   border-radius: 18px;
   padding: 24px;
+  overflow: hidden;
 
   &.withoutPaddings {
     padding: 0;
@@ -18,6 +19,7 @@
 .outlined {
   border: 1px solid var(--accent-redesigned);
 }
+
 .outlinedInverted {
   border: 1px solid var(--dark-bg-redesigned);
 }

@@ -30,16 +30,22 @@ export const ArticlePageGreeting = memo(() => {
 
   if (isMobile) {
     return (
-      <Drawer lazy onClose={onClose}
-        isOpen={isOpen}>
+      <Drawer
+        lazy
+        onClose={onClose}
+        isOpen={isOpen}
+      >
         {text}
       </Drawer>
     );
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}
-      lazy>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      lazy
+    >
       {text}
     </Modal>
   );

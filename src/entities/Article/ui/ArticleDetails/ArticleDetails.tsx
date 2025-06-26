@@ -96,14 +96,26 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           height={200}
           borderRadius={'50%'}
         />
-        <Skeleton className={cls.title} maxWidth={300}
-          height={32} />
-        <Skeleton className={cls.skeleton} maxWidth={600}
-          height={24} />
-        <Skeleton className={cls.skeleton} maxWidth={'100%'}
-          height={200} />
-        <Skeleton className={cls.skeleton} maxWidth={'100%'}
-          height={200} />
+        <Skeleton
+          className={cls.title}
+          maxWidth={300}
+          height={32}
+        />
+        <Skeleton
+          className={cls.skeleton}
+          maxWidth={600}
+          height={24}
+        />
+        <Skeleton
+          className={cls.skeleton}
+          maxWidth={'100%'}
+          height={200}
+        />
+        <Skeleton
+          className={cls.skeleton}
+          maxWidth={'100%'}
+          height={200}
+        />
       </>
     );
   } else if (error) {
@@ -134,11 +146,17 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           size={TextSize.L}
         />
         <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
+          <Icon
+            Svg={EyeIcon}
+            className={cls.icon}
+          />
           <Text text={String(article?.views)} />
         </div>
         <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
+          <Icon
+            Svg={CalendarIcon}
+            className={cls.icon}
+          />
           <Text text={article?.createdAt} />
         </div>
         {article?.blocks.map(renderBlock)}
@@ -147,7 +165,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader
+      reducers={reducers}
+      removeAfterUnmount
+    >
       <div
         className={classNames(cls.ArticleDetails, {}, [className])}
         data-testid="ArticleDetails"
