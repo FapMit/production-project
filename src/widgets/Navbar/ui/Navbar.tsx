@@ -3,14 +3,19 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarProps {
   className?: string;
@@ -71,23 +76,45 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(cls.Navbar, {}, [className])}>
-      <Text
-        title={t('Сервис новостей')}
-        className={cls.AppName}
-      />
-      <Button
-        theme={ButtonTheme.CLEAR_INVERTED}
-        onClick={onShow}
-        className={cls.link}
-      >
-        {t('Войти')}
-      </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+          <Button
+            variant="light"
+            rounded
+            onClick={onShow}
+            className={cls.link}
+          >
+            {t('Войти')}
+          </Button>
 
-      <LoginModal
-        isOpen={isAuthModal}
-        onClose={onClose}
-      />
-    </header>
+          <LoginModal
+            isOpen={isAuthModal}
+            onClose={onClose}
+          />
+        </header>
+      }
+      off={
+        <header className={classNames(cls.Navbar, {}, [className])}>
+          <TextDeprecated
+            title={t('Сервис новостей')}
+            className={cls.AppName}
+          />
+          <ButtonDeprecated
+            theme={ButtonTheme.CLEAR_INVERTED}
+            onClick={onShow}
+            className={cls.link}
+          >
+            {t('Войти')}
+          </ButtonDeprecated>
+
+          <LoginModal
+            isOpen={isAuthModal}
+            onClose={onClose}
+          />
+        </header>
+      }
+    />
   );
 });
