@@ -14,8 +14,13 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated/Text';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -34,27 +39,59 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       reducers={reducers}
       removeAfterUnmount
     >
-      <Page
-        className={classNames(cls.ArticleDetailsPage, {}, [className])}
-        data-testid="ArticleDetailsPage"
-      >
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <ToggleFeatures
-          feature="isArticleRatingEnabled"
-          on={<ArticleRating articleId={id} />}
-          off={
-            <Card>
-              <Text
-                align={TextAlign.CENTER}
-                title="Оценить статью пока нельзя"
-              />
-            </Card>
-          }
-        />
-        <ArticleRecommendationsList />
-        <ArticleComments id={id} />
-      </Page>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <StickyContentLayout
+            content={
+              <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+                data-testid="ArticleDetailsPage"
+              >
+                <DetailsContainer />
+                <ToggleFeatures
+                  feature="isArticleRatingEnabled"
+                  on={<ArticleRating articleId={id} />}
+                  off={
+                    <Card>
+                      <Text
+                        align="center"
+                        title="Оценить статью пока нельзя"
+                      />
+                    </Card>
+                  }
+                />
+                <ArticleRecommendationsList />
+                <ArticleComments id={id} />
+              </Page>
+            }
+            right={<AdditionalInfoContainer />}
+          />
+        }
+        off={
+          <Page
+            className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            data-testid="ArticleDetailsPage"
+          >
+            <ArticleDetailsPageHeader />
+            <ArticleDetails id={id} />
+            <ToggleFeatures
+              feature="isArticleRatingEnabled"
+              on={<ArticleRating articleId={id} />}
+              off={
+                <CardDeprecated>
+                  <TextDeprecated
+                    align={TextAlign.CENTER}
+                    title="Оценить статью пока нельзя"
+                  />
+                </CardDeprecated>
+              }
+            />
+            <ArticleRecommendationsList />
+            <ArticleComments id={id} />
+          </Page>
+        }
+      />
     </DynamicModuleLoader>
   );
 };

@@ -16,7 +16,10 @@
   "Profile page": "Profile page",
   "Read more": "Read more",
   "Something went wrong": "",
+  "additionalContainer": "additionalContainer",
   "error": "",
+  "{{count}} просмотров_one": "{{count}} просмотров_one",
+  "{{count}} просмотров_other": "{{count}} просмотров_other",
   "Аватар": "Аватар",
   "Авторизация": "",
   "Админка": "Админка",
@@ -124,5 +127,6 @@
   "названию": "названию",
   "по": "по",
   "просмотрам": "просмотрам",
+  "просмотров": "просмотров",
   "убыванию": "убыванию"
 }

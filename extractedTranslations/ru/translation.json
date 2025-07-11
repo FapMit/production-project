@@ -15,7 +15,12 @@
   "Profile page": "Profile page",
   "Read more": "Read more",
   "Something went wrong": "Something went wrong",
+  "additionalContainer": "additionalContainer",
   "error": "error",
+  "{{count}} просмотров_few": "{{count}} просмотров_few",
+  "{{count}} просмотров_many": "{{count}} просмотров_many",
+  "{{count}} просмотров_one": "{{count}} просмотров_one",
+  "{{count}} просмотров_other": "{{count}} просмотров_other",
   "Аватар": "Аватар",
   "Авторизация": "Авторизация",
   "Админка": "Админка",
@@ -123,5 +128,6 @@
   "названию": "названию",
   "по": "по",
   "просмотрам": "просмотрам",
+  "просмотров": "просмотров",
   "убыванию": "убыванию"
 }
