@@ -11,3 +11,14 @@
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--bg-color);
 }
+
+.recommendationsRedesigned {
+  flex-wrap: nowrap;
+  overflow: auto hidden;
+  width: 100%;
+  border-radius: 12px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-redesigned) var(--light-bg-redesigned);
+  justify-content: start;
+}

@@ -5,13 +5,15 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import {
   useAddArticleComment,
   useArticleComments,
 } from '../../api/articleCommentsApi';
 import cls from './ArticleComments.module.scss';
 import { getArticleDetailsIsLoading } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleCommentsProps {
   className?: string;
@@ -40,30 +42,62 @@ export const ArticleComments = memo((props: ArticleCommentsProps) => {
   }
 
   return (
-    <VStack
-      max
-      gap="16"
-      className={classNames('', {}, [className])}
-    >
-      <Text
-        size={TextSize.L}
-        title={t('Комментарии')}
-        className={cls.commentTitle}
-      />
-      <Suspense fallback={'Загрузка'}>
-        <CommentForm
-          onSendComment={onSendComment}
-          isLoading={isLoading || false}
-        />
-      </Suspense>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <VStack
+          max
+          gap="16"
+          className={classNames('', {}, [className])}
+        >
+          <Text
+            size="l"
+            title={t('Комментарии')}
+            className={cls.commentTitle}
+          />
+          <Suspense fallback={'Загрузка'}>
+            <CommentForm
+              onSendComment={onSendComment}
+              isLoading={isLoading || false}
+            />
+          </Suspense>
 
-      {comments && (
-        <CommentList
-          isLoading={isLoading}
-          comments={comments}
-          className={cls.commentList}
-        />
-      )}
-    </VStack>
+          {comments && (
+            <CommentList
+              isLoading={isLoading}
+              comments={comments}
+              className={cls.commentList}
+            />
+          )}
+        </VStack>
+      }
+      off={
+        <VStack
+          max
+          gap="16"
+          className={classNames('', {}, [className])}
+        >
+          <TextDeprecated
+            size={TextSize.L}
+            title={t('Комментарии')}
+            className={cls.commentTitle}
+          />
+          <Suspense fallback={'Загрузка'}>
+            <CommentForm
+              onSendComment={onSendComment}
+              isLoading={isLoading || false}
+            />
+          </Suspense>
+
+          {comments && (
+            <CommentList
+              isLoading={isLoading}
+              comments={comments}
+              className={cls.commentList}
+            />
+          )}
+        </VStack>
+      }
+    />
   );
 });

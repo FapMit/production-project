@@ -125,7 +125,10 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       data-testid="ArticleListItem"
     >
-      <Card padding="0">
+      <Card
+        padding="0"
+        max
+      >
         <VStack
           max
           gap="8"

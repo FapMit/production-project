@@ -11,6 +11,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
 import { toggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -67,9 +68,11 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
       data-testid={props['data-testid'] ?? 'Page'}
     >
-      <div
+      <VStack
         className={cls.pageContainer}
         id={PAGE_ID}
+        gap="16"
+        max
       >
         {children}
         {onScrollEnd ? (
@@ -78,7 +81,7 @@ export const Page = memo((props: PageProps) => {
             ref={triggerRef}
           />
         ) : null}
-      </div>
+      </VStack>
     </main>
   );
 });

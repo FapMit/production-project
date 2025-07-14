@@ -3,10 +3,13 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { HStack } from '@/shared/ui/redesigned/Stack';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -18,6 +21,11 @@ import {
   useCommentActions,
 } from '../../model/slices/commentsSlice';
 import cls from './CommentForm.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SendIcon from '@/shared/assets/icons/send.svg';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 
 interface CommentFormProps {
   className?: string;
@@ -68,25 +76,53 @@ export const CommentForm = (props: CommentFormProps) => {
       reducers={reducers}
       removeAfterUnmount
     >
-      <HStack
-        className={classNames(cls.CommentForm, {}, [className])}
-        data-testid="CommentForm"
-      >
-        <Input
-          className={cls.input}
-          placeholder={t('Введите текст')}
-          value={text}
-          onChange={onCommentTextChange}
-          data-testid="CommentForm.Input"
-        />
-        <Button
-          onClick={onSendHandler}
-          theme={ButtonTheme.OUTLINE}
-          data-testid="CommentForm.SendButton"
-        >
-          {t('Отправить')}
-        </Button>
-      </HStack>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        off={
+          <HStack
+            className={classNames(cls.CommentForm, {}, [className])}
+            data-testid="CommentForm"
+          >
+            <InputDeprecated
+              className={cls.input}
+              placeholder={t('Введите текст')}
+              value={text}
+              onChange={onCommentTextChange}
+              data-testid="CommentForm.Input"
+            />
+            <ButtonDeprecated
+              onClick={onSendHandler}
+              theme={ButtonTheme.OUTLINE}
+              data-testid="CommentForm.SendButton"
+            >
+              {t('Отправить')}
+            </ButtonDeprecated>
+          </HStack>
+        }
+        on={
+          <HStack
+            className={classNames(cls.CommentFormRedesigned, {}, [className])}
+            data-testid="CommentForm"
+            gap="16"
+            max
+          >
+            <Input
+              className={cls.input}
+              placeholder={t('Написать комментарий')}
+              value={text}
+              onChange={onCommentTextChange}
+              data-testid="CommentForm.Input"
+              addonLeft={<Icon Svg={SearchIcon} />}
+            />
+            <Icon
+              clickable
+              onClick={onSendHandler}
+              data-testid="CommentForm.SendButton"
+              Svg={SendIcon}
+            />
+          </HStack>
+        }
+      />
     </DynamicModuleLoader>
   );
 };

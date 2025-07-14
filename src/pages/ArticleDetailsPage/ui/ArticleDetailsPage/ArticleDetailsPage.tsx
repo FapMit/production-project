@@ -19,8 +19,8 @@ import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated/Text';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -48,21 +48,23 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
                 data-testid="ArticleDetailsPage"
               >
-                <DetailsContainer />
-                <ToggleFeatures
-                  feature="isArticleRatingEnabled"
-                  on={<ArticleRating articleId={id} />}
-                  off={
-                    <Card>
-                      <Text
-                        align="center"
-                        title="Оценить статью пока нельзя"
-                      />
-                    </Card>
-                  }
-                />
-                <ArticleRecommendationsList />
-                <ArticleComments id={id} />
+                <Card max>
+                  <VStack gap="16">
+                    <ArticleDetails id={id} />
+                    <ToggleFeatures
+                      feature="isArticleRatingEnabled"
+                      on={<ArticleRating articleId={id} />}
+                      off={
+                        <Text
+                          align="center"
+                          title="Оценить статью пока нельзя"
+                        />
+                      }
+                    />
+                    <ArticleRecommendationsList />
+                    <ArticleComments id={id} />
+                  </VStack>
+                </Card>
               </Page>
             }
             right={<AdditionalInfoContainer />}

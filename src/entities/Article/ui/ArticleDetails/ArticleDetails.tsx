@@ -32,6 +32,7 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import defaultArticleImage from '@/shared/assets/default/articleDefault.jpg';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -156,6 +157,12 @@ const Redesigned = () => {
               width={'100%'}
               height={420}
               borderRadius="16px"
+            />
+          }
+          errorFalback={
+            <img
+              src={defaultArticleImage}
+              className={cls.image}
             />
           }
         />
