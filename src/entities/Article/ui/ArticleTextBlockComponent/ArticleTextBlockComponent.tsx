@@ -5,6 +5,7 @@ import { ArticleTextBlock } from '../../model/types/Article';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleTextBlockComponentProps {
   className?: string;
@@ -19,25 +20,24 @@ export const ArticleTextBlockComponent = memo(
       <ToggleFeatures
         feature="isAppRedesigned"
         on={
-          <div
-            className={classNames(cls.ArticleTextBlockComponent, {}, [
-              className,
-            ])}
+          <VStack
+            className={classNames('', {}, [className])}
+            gap="16"
           >
-            {block.title && (
-              <Text
-                title={block?.title}
-                className={cls.title}
-              />
-            )}
-            {block.paragraphs.map((paragraph) => (
-              <Text
-                key={paragraph}
-                text={paragraph}
-                className={cls.paragraph}
-              />
-            ))}
-          </div>
+            {block.title && <Text title={block?.title} />}
+
+            <VStack
+              className={classNames('', {}, [className])}
+              gap="8"
+            >
+              {block.paragraphs.map((paragraph) => (
+                <Text
+                  key={paragraph}
+                  text={paragraph}
+                />
+              ))}
+            </VStack>
+          </VStack>
         }
         off={
           <div
