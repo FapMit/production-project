@@ -117,6 +117,7 @@ export const ProfileCardRedesigned = (props: ProfileCardProps) => {
     <Card
       max
       padding="24"
+      style={{ overflow: 'visible' }}
     >
       <VStack
         max

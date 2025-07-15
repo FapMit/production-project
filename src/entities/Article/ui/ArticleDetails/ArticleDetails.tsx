@@ -77,7 +77,10 @@ const SkeletonBlockDeprecated = () => {
 };
 const SkeletonBlockRedesigned = () => {
   return (
-    <VStack gap="16">
+    <VStack
+      gap="16"
+      max
+    >
       <Skeleton
         maxWidth={200}
         height={32}

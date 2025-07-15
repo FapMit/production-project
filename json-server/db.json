@@ -916,7 +916,8 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "app_dark_theme",

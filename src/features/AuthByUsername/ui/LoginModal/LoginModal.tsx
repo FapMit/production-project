@@ -2,7 +2,12 @@
 import { Suspense } from 'react';
 import { LoginFormAsync as LoginForm } from '../LoginForm/LoginForm.async';
 import { Modal } from '@/shared/ui/redesigned/Modal';
-import { Loader, LoaderSize } from '@/shared/ui/deprecated/Loader';
+import {
+  Loader as LoaderDeprecated,
+  LoaderSize,
+} from '@/shared/ui/deprecated/Loader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Loader } from '@/shared/ui/redesigned/Loader';
 
 interface LoginModalProps {
   isOpen?: boolean;
@@ -20,13 +25,19 @@ export const LoginModal = (props: LoginModalProps) => {
     >
       <Suspense
         fallback={
-          <Loader
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-            size={LoaderSize.L}
+          <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<Loader />}
+            off={
+              <LoaderDeprecated
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+                size={LoaderSize.L}
+              />
+            }
           />
         }
       >

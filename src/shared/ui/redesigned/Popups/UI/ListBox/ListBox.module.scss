@@ -5,6 +5,10 @@
   text-transform: capitalize;
   border: 1px solid var(--light-bg-redesigned);
 
+  &:disabled {
+    cursor: default;
+  }
+
   &:focus-visible {
     outline: 1px solid var(--accent-redesigned);
   }
@@ -13,7 +17,7 @@
     color: var(--hint-redesigned);
   }
 
-  &:hover .buttonArrowIcon {
+  &:not(:disabled):hover .buttonArrowIcon {
     color: var(--accent-redesigned);
   }
 }

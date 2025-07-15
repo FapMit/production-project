@@ -14,7 +14,7 @@
     color: var(--accent-redesigned);
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     color: var(--accent-redesigned);
     transition: all 0.3s;
   }
