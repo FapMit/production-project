@@ -21,7 +21,6 @@ export const loginByEmail = createAsyncThunk<
     }
 
     dispatch(userActions.setAuthData(response.data));
-
     return response.data;
   } catch (error) {
     console.error(error);

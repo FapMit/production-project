@@ -22,7 +22,7 @@ const SettingsPage = memo((props: SettingsPageProps) => {
         gap="16"
       >
         <Text
-          title="Настройки пользователя"
+          title={t('Настройки пользователя')}
           size="xl"
         />
         <UiDesignSwitcher />

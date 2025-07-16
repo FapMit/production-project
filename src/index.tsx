@@ -7,6 +7,7 @@ import '@/app/styles/index.scss';
 import '@/shared/config/i18n/i18n';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import { StorePorvider } from '@/app/providers/StoreProvider';
+import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
 
 const container = document.getElementById('root');
 
@@ -17,11 +18,13 @@ const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <StorePorvider>
-      <ThemeProvider>
-        <ErrorBoundary>
-          <App />
-        </ErrorBoundary>
-      </ThemeProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <ForceUpdateProvider>
+            <App />
+          </ForceUpdateProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
     </StorePorvider>
   </BrowserRouter>,
 );
